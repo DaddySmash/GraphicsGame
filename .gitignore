@@ -1,6 +1,8 @@
-.fscache
-godot
-godot.exe
+alpha
+alpha.exe
+app/.fscache
+app/godot
+app/godot.exe
 
 #################
 ## Eclipse
