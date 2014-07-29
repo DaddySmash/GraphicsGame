@@ -1,0 +1,2577 @@
+<!DOCTYPE html>
+<html class="   "><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    <title>gdscript · okamstudio/godot Wiki</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="okamstudio/godot" name="twitter:title"><meta content="godot - Godot Game Engine" name="twitter:description"><meta content="https://avatars3.githubusercontent.com/u/6318500?s=400" name="twitter:image:src">
+<meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="https://avatars3.githubusercontent.com/u/6318500?s=400" property="og:image"><meta content="okamstudio/godot" property="og:title"><meta content="https://github.com/okamstudio/godot" property="og:url"><meta content="godot - Godot Game Engine" property="og:description">
+
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="conduit-xhr" href="https://ghconduit.com:25035/">
+    <link rel="xhr-socket" href="https://github.com/_sockets">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_wiki" data-pjax-transient="">
+      <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="collector-cdn.github.com" name="octolytics-script-host"><meta content="github" name="octolytics-app-id"><meta content="48AEE1AB:7DF7:A632917:53D721F0" name="octolytics-dimension-request_id"><meta content="7245865" name="octolytics-actor-id"><meta content="DaddySmash" name="octolytics-actor-login"><meta content="c748e176b090ee7476aeef9d73a83ac72f4207152cd56702bce30473ffe7ec45" name="octolytics-actor-hash">
+    
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="zLk5WmTgmKz+dKc0QnTYu/auwZgu+s7mV2vmekOi7iHxxoIWWgP9/PpK6C6jU1hAhzsYyDOTz3D+VA9BfvKLGg==" name="csrf-token">
+
+    <link href="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/github-8f26e319f738109f86d56c527f7873ecb0689e66.css" media="all" rel="stylesheet" type="text/css">
+    <link href="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/github2-86d788897b0079c984f79dd00ff6cc8931deef72.css" media="all" rel="stylesheet" type="text/css">
+    
+
+
+    <meta http-equiv="x-pjax-version" content="4162f162014fcb66ac521c6a805e8582">
+
+      
+  <meta name="description" content="godot - Godot Game Engine">
+
+
+  <meta content="6318500" name="octolytics-dimension-user_id"><meta content="okamstudio" name="octolytics-dimension-user_login"><meta content="15634981" name="octolytics-dimension-repository_id"><meta content="okamstudio/godot" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="15634981" name="octolytics-dimension-repository_network_root_id"><meta content="okamstudio/godot" name="octolytics-dimension-repository_network_root_nwo">
+
+  <link href="https://github.com/okamstudio/godot/commits/master.atom" rel="alternate" title="Recent Commits to godot:master" type="application/atom+xml">
+
+  <script src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/api.js" async="" type="text/javascript"></script><style>@-webkit-keyframes popqjrvgmocllggoxnbqopnqddprkdwxqoliz {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popqjrvgmocllggoxnbqopnqddprkdwxqoliz {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#qjrvgmocllggoxnbqopnqddprkdwxqoliz{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:solid 2px #fff !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-moz-border-radius:5px !important;border-radius:5px !important;-moz-box-shadow:0px 0px 20px #000 !important;box-shadow:0px 0px 20px #000 !important;}.qjrvgmocllggoxnbqopnqddprkdwxqoliz-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;color:#AAA !important;display:inline !important;text-decoration:line-through !important;}#qjrvgmocllggoxnbqopnqddprkdwxqoliz br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#qjrvgmocllggoxnbqopnqddprkdwxqoliz span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;}#qjrvgmocllggoxnbqopnqddprkdwxqoliz div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#qjrvgmocllggoxnbqopnqddprkdwxqoliz a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#qjrvgmocllggoxnbqopnqddprkdwxqoliz-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(resource://firefox-at-ghostery-dot-com/ghostery/data/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#qjrvgmocllggoxnbqopnqddprkdwxqoliz-gear:hover{-webkit-animation-name:popqjrvgmocllggoxnbqopnqddprkdwxqoliz !important;animation-name:popqjrvgmocllggoxnbqopnqddprkdwxqoliz !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#qjrvgmocllggoxnbqopnqddprkdwxqoliz:hover #qjrvgmocllggoxnbqopnqddprkdwxqoliz-gear{text-decoration:none !important;display:inline-block !important;}#qjrvgmocllggoxnbqopnqddprkdwxqoliz hr{visibility:hidden !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;height:1em;}@media print{#qjrvgmocllggoxnbqopnqddprkdwxqoliz{display:none !important;}}</style></head>
+
+
+  <body class="logged_in  env-production windows vis-public">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+      
+
+
+      <div class="header header-logged-in true">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" aria-label="Homepage">
+  <span class="mega-octicon octicon-mark-github"></span>
+</a>
+
+
+    
+    <a href="https://github.com/notifications" aria-label="You have no unread notifications" class="notification-indicator tooltipped tooltipped-s" data-hotkey="g n">
+        <span class="mail-status all-read"></span>
+</a>
+
+      <div class="command-bar js-command-bar  in-repository">
+          <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<div class="commandbar">
+  <span class="message"></span>
+  <input data-hotkey="s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-username="DaddySmash" data-repo="okamstudio/godot" type="text">
+  <div class="display hidden"></div>
+</div>
+
+    <input name="nwo" value="okamstudio/godot" type="hidden">
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target" role="button" aria-haspopup="true">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container" aria-hidden="true">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input class="js-search-this-repository" name="search_target" value="repository" checked="checked" type="radio">
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input name="search_target" value="global" type="radio">
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="help tooltipped tooltipped-s" aria-label="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input name="ref" value="cmdform" type="hidden">
+
+</form>
+        <ul class="top-nav">
+          <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+            <li><a href="https://gist.github.com/">Gist</a></li>
+            <li><a href="https://github.com/blog">Blog</a></li>
+          <li><a href="https://help.github.com/">Help</a></li>
+        </ul>
+      </div>
+
+    
+
+<ul id="user-links">
+  <li>
+    <a href="https://github.com/DaddySmash" class="name">
+      <img alt="DaddySmash" data-user="7245865" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/7245865.png" height="20" width="20"> DaddySmash
+    </a>
+  </li>
+
+  <li class="new-menu dropdown-toggle js-menu-container">
+    <a href="#" class="js-menu-target tooltipped tooltipped-s" aria-label="Create new...">
+      <span class="octicon octicon-plus"></span>
+      <span class="dropdown-arrow"></span>
+    </a>
+
+    <div class="new-menu-content js-menu-content">
+    </div>
+  </li>
+
+  <li>
+    <a href="https://github.com/settings/profile" id="account_settings" class="tooltipped tooltipped-s" aria-label="Account settings ">
+      <span class="octicon octicon-tools"></span>
+    </a>
+  </li>
+  <li>
+    <form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" value="qmiOkLG5H7BKBSv9siMiTZnelaMOAIOldjSpn1z9nhRAbwLzCkx0FpOhbjm3jb4ALcWPp5VIuXyzhjmRXWFxBw==" type="hidden"></div>
+      <button class="sign-out-button tooltipped tooltipped-s" aria-label="Sign out">
+        <span class="octicon octicon-sign-out"></span>
+      </button>
+</form>  </li>
+
+</ul>
+
+<div class="js-new-dropdown-contents hidden">
+  
+
+<ul class="dropdown-menu">
+  <li>
+    <a href="https://github.com/new"><span class="octicon octicon-repo"></span> New repository</a>
+  </li>
+  <li>
+    <a href="https://porter.github.com/new"><span class="octicon octicon-move-right"></span> Import repository</a>
+  </li>
+  <li>
+    <a href="https://github.com/organizations/new"><span class="octicon octicon-organization"></span> New organization</a>
+  </li>
+
+
+    <li class="section-title">
+      <span title="okamstudio/godot">This repository</span>
+    </li>
+      <li>
+        <a href="https://github.com/okamstudio/godot/issues/new"><span class="octicon octicon-issue-opened"></span> New issue</a>
+      </li>
+</ul>
+
+</div>
+
+
+    
+  </div>
+</div>
+
+      
+
+        
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+<ul class="pagehead-actions">
+
+    <li class="subscription">
+      <form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" value="lmQHPb8f6uyrYYFo2JX6/+0jMQergQ971VHVPH8kVBLps4NDWTRd7YSQj1e+/4oKkmyjeU6PZmwOOY+3jetRuQ==" type="hidden"></div>  <input id="repository_id" name="repository_id" value="15634981" type="hidden">
+
+    <div class="select-menu js-menu-container js-select-menu">
+      <a class="social-count js-social-count" href="https://github.com/okamstudio/godot/watchers">
+        361
+      </a>
+      <a href="https://github.com/okamstudio/godot/subscription" class="minibutton select-menu-button with-count js-menu-target" role="button" tabindex="0" aria-haspopup="true">
+        <span class="js-select-button">
+          <span class="octicon octicon-eye"></span>
+          Watch
+        </span>
+      </a>
+
+      <div class="select-menu-modal-holder">
+        <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notifications</span>
+            <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-list js-navigation-container" role="menu">
+
+            <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input checked="checked" id="do_included" name="do" value="included" type="radio">
+                <h4>Not watching</h4>
+                <span class="description">Be notified when participating or @mentioned.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye"></span>
+                  Watch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_subscribed" name="do" value="subscribed" type="radio">
+                <h4>Watching</h4>
+                <span class="description">Be notified of all conversations.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye"></span>
+                  Unwatch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_ignore" name="do" value="ignore" type="radio">
+                <h4>Ignoring</h4>
+                <span class="description">Never be notified.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-mute"></span>
+                  Stop ignoring
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+</form>
+    </li>
+
+  <li>
+    
+
+  <div class="js-toggler-container js-social-container starring-container ">
+
+    <form accept-charset="UTF-8" action="/okamstudio/godot/unstar" class="js-toggler-form starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" value="53rGxGPEc78Og2MrvbAE4mVlhkAdUcjUAixILux2o9ylJpYh2Uh7cJCyrn4p8hrwrQwd027j9MQSaE3zg7Cmxg==" type="hidden"></div>
+      <button class="minibutton with-count js-toggler-target star-button" aria-label="Unstar this repository" title="Unstar okamstudio/godot">
+        <span class="octicon octicon-star"></span>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/okamstudio/godot/stargazers">
+          2,308
+        </a>
+</form>
+    <form accept-charset="UTF-8" action="/okamstudio/godot/star" class="js-toggler-form unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" value="XBHASL1+uX8n/RnhA1XeXpkt+M81Mv99BtogXjDA8e2pzgU3fnyC2/BNGMbN8UaZJ94fVS/sPrrteHdYRv3Ckg==" type="hidden"></div>
+      <button class="minibutton with-count js-toggler-target star-button" aria-label="Star this repository" title="Star okamstudio/godot">
+        <span class="octicon octicon-star"></span>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/okamstudio/godot/stargazers">
+          2,308
+        </a>
+</form>  </div>
+
+  </li>
+
+
+        <li>
+          <a href="https://github.com/okamstudio/godot/fork" class="minibutton with-count js-toggler-target fork-button lighter tooltipped-n" title="Fork your own copy of okamstudio/godot to your account" aria-label="Fork your own copy of okamstudio/godot to your account" rel="nofollow" data-method="post">
+            <span class="octicon octicon-repo-forked"></span>
+            Fork
+          </a>
+          <a href="https://github.com/okamstudio/godot/network" class="social-count">550</a>
+        </li>
+
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="https://github.com/okamstudio" class="url fn" itemprop="url" rel="author"><span itemprop="title">okamstudio</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="https://github.com/okamstudio/godot" class="js-current-repository js-repo-home-link">godot</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/octocat-spinner-32.gif" height="16" width="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline">
+        <div class="repository-sidebar clearfix">
+            
+
+<div class="sunken-menu vertical-right repo-nav js-repo-nav js-repository-container-pjax js-octicon-loaders" data-issue-count-url="/okamstudio/godot/issues/counts">
+  <div class="sunken-menu-contents">
+    <ul class="sunken-menu-group">
+      <li class="tooltipped tooltipped-w" aria-label="Code">
+        <a href="https://github.com/okamstudio/godot" aria-label="Code" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /okamstudio/godot">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="" class="mini-loader" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/octocat-spinner-32.gif" height="16" width="16">
+</a>      </li>
+
+        <li class="tooltipped tooltipped-w" aria-label="Issues">
+          <a href="https://github.com/okamstudio/godot/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /okamstudio/godot/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class="js-issue-replace-counter"></span>
+            <img alt="" class="mini-loader" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/octocat-spinner-32.gif" height="16" width="16">
+</a>        </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Pull Requests">
+        <a href="https://github.com/okamstudio/godot/pulls" aria-label="Pull Requests" class="js-selected-navigation-item sunken-menu-item js-disable-pjax" data-hotkey="g p" data-selected-links="repo_pulls /okamstudio/godot/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class="js-pull-replace-counter"></span>
+            <img alt="" class="mini-loader" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/octocat-spinner-32.gif" height="16" width="16">
+</a>      </li>
+
+
+        <li class="tooltipped tooltipped-w" aria-label="Wiki">
+          <a href="https://github.com/okamstudio/godot/wiki" aria-label="Wiki" class="selected js-selected-navigation-item sunken-menu-item js-disable-pjax" data-hotkey="g w" data-selected-links="repo_wiki /okamstudio/godot/wiki">
+            <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+            <img alt="" class="mini-loader" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/octocat-spinner-32.gif" height="16" width="16">
+</a>        </li>
+    </ul>
+    <div class="sunken-menu-separator"></div>
+    <ul class="sunken-menu-group">
+
+      <li class="tooltipped tooltipped-w" aria-label="Pulse">
+        <a href="https://github.com/okamstudio/godot/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="pulse /okamstudio/godot/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="" class="mini-loader" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/octocat-spinner-32.gif" height="16" width="16">
+</a>      </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Graphs">
+        <a href="https://github.com/okamstudio/godot/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /okamstudio/godot/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="" class="mini-loader" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/octocat-spinner-32.gif" height="16" width="16">
+</a>      </li>
+    </ul>
+
+
+  </div>
+</div>
+
+              <div class="only-with-full-nav">
+                
+
+  
+
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input class="clone js-url-field" value="https://github.com/okamstudio/godot.git" readonly="readonly" type="text">
+    <span class="url-box-clippy">
+    <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="https://github.com/okamstudio/godot.git" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="ssh" data-url="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone">
+  <h3><strong>SSH</strong> clone URL</h3>
+  <div class="clone-url-box">
+    <input class="clone js-url-field" value="git@github.com:okamstudio/godot.git" readonly="readonly" type="text">
+    <span class="url-box-clippy">
+    <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="git@github.com:okamstudio/godot.git" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+  <div class="clone-url-box">
+    <input class="clone js-url-field" value="https://github.com/okamstudio/godot" readonly="readonly" type="text">
+    <span class="url-box-clippy">
+    <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="https://github.com/okamstudio/godot" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+<p class="clone-options">You can clone with
+      <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+      <a href="#" class="js-clone-selector" data-protocol="ssh">SSH</a>,
+      or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</p>
+
+
+  <a href="github-windows://openRepo/https://github.com/okamstudio/godot" class="minibutton sidebar-button" title="Save okamstudio/godot to your computer and use it in GitHub Desktop." aria-label="Save okamstudio/godot to your computer and use it in GitHub Desktop.">
+    <span class="octicon octicon-device-desktop"></span>
+    Clone in Desktop
+  </a>
+
+                <a href="https://github.com/okamstudio/godot/archive/master.zip" class="minibutton sidebar-button" aria-label="Download okamstudio/godot as a zip file" title="Download okamstudio/godot as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+
+
+<div id="wiki-wrapper" class="wiki-wrapper page">
+<div class="gh-header">
+  <div class="gh-header-show">
+      <div class="gh-header-actions">
+      </div>
+    <h1 class="gh-header-title instapaper_title">gdscript&nbsp;</h1>
+      <div class="gh-header-meta">
+        <a href="https://github.com/reduz" class="author">reduz</a> edited this page <time title="Tuesday, May 06, 2014 3:24:28 PM" datetime="2014-05-06T14:24:28-07:00" is="relative-time">on May 6</time>
+        ·
+        <a href="https://github.com/okamstudio/godot/wiki/gdscript/_history" class="history">
+          16 revisions
+        </a>
+      </div>
+  </div>
+</div>
+<div id="wiki-content">
+  <div class="wrap has-rightbar">
+
+  <div id="wiki-rightbar">
+    <div class="wiki-pages-box readability-sidebar box box-small js-wiki-pages-box ">
+      
+
+
+  <div class="box-header js-wiki-toggle-collapse wiki-auxiliary-content">
+    <h3 class="box-title">
+      <span class="octicon octicon-triangle-down caret-expanded"></span>
+      <span class="octicon octicon-triangle-right caret-collapsed"></span>
+      Pages <span class="counter">400</span>
+    </h3>
+  </div>
+  <div class="box-body wiki-auxiliary-content wiki-auxiliary-content-no-bg">
+      <div class="filter-bar">
+        <input id="wiki-pages-filter" class="filter-input js-filterable-field" placeholder="Find a Page…" tabindex="2" type="text">
+      </div>
+
+    <ul class="wiki-pages" data-filterable-for="wiki-pages-filter" data-filterable-type="substring">
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/advanced">advanced</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/Background-loading">Background loading</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_@gdscript">class_@gdscript</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_@global-scope">class_@global scope</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_@multiscript">class_@multiscript</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_aabb">class_aabb</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_acceptdialog">class_acceptdialog</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_animatedsprite">class_animatedsprite</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_animatedsprite3d">class_animatedsprite3d</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_animation">class_animation</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_animationplayer">class_animationplayer</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_animationtreeplayer">class_animationtreeplayer</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_area">class_area</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_area2d">class_area2d</a></strong>
+      </li>
+      <li>
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_array">class_array</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_atlastexture">class_atlastexture</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audioserver">class_audioserver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audioserversw">class_audioserversw</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audiostream">class_audiostream</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audiostreamgibberish">class_audiostreamgibberish</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audiostreammpc">class_audiostreammpc</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audiostreamoggvorbis">class_audiostreamoggvorbis</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audiostreamresampled">class_audiostreamresampled</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_audiostreamspeex">class_audiostreamspeex</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_bakedlight">class_bakedlight</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_bakedlightinstance">class_bakedlightinstance</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_basebutton">class_basebutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_bitmap">class_bitmap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_boneattachment">class_boneattachment</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_bool">class_bool</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_boxcontainer">class_boxcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_boxshape">class_boxshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_button">class_button</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_buttonarray">class_buttonarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_buttongroup">class_buttongroup</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_camera">class_camera</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_camera2d">class_camera2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_canvasitem">class_canvasitem</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_canvaslayer">class_canvaslayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_capsuleshape">class_capsuleshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_capsuleshape2d">class_capsuleshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_carbody">class_carbody</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_carwheel">class_carwheel</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_centercontainer">class_centercontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_checkbutton">class_checkbutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_circleshape2d">class_circleshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_collisionobject">class_collisionobject</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_collisionobject2d">class_collisionobject2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_collisionpolygon2d">class_collisionpolygon2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_collisionshape">class_collisionshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_collisionshape2d">class_collisionshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_color">class_color</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_colorarray">class_colorarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_colorpicker">class_colorpicker</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_colorpickerbutton">class_colorpickerbutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_concavepolygonshape">class_concavepolygonshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_concavepolygonshape2d">class_concavepolygonshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_configfile">class_configfile</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_confirmationdialog">class_confirmationdialog</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_container">class_container</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_control">class_control</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_convexpolygonshape">class_convexpolygonshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_convexpolygonshape2d">class_convexpolygonshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_cubemap">class_cubemap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_curve2d">class_curve2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_curve3d">class_curve3d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_dampedspringjoint2d">class_dampedspringjoint2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_dictionary">class_dictionary</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_directionallight">class_directionallight</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_directory">class_directory</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_editableshape">class_editableshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_editablesphere">class_editablesphere</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_editorimportplugin">class_editorimportplugin</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_editorplugin">class_editorplugin</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_editorscenepostimport">class_editorscenepostimport</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_editorscript">class_editorscript</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_emptycontrol">class_emptycontrol</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_environment">class_environment</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_eventplayer">class_eventplayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_eventstream">class_eventstream</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_eventstreamchibi">class_eventstreamchibi</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_file">class_file</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_filedialog">class_filedialog</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_fixedmaterial">class_fixedmaterial</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_float">class_float</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_flurry">class_flurry</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_followcamera">class_followcamera</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_font">class_font</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_funcref">class_funcref</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_gdnativeclass">class_gdnativeclass</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_gdscript">class_gdscript</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_geometry">class_geometry</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_geometryinstance">class_geometryinstance</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_globals">class_globals</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_gridcontainer">class_gridcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_gridmap">class_gridmap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_groovejoint2d">class_groovejoint2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_hboxcontainer">class_hboxcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_hbuttonarray">class_hbuttonarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_hscrollbar">class_hscrollbar</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_hseparator">class_hseparator</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_hslider">class_hslider</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_hsplitcontainer">class_hsplitcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_httpclient">class_httpclient</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_image">class_image</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_imagepathfinder">class_imagepathfinder</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_imagetexture">class_imagetexture</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_immediategeometry">class_immediategeometry</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_input">class_input</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputdefault">class_inputdefault</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputevent">class_inputevent</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventaction">class_inputeventaction</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventjoybutton">class_inputeventjoybutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventjoymotion">class_inputeventjoymotion</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventkey">class_inputeventkey</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventmousebutton">class_inputeventmousebutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventmousemotion">class_inputeventmousemotion</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventscreendrag">class_inputeventscreendrag</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputeventscreentouch">class_inputeventscreentouch</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_inputmap">class_inputmap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_int">class_int</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_intarray">class_intarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_interpolatedcamera">class_interpolatedcamera</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_ip">class_ip</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_ip_unix">class_ip_unix</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_joint2d">class_joint2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_kinematicbody2d">class_kinematicbody2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_label">class_label</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_largetexture">class_largetexture</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_light">class_light</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_lineedit">class_lineedit</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_lineshape2d">class_lineshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_list">class_list</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_mainloop">class_mainloop</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_margincontainer">class_margincontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_marshalls">class_marshalls</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_material">class_material</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_matrix3">class_matrix3</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_matrix32">class_matrix32</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_menubutton">class_menubutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_mesh">class_mesh</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_meshdatatool">class_meshdatatool</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_meshinstance">class_meshinstance</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_meshlibrary">class_meshlibrary</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_multimesh">class_multimesh</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_multimeshinstance">class_multimeshinstance</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_multiscript">class_multiscript</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_mutex">class_mutex</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_nil">class_nil</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_node">class_node</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_node2d">class_node2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_nodepath">class_nodepath</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_object">class_object</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_omnilight">class_omnilight</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_optionbutton">class_optionbutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_os">class_os</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_packeddatacontainer">class_packeddatacontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_packeddatacontainerref">class_packeddatacontainerref</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_packedscene">class_packedscene</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_packetpeer">class_packetpeer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_packetpeerstream">class_packetpeerstream</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_panel">class_panel</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_panelcontainer">class_panelcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_parallaxbackground">class_parallaxbackground</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_parallaxlayer">class_parallaxlayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_particleattractor2d">class_particleattractor2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_particles">class_particles</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_particles2d">class_particles2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_particlesystemmaterial">class_particlesystemmaterial</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_path">class_path</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_path2d">class_path2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_pathfollow">class_pathfollow</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_pathremap">class_pathremap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_performance">class_performance</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_phashtranslation">class_phashtranslation</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physics2ddirectbodystate">class_physics2ddirectbodystate</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physics2ddirectbodystatesw">class_physics2ddirectbodystatesw</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physics2ddirectspacestate">class_physics2ddirectspacestate</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physics2dserver">class_physics2dserver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physics2dserversw">class_physics2dserversw</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physics2dshapequeryresult">class_physics2dshapequeryresult</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsbody">class_physicsbody</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsbody2d">class_physicsbody2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsdirectbodystate">class_physicsdirectbodystate</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsdirectbodystatesw">class_physicsdirectbodystatesw</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsdirectspacestate">class_physicsdirectspacestate</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsserver">class_physicsserver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsserversw">class_physicsserversw</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_physicsshapequeryresult">class_physicsshapequeryresult</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_pinjoint2d">class_pinjoint2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_plane">class_plane</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_planeshape">class_planeshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_polygonpathfinder">class_polygonpathfinder</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_popup">class_popup</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_popupdialog">class_popupdialog</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_popupmenu">class_popupmenu</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_popuppanel">class_popuppanel</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_portal">class_portal</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_position2d">class_position2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_position3d">class_position3d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_progressbar">class_progressbar</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_proximitygroup">class_proximitygroup</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_quad">class_quad</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_quat">class_quat</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_range">class_range</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rawarray">class_rawarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_raycast">class_raycast</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_raycast2d">class_raycast2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rayshape">class_rayshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rayshape2d">class_rayshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_real">class_real</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_realarray">class_realarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rect2">class_rect2</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rectangleshape2d">class_rectangleshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_reference">class_reference</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_referenceframe">class_referenceframe</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_regex">class_regex</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_remotetransform2d">class_remotetransform2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rendertargettexture">class_rendertargettexture</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_resource">class_resource</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_resourceimportmetadata">class_resourceimportmetadata</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_resourceinteractiveloader">class_resourceinteractiveloader</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_resourceloader">class_resourceloader</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_resourcepreloader">class_resourcepreloader</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_resourcesaver">class_resourcesaver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_richtextlabel">class_richtextlabel</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rid">class_rid</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rigidbody">class_rigidbody</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_rigidbody2d">class_rigidbody2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_room">class_room</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_roombounds">class_roombounds</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sample">class_sample</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_samplelibrary">class_samplelibrary</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sampleplayer">class_sampleplayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sampleplayer2d">class_sampleplayer2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sceneinteractiveloader">class_sceneinteractiveloader</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sceneio">class_sceneio</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_scenemainloop">class_scenemainloop</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_scenepreloader">class_scenepreloader</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_script">class_script</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_scrollbar">class_scrollbar</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_scrollcontainer">class_scrollcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_segmentshape2d">class_segmentshape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_semaphore">class_semaphore</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_separator">class_separator</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_shader">class_shader</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_shadermaterial">class_shadermaterial</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_shape">class_shape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_shape2d">class_shape2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_skeleton">class_skeleton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_slider">class_slider</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_soundplayer2d">class_soundplayer2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_soundroomparams">class_soundroomparams</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatial">class_spatial</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatialplayer">class_spatialplayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatialsampleplayer">class_spatialsampleplayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatialsound2dserver">class_spatialsound2dserver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatialsound2dserversw">class_spatialsound2dserversw</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatialsoundserver">class_spatialsoundserver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatialsoundserversw">class_spatialsoundserversw</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spatialstreamplayer">class_spatialstreamplayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sphereshape">class_sphereshape</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spinbox">class_spinbox</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_splitcontainer">class_splitcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spotlight">class_spotlight</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sprite">class_sprite</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_sprite3d">class_sprite3d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spritebase3d">class_spritebase3d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_spriteframes">class_spriteframes</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_staticbody">class_staticbody</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_staticbody2d">class_staticbody2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_streampeer">class_streampeer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_streampeerssl">class_streampeerssl</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_streampeertcp">class_streampeertcp</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_streamplayer">class_streamplayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_string">class_string</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_stringarray">class_stringarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_stylebox">class_stylebox</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_styleboxempty">class_styleboxempty</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_styleboxflat">class_styleboxflat</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_styleboximagemask">class_styleboximagemask</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_styleboxtexture">class_styleboxtexture</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_surfacetool">class_surfacetool</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_tabcontainer">class_tabcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_tabs">class_tabs</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_tcp_server">class_tcp_server</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_testcube">class_testcube</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_textedit">class_textedit</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_texture">class_texture</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_texturebutton">class_texturebutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_textureframe">class_textureframe</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_textureprogress">class_textureprogress</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_theme">class_theme</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_thread">class_thread</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_tilemap">class_tilemap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_tileset">class_tileset</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_timer">class_timer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_touchscreenbutton">class_touchscreenbutton</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_transform">class_transform</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_translation">class_translation</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_translationserver">class_translationserver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_tree">class_tree</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_treeitem">class_treeitem</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_unshadedmaterial">class_unshadedmaterial</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vboxcontainer">class_vboxcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vbuttonarray">class_vbuttonarray</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vector2">class_vector2</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vector2array">class_vector2array</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vector3">class_vector3</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vector3array">class_vector3array</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_videoplayer">class_videoplayer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_videostream">class_videostream</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_videostreamtheora">class_videostreamtheora</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_viewport">class_viewport</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_viewportsprite">class_viewportsprite</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_visibilityenabler">class_visibilityenabler</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_visibilityenabler2d">class_visibilityenabler2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_visibilitynotifier">class_visibilitynotifier</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_visibilitynotifier2d">class_visibilitynotifier2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_visualinstance">class_visualinstance</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_visualserver">class_visualserver</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vscrollbar">class_vscrollbar</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vseparator">class_vseparator</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vslider">class_vslider</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_vsplitcontainer">class_vsplitcontainer</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_windowdialog">class_windowdialog</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_world">class_world</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_world2d">class_world2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_worldenvironment">class_worldenvironment</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/class_xmlparser">class_xmlparser</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/command_line">command_line</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/compiling_android">compiling_android</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/compiling_flags">compiling_flags</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/compiling_ios">compiling_ios</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/compiling_linux">compiling_linux</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/compiling_osx">compiling_osx</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/compiling_server">compiling_server</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/compiling_windows">compiling_windows</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/core_object">core_object</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/core_types">core_types</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/core_variant">core_variant</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/devel_roadmap">devel_roadmap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/devel_volunteers">devel_volunteers</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/editor_font">editor_font</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/editor_plugin">editor_plugin</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/export">export</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/export_android">export_android</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/export_images">export_images</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/export_ios">export_ios</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/export_pc">export_pc</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/gdscript">gdscript</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/GDScript">GDScript</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki">Home</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/http_client">http_client</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/image_files">image_files</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/import_3d">import_3d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/import_fonts">import_fonts</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/import_meshes">import_meshes</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/import_process">import_process</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/import_samples">import_samples</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/import_textures">import_textures</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/import_translation">import_translation</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/ios_services">ios_services</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/locales">locales</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/memory">memory</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/one_click_deploy">one_click_deploy</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/paths">paths</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/shader">shader</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/start">start</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_2d">tutorial_2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_3d">tutorial_3d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_animation">tutorial_animation</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_encrypting_savegames">tutorial_encrypting_savegames</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_fixed_materials">tutorial_fixed_materials</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_fs">tutorial_fs</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_gui">tutorial_gui</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_gui_repositioning">tutorial_gui_repositioning</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_hdr">tutorial_hdr</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_instancing">tutorial_instancing</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_instancing_2">tutorial_instancing_2</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_kinematic_char">tutorial_kinematic_char</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_lighting">tutorial_lighting</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_localization">tutorial_localization</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_materials">tutorial_materials</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_multires">tutorial_multires</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_physics_2d">tutorial_physics_2d</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_portals_rooms">tutorial_portals_rooms</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_quit">tutorial_quit</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_resources">tutorial_resources</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_scene">tutorial_scene</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_scene_main_loop">tutorial_scene_main_loop</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_scripting">tutorial_scripting</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_scripting_2">tutorial_scripting_2</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_shader_materials">tutorial_shader_materials</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_shadow_mapping">tutorial_shadow_mapping</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_singletons">tutorial_singletons</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_splash">tutorial_splash</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_tilemap">tutorial_tilemap</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_vercontrol">tutorial_vercontrol</a></strong>
+      </li>
+      <li class="wiki-more-pages">
+        <strong><a href="https://github.com/okamstudio/godot/wiki/tutorial_viewports">tutorial_viewports</a></strong>
+      </li>
+      <li class="wiki-more-pages-link">
+        <a href="#" class="js-wiki-more-pages-link">
+          Show 385 more pages…
+        </a>
+      </li>
+    </ul>
+  </div>
+
+    </div>
+
+
+    <div class="clone-url" data-protocol-type="" data-url="https://github.com/okamstudio/godot.wiki.git">
+      <h5>Clone this wiki locally</h5>
+      <div class="clone-url-box">
+        <input class="clone js-url-field" value="https://github.com/okamstudio/godot.wiki.git" readonly="readonly" type="text">
+        <span class="url-box-clippy">
+          <button aria-label="Copy to clipboard" class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="https://github.com/okamstudio/godot.wiki.git" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+        </span>
+      </div>
+
+
+        <a href="github-windows://openRepo/https://github.com/okamstudio/godot.wiki.git" class="minibutton sidebar-button" title="Save this wiki to your computer and use it in GitHub Desktop." aria-label="Save this wiki to your computer and use it in GitHub Desktop.">
+          <span class="octicon octicon-device-desktop"></span>
+          Clone in Desktop
+        </a>
+    </div>
+  </div>
+
+  <div id="wiki-body" class="gollum-markdown-content instapaper_body">
+    <div class="markdown-body">
+      <h1>
+<a name="user-content-introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>GDScript is a high level, dynamically typed programming language used
+ to create content. It uses a syntax that is very similar to the Python 
+language (blocks are indent-based) and it’s goal is to be very optimal 
+and tigthly integrated with the engine, allowing great flexibility for 
+content creation and integration.</p>
+
+<h1>
+<a name="user-content-history" class="anchor" href="#history" aria-hidden="true"><span class="octicon octicon-link"></span></a>History</h1>
+
+<p>Initially, Godot was designed to support multiple scripting languages
+ (this ability still exists today). However, only GDScript is in use 
+right now. There is a little history behind this. </p>
+
+<p>In the early days, the engine used the <a href="http://www.lua.org/">Lua</a>
+ scripting language. Lua is fast, but creating bindings to an object 
+oriented system (by using fallbacks) was complex and slow and took an 
+enormous amount of code. After some experiments with <a href="http://www.python.org/">Python</a>, it also proved difficult to embed. </p>
+
+<p>The last third party scripting language that was used for shipped games was <a href="http://squirrel-lang.org/">Squirrel</a>,
+ but it was also dropped too. At that point, it became evident that 
+Godot would work more optimally by using a built-in scripting language, 
+as the following barriers were met:</p>
+
+<ul class="task-list">
+<li> Godot embeds scripts in nodes, most languages are not designed with this in mind.</li>
+<li> Godot uses several built-in datatypes for 2D and 3D math, script 
+languages do not provide this, and binding them is inefficient.</li>
+<li> Godot uses threads heavily for lifting and initializing data from 
+the net or disk, script interpreters for common languages are not 
+friendly to this.</li>
+<li> Godot already has a memory management model for resources, most 
+script languages provide their own, which resulted in duplicate effort 
+and bugs.</li>
+<li> Binding code is always messy and results in several failure points, unexpected bugs and general unmaintaniability.</li>
+</ul><p>Finally, GDScript was written. The language and interpreter for 
+it ended up being smaller than the binding code itself for Lua and 
+Squirrel, and equally as functional. With time, having a built in 
+language ended up being a huge advantage.</p>
+
+<h1>
+<a name="user-content-example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h1>
+
+<p>Some people can learn better by just taking a look at the syntax, so here’s a simple example of how it looks.</p>
+
+<div class="highlight highlight-python"><pre><span class="c">#a file is a class!</span>
+
+<span class="c"># inheritance</span>
+
+<span class="n">extends</span> <span class="n">BaseClass</span>
+
+<span class="c"># member variables</span>
+
+<span class="n">var</span> <span class="n">a</span><span class="o">=</span><span class="mi">5</span> 
+<span class="n">var</span> <span class="n">s</span><span class="o">=</span><span class="s">"Hello"</span>
+<span class="n">var</span> <span class="n">arr</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">var</span> <span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="s">"key"</span><span class="p">:</span><span class="s">"value"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="c"># constants</span>
+
+<span class="n">const</span> <span class="n">answer</span><span class="o">=</span><span class="mi">42</span>
+<span class="n">const</span> <span class="n">thename</span><span class="o">=</span><span class="s">"Charly"</span>
+
+<span class="c"># built-in vector types</span>
+
+<span class="n">var</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">var</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c"># function</span>
+
+<span class="n">func</span> <span class="n">some_function</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span><span class="n">param2</span><span class="p">):</span>
+    <span class="n">var</span> <span class="n">local_var</span><span class="o">=</span><span class="mi">5</span>
+
+    <span class="k">if</span> <span class="n">param1</span> <span class="o">&lt;</span> <span class="n">local_var</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">param1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">param2</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">param2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"fail!"</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">param2</span><span class="o">!=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">param2</span><span class="o">-=</span><span class="mi">1</span>
+
+    <span class="n">var</span> <span class="n">local_var2</span> <span class="o">=</span> <span class="n">param1</span><span class="o">+</span><span class="mi">3</span>
+    <span class="k">return</span> <span class="n">local_var2</span>
+
+
+<span class="c"># subclass</span>
+
+<span class="k">class</span> <span class="nc">Something</span><span class="p">:</span>
+    <span class="n">var</span> <span class="n">a</span><span class="o">=</span><span class="mi">10</span>
+
+<span class="c"># constructor</span>
+
+<span class="n">func</span> <span class="n">_init</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"constructed!"</span><span class="p">)</span>
+    <span class="n">var</span> <span class="n">lv</span> <span class="o">=</span> <span class="n">Something</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">lv</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c">#pass</span>
+
+
+<span class="n">func</span> <span class="n">emptyfunc</span><span class="p">():</span>
+     <span class="k">pass</span> <span class="c"># pass does nothing, allows an empty function</span>
+
+</pre></div>
+
+<h1>
+<a name="user-content-language" class="anchor" href="#language" aria-hidden="true"><span class="octicon octicon-link"></span></a>Language</h1>
+
+<h2>
+<a name="user-content-identifiers" class="anchor" href="#identifiers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Identifiers</h2>
+
+<p>Any string that restricts itself to alphabetic characters (’a’ to ’z’
+ and ’A’ to ’Z’), digits (’0’ to ’9’) and ’_’ qualifies as an 
+identifier. As an extra restriction, identifiers must not begin with a 
+digit. Identifiers are case-sensitive (’foo’ is different to ’FOO’).</p>
+
+<h2>
+<a name="user-content-keywords" class="anchor" href="#keywords" aria-hidden="true"><span class="octicon octicon-link"></span></a>Keywords</h2>
+
+<p>The following is the list of keywords supported by the language. 
+Since keywords are reserved words (tokens), they can’t be used as 
+identifiers:</p>
+
+<p><strong>and break class const continue elif else enum export extends false for func if in null or pass return self tool true var while</strong></p>
+
+<h2>
+<a name="user-content-operators" class="anchor" href="#operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operators</h2>
+
+<p>The following is the list of supported operators and their precedence
+ (TODO, change since this was made to reflect python operators)</p>
+
+<table>
+<thead><tr>
+<th>Operator</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>x[index]</code></td>
+<td>Subscription, Highest Priority</td>
+</tr>
+<tr>
+<td>x.attribute</td>
+<td>Attribute Reference</td>
+</tr>
+<tr>
+<td>extends</td>
+<td>Instance Type Checker</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>Bitwise NOT</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>Negative</td>
+</tr>
+<tr>
+<td>* / %</td>
+<td>Mult / Div / Remainder</td>
+</tr>
+<tr>
+<td>+ -</td>
+<td>Addition / Substraction</td>
+</tr>
+<tr>
+<td><code>&lt;&lt; &gt;&gt;</code></td>
+<td>Bit Shifting</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Bitwise AND</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Bitwise XOR</td>
+</tr>
+<tr>
+<td>`</td>
+<td>`</td>
+</tr>
+<tr>
+<td><code>&lt; &gt; == != &gt;= &lt;=</code></td>
+<td>Comparisons</td>
+</tr>
+<tr>
+<td>in</td>
+<td>Content Test</td>
+</tr>
+<tr>
+<td><code>! not</code></td>
+<td>Boolean NOT</td>
+</tr>
+<tr>
+<td>and &amp;&amp;</td>
+<td>Boolean AND</td>
+</tr>
+<tr>
+<td>or `</td>
+<td></td>
+</tr>
+<tr>
+<td>`= += -= *= /= %= &amp;=</td>
+<td>=`</td>
+</tr>
+</tbody>
+</table><h2>
+<a name="user-content-literals" class="anchor" href="#literals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Literals</h2>
+
+<table>
+<thead><tr>
+<th>Literal</th>
+<th>Name</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>45</td>
+<td>Base 10 Integer</td>
+</tr>
+<tr>
+<td>0x8F51</td>
+<td>Base 16 (hex) Integer</td>
+</tr>
+<tr>
+<td>3.14, 58.1e-10</td>
+<td>Floating Point Number (real)</td>
+</tr>
+<tr>
+<td>’Hello’, “Hi”</td>
+<td>Strings</td>
+</tr>
+<tr>
+<td>@"Node/Label"</td>
+<td>Node Path or StringName</td>
+</tr>
+</tbody>
+</table><h2>
+<a name="user-content-comments" class="anchor" href="#comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comments</h2>
+
+<p>Anything from a ’#’ to the end of the line is ignored and is considered a comment.</p>
+
+<div class="highlight highlight-python"><pre><span class="c"># This is a comment</span>
+</pre></div>
+
+<h1>
+<a name="user-content-built-in-types" class="anchor" href="#built-in-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-in Types</h1>
+
+<h2>
+<a name="user-content-basic-bult-in-types" class="anchor" href="#basic-bult-in-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Bult-In Types</h2>
+
+<p>A variable in GDScript can be assigned many of several built-in types.</p>
+
+<h3>
+<a name="user-content-null" class="anchor" href="#null" aria-hidden="true"><span class="octicon octicon-link"></span></a>null</h3>
+
+<p>’null’ is a data type that contains no information, nothing assigned,
+ and it’s just empy. It can only be set to one value: ’null’.</p>
+
+<h3>
+<a name="user-content-bool" class="anchor" href="#bool" aria-hidden="true"><span class="octicon octicon-link"></span></a>bool</h3>
+
+<p>Boolean data type, can only contain ’true’ or ’false’.</p>
+
+<h3>
+<a name="user-content-int" class="anchor" href="#int" aria-hidden="true"><span class="octicon octicon-link"></span></a>int</h3>
+
+<p>Integer data type, can only contain integer numbers, negative and positive.</p>
+
+<h3>
+<a name="user-content-float" class="anchor" href="#float" aria-hidden="true"><span class="octicon octicon-link"></span></a>float</h3>
+
+<p>contains a floating point value (real).</p>
+
+<h3>
+<a name="user-content-string" class="anchor" href="#string" aria-hidden="true"><span class="octicon octicon-link"></span></a>String</h3>
+
+<p>Sequence of characters in unicode format. Strings can contain the standard C escape sequences.</p>
+
+<h2>
+<a name="user-content-vector-built-in-types" class="anchor" href="#vector-built-in-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vector Built-In Types</h2>
+
+<h3>
+<a name="user-content-vector2size2" class="anchor" href="#vector2size2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vector2/Size2</h3>
+
+<p>2D vector type, containing x and y fields. Can alternatively access 
+fields as width and height for readability. Can also be accessed as 
+array.</p>
+
+<h3>
+<a name="user-content-rect2" class="anchor" href="#rect2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rect2</h3>
+
+<p>2D Rectangle type. Contains 2 vectors fields, “pos” and size’’. Alternatively contains an “end” field which is “pos+size”.</p>
+
+<h3>
+<a name="user-content-vector3" class="anchor" href="#vector3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vector3</h3>
+
+<p>3D vector type. Contains x, y and z fields. Can also be accessed as array.</p>
+
+<h3>
+<a name="user-content-matrix32" class="anchor" href="#matrix32" aria-hidden="true"><span class="octicon octicon-link"></span></a>Matrix32</h3>
+
+<p>3x2 matrix used for 2D transforms.</p>
+
+<h3>
+<a name="user-content-plane" class="anchor" href="#plane" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plane</h3>
+
+<p>3D Plane type in normalized form. Contains a “normal” vector field and a “d” scalar distance.</p>
+
+<h3>
+<a name="user-content-quat" class="anchor" href="#quat" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quat</h3>
+
+<p>Quaternion, datatype used for representing a 3D rotation. It’s useful for interpolating rotations.</p>
+
+<h3>
+<a name="user-content-aabbbox3" class="anchor" href="#aabbbox3" aria-hidden="true"><span class="octicon octicon-link"></span></a>AABB/Box3</h3>
+
+<p>Axis Aligned bounding box (or alternatively, 3D box). Contains 2 
+vectors fields, “pos” and size’’. Alternatively contains an “end” field 
+which is “pos+size”.</p>
+
+<h3>
+<a name="user-content-matrix3" class="anchor" href="#matrix3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Matrix3</h3>
+
+<p>3x3 matrix used for 3D rotation and scale. Contains 3 vector fields x,y and z. Can also be accessed as array of 3D vectors.</p>
+
+<h3>
+<a name="user-content-transform" class="anchor" href="#transform" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transform</h3>
+
+<p>3D Transform, contains a Matrix3 field “basis” and a Vector3 field “origin”.</p>
+
+<h2>
+<a name="user-content-engine-built-in-types" class="anchor" href="#engine-built-in-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Engine Built-In Types</h2>
+
+<h3>
+<a name="user-content-color" class="anchor" href="#color" aria-hidden="true"><span class="octicon octicon-link"></span></a>Color</h3>
+
+<p>Color datatype, contains r,g,b,a fields. Can also be accessed as h,s,v for hue/saturation/value.</p>
+
+<h3>
+<a name="user-content-image" class="anchor" href="#image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image</h3>
+
+<p>Contains a 2D Image of custom format and allows direct access to the pixels.</p>
+
+<h3>
+<a name="user-content-nodepath" class="anchor" href="#nodepath" aria-hidden="true"><span class="octicon octicon-link"></span></a>NodePath</h3>
+
+<p>Compiled path to a node, used mainly in the scene system. Can be easily asigned from/to a String.</p>
+
+<h3>
+<a name="user-content-rid" class="anchor" href="#rid" aria-hidden="true"><span class="octicon octicon-link"></span></a>RID</h3>
+
+<p>Resource ID (RID). Servers use generic RIDs to reference opaque data.</p>
+
+<h3>
+<a name="user-content-object" class="anchor" href="#object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Object</h3>
+
+<p>Base class for anything not a built-in type.</p>
+
+<h3>
+<a name="user-content-inputevent" class="anchor" href="#inputevent" aria-hidden="true"><span class="octicon octicon-link"></span></a>InputEvent</h3>
+
+<p>Events from input devices are contained in very compact form in 
+InputEvent objects. Due to fact they can be received in high amounts 
+from frame to frame, they are optimized in their own datatype.</p>
+
+<h2>
+<a name="user-content-container-built-in-types" class="anchor" href="#container-built-in-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Container Built-In Types</h2>
+
+<h3>
+<a name="user-content-array" class="anchor" href="#array" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/okamstudio/godot/wiki/class_array">Array</a>
+</h3>
+
+<p>Generic sequence of objects. It’s size can be changed to anything and starts from index 0.</p>
+
+<div class="highlight highlight-python"><pre><span class="n">var</span> <span class="n">arr</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">arr</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="s">"Hi!"</span>
+</pre></div>
+
+<p>Arrays are allocated linearly in memory, so they are fast, but very 
+large arrays (more than tens of thousands of elements) may cause 
+fragmentation. </p>
+
+<p>Arrays can be appended using the + operator:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">arr</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="c">#is the same as</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+
+<p>There are specialized arrays for some built-in datatypes which do not
+ suffer from this and use  less memory, but they are atomic and 
+generally run a little slower, so they are only justified for very large
+ amount of data: <a href="https://github.com/okamstudio/godot/wiki/class_rawarray">RawArraw</a>, <a href="https://github.com/okamstudio/godot/wiki/class_intarray">IntArray</a>, <a href="https://github.com/okamstudio/godot/wiki/class_floatarray">FloatArray</a>, <a href="https://github.com/okamstudio/godot/wiki/class_stringarray">StringArray</a>, <a href="https://github.com/okamstudio/godot/wiki/class_vector2array">Vector2Array</a>, <a href="https://github.com/okamstudio/godot/wiki/class_vector3array">Vector3Array</a>, <a href="https://github.com/okamstudio/godot/wiki/class_colorarray">ColorArray</a>.</p>
+
+<h3>
+<a name="user-content-dictionary" class="anchor" href="#dictionary" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/okamstudio/godot/wiki/class_dictionary">Dictionary</a>
+</h3>
+
+<p>Associative container which contains values referenced by unique keys.</p>
+
+<div class="highlight highlight-python"><pre><span class="n">var</span> <span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="mi">4</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s">"a key"</span><span class="p">:</span><span class="s">"a value"</span><span class="p">,</span> <span class="mi">28</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]}</span>
+<span class="n">d</span><span class="p">[</span><span class="s">"Hi!"</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+</pre></div>
+
+<p>Lua-style table syntax is also supported, given it's easier to write and read:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">var</span> <span class="n">d</span><span class="o">=</span> <span class="p">{</span>
+    <span class="n">somekey</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">otherkey</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+    <span class="n">morekey</span><span class="o">=</span><span class="s">"Hello"</span>
+<span class="p">}</span>
+</pre></div>
+
+<h1>
+<a name="user-content-data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data</h1>
+
+<h2>
+<a name="user-content-variables" class="anchor" href="#variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables</h2>
+
+<p>Variables can exist as class members or local to functions. They are 
+created with the “var” keyword and may be, optionally, be assigned a 
+value upon initialization.</p>
+
+<div class="highlight highlight-python"><pre><span class="n">var</span> <span class="n">a</span> <span class="c"># datatype is null by default</span>
+<span class="n">var</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">var</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">3.8</span>
+<span class="n">var</span> <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">+</span><span class="n">c</span> <span class="c"># variables are always initialized in order</span>
+</pre></div>
+
+<h2>
+<a name="user-content-constants" class="anchor" href="#constants" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constants</h2>
+
+<p>Constants are similar to variables, but must be constants or constant expressions and must be assigned on initialization.</p>
+
+<div class="highlight highlight-python"><pre><span class="n">const</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">const</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">const</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">+</span><span class="mi">20</span> <span class="c"># constant expression</span>
+<span class="n">const</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">x</span> <span class="c"># constant expression: 20</span>
+<span class="n">const</span> <span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c"># constant expression: 1</span>
+<span class="n">const</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="c"># sin() can be used in constant expression</span>
+<span class="n">const</span> <span class="n">g</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">20</span> <span class="c"># invalid, not a constant expression!</span>
+</pre></div>
+
+<h2>
+<a name="user-content-functions" class="anchor" href="#functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions</h2>
+
+<p>Functions always belong to a class. The scope priority for variable 
+look-up is: local -&gt; class member -&gt; global. “self” is provided as
+ an option for accessing class members but is not required always (and 
+must <em>not</em> be defined as first parameter, like in Python). For 
+performance reasons, functions are not considered class members, so they
+ can’t be referenced directly. A function can return at any point. The 
+default return value is null.</p>
+
+<div class="highlight highlight-python"><pre>    <span class="n">func</span> <span class="n">myfunction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="c"># return is optional, otherwise null is returned</span>
+</pre></div>
+
+<h3>
+<a name="user-content-statements-and-control-flow" class="anchor" href="#statements-and-control-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Statements and Control Flow</h3>
+
+<p>Statements are standard, and can be assignments, function calls, 
+control flow structures, etc (see below). “;” as separator is entirely 
+optional.</p>
+
+<h3>
+<a name="user-content-ifelseelif" class="anchor" href="#ifelseelif" aria-hidden="true"><span class="octicon octicon-link"></span></a>if/else/elif</h3>
+
+<p>Simple conditions are created by using the <em>if/else/elif</em> 
+syntax. Parenthesis around statements is allowed but not requiered. 
+Given the nature of the tab-based indentation, elif can be used instead 
+of else:/if: to mantain a level of indentation.</p>
+
+<div class="highlight highlight-python"><pre><span class="k">if</span> <span class="p">[</span><span class="n">expression</span><span class="p">]:</span>
+    <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">[</span><span class="n">expression</span><span class="p">]:</span>
+    <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+<h3>
+<a name="user-content-while" class="anchor" href="#while" aria-hidden="true"><span class="octicon octicon-link"></span></a>while</h3>
+
+<p>Simple loops are created by using <em>while</em> syntax. Loops can be broken using <em>break</em>, or continued using <em>continue</em>:</p>
+
+<div class="highlight highlight-python"><pre><span class="k">while</span> <span class="p">[</span><span class="n">expression</span><span class="p">]:</span>
+    <span class="n">statement</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+<h3>
+<a name="user-content-for" class="anchor" href="#for" aria-hidden="true"><span class="octicon octicon-link"></span></a>for</h3>
+
+<p>To iterate a range, array or table a <em>for</em> loop is used. For loops store the index in the loop variable on each iteration.</p>
+
+<div class="highlight highlight-python"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+    <span class="n">statement</span> <span class="c"># loop iterates 3 times, i being 0,1 and 2</span>
+
+<span class="n">var</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">"a"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s">"b"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s">"c"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c"># loop iterates the keys, i being "a","b" and c". It prints 0, 1 and 2.</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">statement</span> <span class="c"># similar to [0,1,2] but does not allocate an array</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">statement</span> <span class="c"># similar to [1,2] but does not allocate an array</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">statement</span> <span class="c"># similar to [2,4,6] but does not allocate an array</span>
+</pre></div>
+
+<h1>
+<a name="user-content-classes" class="anchor" href="#classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes</h1>
+
+<p>By default, the body of a script file is an unnamed class, and it can
+ only be referenced externally as a resource or file. Class syntax is 
+meant to be very compact and can only contain member variables or 
+functions. Static functions are allowed, but not static members (in the 
+spirit of thread safety, since scripts can be initialized in separate 
+threads without the user knowing). In the same way, member variables 
+(including arrays and dictionaries) are initialized every time an 
+instance is created.</p>
+
+<h2>
+<a name="user-content-class-file-example" class="anchor" href="#class-file-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class File Example</h2>
+
+<p>Example of a class file, imagine it being stored in a file like myclass.gd.</p>
+
+<div class="highlight highlight-python"><pre><span class="n">var</span> <span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+
+<span class="n">func</span> <span class="n">print_value_of_a</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+<h2>
+<a name="user-content-inheritance" class="anchor" href="#inheritance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inheritance</h2>
+
+<p>A class-file can inherit from a global class, another file or a 
+subclass inside another file. Multiple inheritance is not allowed. The 
+“extends” syntax is used:</p>
+
+<div class="highlight highlight-python"><pre><span class="c"># extend from some class (global)</span>
+<span class="n">extends</span> <span class="n">SomeClass</span> 
+
+<span class="c"># optionally, extend from another file</span>
+
+<span class="n">extends</span> <span class="s">"somefile.gd"</span> 
+
+<span class="c"># extend from a subclass in another file</span>
+
+<span class="n">extends</span> <span class="s">"somefile.gd"</span><span class="o">.</span><span class="n">Subclass</span> 
+</pre></div>
+
+<h2>
+<a name="user-content-inheritance-testing" class="anchor" href="#inheritance-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inheritance Testing</h2>
+
+<p>It is possible to check if an instance inherits from a given class. 
+For this the “extends” keyword can be used as an operator instead:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">const</span> <span class="n">enemy_class</span> <span class="o">=</span> <span class="n">preload</span><span class="p">(</span><span class="s">"enemy.gd"</span><span class="p">)</span> <span class="c"># cache the enemy class</span>
+
+<span class="p">[</span><span class="o">..</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="n">entity</span> <span class="n">extends</span> <span class="n">enemy_class</span> <span class="p">):</span>
+    <span class="n">entity</span><span class="o">.</span><span class="n">apply_damage</span><span class="p">()</span>
+</pre></div>
+
+<h2>
+<a name="user-content-constructor" class="anchor" href="#constructor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructor</h2>
+
+<p>A class can have an optional constructor, a function named “_init” that is called when the class is instanced.</p>
+
+<h2>
+<a name="user-content-sub-classes" class="anchor" href="#sub-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sub Classes</h2>
+
+<p>A class file can have subclasses. Syntax should be straightforward:</p>
+
+<div class="highlight highlight-python"><pre><span class="k">class</span> <span class="nc">SomeSubClass</span><span class="p">:</span>
+    <span class="n">var</span> <span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+    <span class="n">func</span> <span class="n">print_value_of_a</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">func</span> <span class="n">_init</span><span class="p">():</span>
+    <span class="n">var</span> <span class="n">sc</span> <span class="o">=</span> <span class="n">SomeSubClass</span><span class="o">.</span><span class="n">new</span><span class="p">()</span> <span class="c">#instance by calling built-in new</span>
+    <span class="n">sc</span><span class="o">.</span><span class="n">print_value_of_a</span><span class="p">()</span>
+</pre></div>
+
+<h2>
+<a name="user-content-classes-as-objects" class="anchor" href="#classes-as-objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes as Objects</h2>
+
+<p>It may be desired at some point to load a class from a file and then 
+instance it. Since the global scope does not exist, classes must be 
+loaded as a resource. Instancing is done by calling the “new” function 
+in a class object:</p>
+
+<div class="highlight highlight-python"><pre><span class="c">#load the class (loaded every time the script is instanced)</span>
+<span class="n">var</span> <span class="n">MyClass</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s">"myclass.gd"</span><span class="p">)</span>
+
+<span class="c"># alternatively, using the preload() function preloads the class at compile time</span>
+
+<span class="n">var</span> <span class="n">MyClass2</span> <span class="o">=</span> <span class="n">preload</span><span class="p">(</span><span class="s">"myclass.gd"</span><span class="p">)</span>
+
+<span class="n">func</span> <span class="n">_init</span><span class="p">():</span>
+    <span class="n">var</span> <span class="n">a</span> <span class="o">=</span> <span class="n">MyClass</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">somefunction</span><span class="p">()</span>
+</pre></div>
+
+<h2>
+<a name="user-content-exports" class="anchor" href="#exports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exports</h2>
+
+<p>Class members can be exported. This means their value gets saved 
+along with a scene. If class members have initializers to constant 
+expressions, they will be available for editing in the property editor. 
+Exporting is done by using the export keyword:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">extends</span> <span class="n">Button</span>
+
+<span class="n">export</span> <span class="n">var</span> <span class="n">data</span> <span class="c"># value will be saved</span>
+<span class="n">export</span> <span class="n">var</span> <span class="n">number</span><span class="o">=</span><span class="mi">5</span> <span class="c"># also available to the property editor</span>
+</pre></div>
+
+<p>One of the fundamental benefits of exporting member variables is to 
+have them visible in the property editor. This way artists and game 
+designers can modify values that later influence how the program runs. 
+For this, a special export syntax is provided for more detail in the 
+exported variables:</p>
+
+<div class="highlight highlight-python"><pre><span class="c">#if the exported value assigns a constant or constant expression, the type will be infered and used in the editor</span>
+
+<span class="n">export</span> <span class="n">var</span> <span class="n">number</span><span class="o">=</span><span class="mi">5</span>
+
+<span class="c"># export can take a basic datatype as argument, which will be used in the editor</span>
+
+<span class="n">export</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="n">var</span> <span class="n">number</span>
+
+<span class="c"># export can also take a resource type as hint</span>
+
+<span class="n">export</span><span class="p">(</span><span class="n">Texture</span><span class="p">)</span> <span class="n">var</span> <span class="n">character_face</span>
+
+<span class="c"># integers and strings hint enumerated values</span>
+
+<span class="n">export</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="s">"Warrior"</span><span class="p">,</span><span class="s">"Magician"</span><span class="p">,</span><span class="s">"Thief"</span><span class="p">)</span> <span class="n">var</span> <span class="n">character_class</span> <span class="c"># (editor will set them as 0,1 and 2) </span>
+<span class="n">export</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="s">"Rebecca"</span><span class="p">,</span><span class="s">"Mary"</span><span class="p">,</span><span class="s">"Leah"</span><span class="p">)</span> <span class="n">var</span> <span class="n">character_name</span> 
+
+<span class="c"># strings as paths</span>
+
+<span class="n">export</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">FILE</span><span class="p">)</span> <span class="n">var</span> <span class="n">f</span> <span class="c"># string is a path to a file</span>
+<span class="n">export</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">DIR</span><span class="p">)</span> <span class="n">var</span> <span class="n">f</span> <span class="c"># string is a path to a directory</span>
+<span class="n">export</span><span class="p">(</span><span class="n">String</span><span class="p">,</span><span class="n">FILE</span><span class="p">,</span><span class="s">"*.txt"</span><span class="p">)</span> <span class="n">var</span> <span class="n">f</span> <span class="c"># string is a path to a file, custom filter provided as hint</span>
+
+<span class="c"># integers and floats hint ranges</span>
+
+<span class="n">export</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="n">var</span> <span class="n">i</span> <span class="c"># 0 to 20 allowed</span>
+<span class="n">export</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="n">var</span> <span class="n">j</span> <span class="c"># -10 to 20 allowed</span>
+<span class="n">export</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span> <span class="n">var</span> <span class="n">k</span> <span class="c"># -10 to 20 allowed, with stepping of 0.2</span>
+
+<span class="c"># color can hint availability of alpha</span>
+
+<span class="n">export</span><span class="p">(</span><span class="n">Color</span><span class="p">,</span><span class="n">RGB</span><span class="p">)</span> <span class="n">var</span> <span class="n">col</span> <span class="c"># Color is RGB</span>
+<span class="n">export</span><span class="p">(</span><span class="n">Color</span><span class="p">,</span><span class="n">RGBA</span><span class="p">)</span> <span class="n">var</span> <span class="n">col</span> <span class="c"># Color is RGBA</span>
+
+</pre></div>
+
+<p>It must be noted that even if the script is not being run while at 
+the editor, the exported properties are still editable (see below for 
+“tool”).</p>
+
+<h2>
+<a name="user-content-virtual-functions" class="anchor" href="#virtual-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Virtual Functions</h2>
+
+<p>As any dynamically typed language, all functions are virtual. This 
+means if a function with a certain name exists in a class, and it is 
+re-declared in one that extends it, the new one will be called instead.</p>
+
+<h3>
+<a name="user-content-super-call" class="anchor" href="#super-call" aria-hidden="true"><span class="octicon octicon-link"></span></a>Super Call</h3>
+
+<p>To call the same function on the parent, use a call with a period prefix, like this:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">func</span> <span class="n">_myfunc</span><span class="p">():</span>
+   <span class="o">.</span><span class="n">_myfync</span><span class="p">()</span> <span class="c">#calls parent func</span>
+</pre></div>
+
+<h3>
+<a name="user-content-built-in-engine-callbacks" class="anchor" href="#built-in-engine-callbacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-In engine callbacks</h3>
+
+<p>However, as a single exception, most engine built-in callbacks (not 
+the signals!, just overridable functions like _notification, _process, 
+_init, _input, _ready, _draw, _enter_scene, etc) happen in all levels of
+ inheritance. Calling super on those is not needed.</p>
+
+<h2>
+<a name="user-content-static-functions" class="anchor" href="#static-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static Functions</h2>
+
+<p>A function can be declared static. When static, it has no access to 
+the instance member variables or “self”. This is mainly useful to make 
+libraries of helper functions:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">static</span> <span class="n">func</span> <span class="n">sum2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+
+<h2>
+<a name="user-content-tool-mode" class="anchor" href="#tool-mode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tool Mode</h2>
+
+<p>Scripts by default don’t run inside the editor, and only the exported
+ properties can be changed. In some cases it is desired that they do (as
+ long as they don’t execute game code or manually avoid doing so). For 
+this, the “tool” keyword exists, and must be placed at the top of the 
+file:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">tool</span>
+<span class="n">extends</span> <span class="n">Button</span>
+
+<span class="n">func</span> <span class="n">_init</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+</pre></div>
+
+<h2>
+<a name="user-content-memory-management" class="anchor" href="#memory-management" aria-hidden="true"><span class="octicon octicon-link"></span></a>Memory Management</h2>
+
+<p>If a class inherits from <em>Reference</em>, then instances will be 
+freed when no longer in use. No garbage collector exists, just simple 
+reference counting. By default, all classes that don’t define 
+inheritance extend <em>Reference</em>. If this is not desired, then a class must inherit <em>Object</em>
+ manually and must call instance.free(). To avoid reference cycles that 
+can’t be freed, a weakref() function is provided for creating weak 
+references.</p>
+
+<div class="highlight highlight-python"><pre><span class="c"># to create the weak reference</span>
+
+<span class="n">var</span> <span class="n">wr</span> <span class="o">=</span> <span class="n">weakref</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+
+<span class="c">#to use the weak reference (returns null if previously erased)</span>
+
+<span class="n">wr</span><span class="o">.</span><span class="n">get_ref</span><span class="p">()</span><span class="o">.</span><span class="n">somefunction</span><span class="p">()</span>
+
+</pre></div>
+
+<h2>
+<a name="user-content-function-references" class="anchor" href="#function-references" aria-hidden="true"><span class="octicon octicon-link"></span></a>Function References</h2>
+
+<p>Functions can’t be referenced because they are not treated as class 
+members. There are two alternatives to this, though. The “call” function
+ or the funcref() helper.</p>
+
+<div class="highlight highlight-python"><pre><span class="n">instance</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s">"funcname"</span><span class="p">,</span><span class="n">args</span><span class="p">)</span> <span class="c"># call a function by bane</span>
+
+<span class="n">var</span> <span class="n">fr</span> <span class="o">=</span> <span class="n">funcref</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span><span class="s">"funcname"</span><span class="p">)</span> <span class="c">#create a function ref</span>
+<span class="n">fr</span><span class="o">.</span><span class="n">call_func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+</pre></div>
+
+<h2>
+<a name="user-content-assertions" class="anchor" href="#assertions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assertions</h2>
+
+<p>It is often desired to check for a condition and fail if not met. 
+When running in the debugger this would effectively cause a break. For 
+this, the assert() built-in function exists:</p>
+
+<div class="highlight highlight-python"><pre><span class="k">assert</span><span class="p">(</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">)</span>
+
+</pre></div>
+
+<p>If the condition inside assert() is false, assertion fails and an 
+error happens. When using release builds, this condition is not checked.</p>
+
+<p>--- //<a href="https://github.com/okamstudio/godot/wiki/reduzio@gmail.com">Juan Linietsky</a> 2013/11/10 18:09//</p>
+    </div>
+
+  </div>
+  </div>
+</div>
+</div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="http://training.github.com/">Training</a></li>
+      <li><a href="http://shop.github.com/">Shop</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2014 <span title="0.16706s from github-fe119-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w" aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/frameworks-caa5b172e276e6cfb9657534025e7be159dc931e.js" type="text/javascript"></script>
+      <script async="async" crossorigin="anonymous" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/github-62b4639b173285601517c2ca2821b6fe5c9ebcd2.js" type="text/javascript"></script>
+      
+        <script crossorigin="anonymous" src="gdscript%20%C2%B7%20okamstudio_godot%20Wiki_files/wiki-69ea729c297d74e172ffb605c4ff77bb667aad13.js" type="text/javascript"></script>
+
+        
+  
+
+
+<div style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;" class="global-zeroclipboard-container" id="global-zeroclipboard-html-bridge"><div role="button" tabindex="0" dataattribute="https://assets-cdn.github.com/flash/ZeroClipboard.v2.1.2.swf" title="https://assets-cdn.github.com/flash/ZeroClipboard.v2.1.2.swf" style="background: url(&quot;chrome://flashblock/content/flash.png&quot;) no-repeat scroll center center transparent ! important; min-width: 32px ! important; min-height: 32px ! important; width: 100%; height: 100%; border: 1px solid rgb(223, 223, 223); cursor: pointer; overflow: hidden; display: inline-block; visibility: visible ! important; opacity: 100 ! important; -moz-box-sizing: border-box;" bgactive="url(chrome://flashblock/content/flashplay.png) no-repeat center" bginactive="url(chrome://flashblock/content/flash.png) no-repeat center"></div></div></body></html>
