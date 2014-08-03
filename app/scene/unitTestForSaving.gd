@@ -10,8 +10,8 @@ func _ready():
 	#var value = get_node("/root/global").getSavedHighScore()
 	get_node("/root/global").saveHighScore()
 	
-	get_node("/root/global").savedHighScore = "NO NO NO"
-	get_node("/root/global").savedHighTime = "NO NO NO"
+	#get_node("/root/global").savedHighScore = "NO NO NO"
+	#get_node("/root/global").savedHighTime = "NO NO NO"
 	get_node("/root/global").savedHighDifficulty = "NO NO NO"
 	get_node("/root/global").savedHighName = "NO NO NO"
 	
