@@ -90,3 +90,7 @@ func newHighScore(savedHighScore, savedHighTime, savedHighDifficulty, savedHighN
 
 func getSavedHighScore():
     return savedHighScore
+
+func exitGame():
+	get_scene().quit()
+	
