@@ -1,5 +1,8 @@
 extends Node
 
+#This is used by global.gd for changing scenes.
+var current_scene = null
+
 #These need saved to disk.
 var savedHighScore = null
 var savedHighTime = null
@@ -24,9 +27,25 @@ func _ready():
     savedHighTime = [0, 1, 2]
     savedHighDifficulty = [0, 1, 2]
     savedHighName = [0, 1, 2]
+    var root = get_scene().get_root()
+    current_scene = root.get_child( root.get_child_count() -1 )
+
 func _notification(what):
     if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
         get_scene().quit() #default behavior
+
+func start_round(settings):
+    var s = ResourceLoader.load("res://scene/zombiesGo.scn")
+    current_scene.queue_free()
+    current_scene = s.instance()
+    get_scene().get_root().add_child(current_scene)
+    #Init settings for round.
+
+func end_round():
+    var s = ResourceLoader.load("res://scene/intro.scn")
+    current_scene.queue_free()
+    current_scene = s.instance()
+    get_scene().get_root().add_child(current_scene)
 
 func sortHighScore():
     #This function is to sort the high scores before a save.
