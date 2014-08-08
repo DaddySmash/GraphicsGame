@@ -8,4 +8,4 @@ func _input(inputEvent):
 	#if (!inputEvent.is_pressed()):
 	#	return
 	if (inputEvent.is_pressed()):
-		get_node("/root/global").start_match("")
+		get_node("/root/global").start_round("")

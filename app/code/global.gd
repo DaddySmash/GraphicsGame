@@ -35,14 +35,14 @@ func _notification(what):
         get_scene().quit() #default behavior
 
 func start_round(settings):
-    var s = ResourceLoader.load("res://scene/zombiesGo.scn")
+    var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
     current_scene.queue_free()
     current_scene = s.instance()
     get_scene().get_root().add_child(current_scene)
     #Init settings for round.
 
 func end_round():
-    var s = ResourceLoader.load("res://scene/intro.scn")
+    var s = ResourceLoader.load("res://scene/intro.xscn")
     current_scene.queue_free()
     current_scene = s.instance()
     get_scene().get_root().add_child(current_scene)
