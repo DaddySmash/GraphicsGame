@@ -3,7 +3,7 @@ extends Control
 
 var counter = 0
 var x = 0
-textHeight = ""
+var textHeight = ""
 
 # member variables here, example:
 # var a=2
@@ -19,7 +19,7 @@ var credits = [
 
 func _ready():
 	# Initalization here
-	textHeight = get_node("text").get_height()
+	#textHeight = get_node("text").get_height
 	pass
 
 func next_credit():
