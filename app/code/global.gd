@@ -17,7 +17,7 @@ var playerScore = null
 var playerTime = null
 var playerDifficulty = null
 var playerHealth = null
-#var specialAbilityAmmo
+#var specialAbilityAmmo = null
 
 func _ready():
     get_scene().set_auto_accept_quit(false)
@@ -35,11 +35,14 @@ func _notification(what):
         get_scene().quit() #default behavior
 
 func start_round(difficulty):
+	set_process_input(false)
+	
 	#Init settings for round.
 	playerDifficulty = difficulty
 	eclipseRatio = (difficulty - 1) * 0.2
 	playerScore = 0
 	playerTime = 0
+	#specialAbilityAmmo = 0
 	if playerDifficulty == 1:
 		playerHealth = 3
 	if playerDifficulty == 2:
@@ -50,6 +53,9 @@ func start_round(difficulty):
 		playerHealth = 4
 	
 	var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
+	
+	#get_node("exitScene").active(true)
+	
 	current_scene.queue_free()
 	current_scene = s.instance()
 	get_scene().get_root().add_child(current_scene)
