@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="3" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
-	<ext_resource path="res://visual/Background_Placeholder2(Scaled).png" type="Texture"></ext_resource>
-	<ext_resource path="res://code/zombiesGo.gd" type="Script"></ext_resource>
+<resource_file type="PackedScene" subresource_count="2" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+	<ext_resource path="res://code/menu.gd" type="Script"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="38">
-				<string> "zombiesGo" </string>
-				<string> "EmptyControl" </string>
+			<string_array  len="40">
+				<string> "menu" </string>
+				<string> "HButtonArray" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
 				<string> "visibility/opacity" </string>
@@ -15,6 +14,10 @@
 				<string> "visibility/behind_parent" </string>
 				<string> "anchor/right" </string>
 				<string> "anchor/bottom" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
 				<string> "focus_neighbour/left" </string>
 				<string> "focus_neighbour/top" </string>
 				<string> "focus_neighbour/right" </string>
@@ -24,54 +27,63 @@
 				<string> "size_flags/horizontal" </string>
 				<string> "size_flags/vertical" </string>
 				<string> "size_flags/stretch_ratio" </string>
-				<string> "minsize" </string>
+				<string> "button/count" </string>
+				<string> "button/min_button_size" </string>
+				<string> "button/align" </string>
+				<string> "button/0/text" </string>
+				<string> "button/0/icon" </string>
+				<string> "button/1/text" </string>
+				<string> "button/1/icon" </string>
+				<string> "button/2/text" </string>
+				<string> "button/2/icon" </string>
+				<string> "button/3/text" </string>
+				<string> "button/3/icon" </string>
+				<string> "button/4/text" </string>
+				<string> "button/4/icon" </string>
+				<string> "button/5/text" </string>
+				<string> "button/5/icon" </string>
+				<string> "button/selected" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
-				<string> "backdrop" </string>
-				<string> "Sprite" </string>
-				<string> "visibility/blend_mode" </string>
-				<string> "transform/pos" </string>
-				<string> "transform/rot" </string>
-				<string> "transform/scale" </string>
-				<string> "texture" </string>
-				<string> "centered" </string>
-				<string> "offset" </string>
-				<string> "flip_h" </string>
-				<string> "flip_v" </string>
-				<string> "vframes" </string>
-				<string> "hframes" </string>
-				<string> "frame" </string>
-				<string> "modulate" </string>
-				<string> "region" </string>
-				<string> "region_rect" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 2 </int>
+			<int> 1 </int>
 			<string> "variants" </string>
-			<array  len="18" shared="false">
+			<array  len="19" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
 				<bool> False </bool>
 				<int> 1 </int>
+				<real> 80 </real>
+				<real> 560 </real>
 				<int> 2 </int>
-				<vector2> 0, 0 </vector2>
-				<resource  resource_type="Script" path="res://code/zombiesGo.gd">  </resource>
+				<int> 6 </int>
+				<int> 4 </int>
+				<string> "Flee" </string>
+				<resource name=""></resource>				<string> "Easy" </string>
+				<string> "Normal" </string>
+				<string> "Hard" </string>
+				<string> "Insane" </string>
+				<string> "Donate" </string>
+				<resource  resource_type="Script" path="res://code/menu.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 1 </int>
 							<string> "sources" </string>
-							<array  len="2" shared="false">
-								<string> "res://code/zombiesGo.gd" </string>
+							<array  len="4" shared="false">
+								<string> "res://code/menu.gd" </string>
 								<string> "res://code/global.gd" </string>
+								<string> "res://code/unittests.gd" </string>
+								<string> "res://code/zombiesGo.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -79,11 +91,11 @@
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 0.358486 </real>
+							<real> 0.540361 </real>
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -22.0936, -97.2993 </vector2>
+							<vector2> -19.4164, -171.554 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
@@ -172,20 +184,11 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 				</dictionary>
-				<real> 0.3 </real>
-				<real> 0.5 </real>
-				<int> 3 </int>
-				<real> 0 </real>
-				<vector2> 1, 1 </vector2>
-				<resource  resource_type="Texture" path="res://visual/Background_Placeholder2(Scaled).png">  </resource>
-				<int> 0 </int>
-				<color> 1, 1, 1, 1 </color>
-				<rect2> 0, 0, 0, 0 </rect2>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="92"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 5, 16, 5, 17, 2, 18, 6, 19, 7, 20, 8, 0, 0, 0, 22, 21, -1, 20, 2, 0, 3, 1, 4, 9, 5, 10, 6, 3, 23, 11, 24, 6, 25, 12, 26, 13, 27, 14, 28, 3, 29, 6, 30, 3, 31, 3, 32, 4, 33, 4, 34, 15, 35, 16, 36, 3, 37, 17, 0 </int_array>
+			<int_array  len="83"> 				-1, -1, 1, 0, -1, 38, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 5, 10, 6, 11, 5, 12, 5, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 22, 8, 23, 5, 24, 9, 25, 10, 26, 11, 27, 12, 28, 11, 29, 13, 30, 11, 31, 14, 32, 11, 33, 15, 34, 11, 35, 16, 36, 11, 37, 4, 38, 17, 39, 18, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

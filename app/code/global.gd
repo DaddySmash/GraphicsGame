@@ -34,12 +34,25 @@ func _notification(what):
     if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
         get_scene().quit() #default behavior
 
-func start_round(settings):
-    var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
-    current_scene.queue_free()
-    current_scene = s.instance()
-    get_scene().get_root().add_child(current_scene)
-    #Init settings for round.
+func start_round(difficulty):
+	#Init settings for round.
+	playerDifficulty = difficulty
+	eclipseRatio = (difficulty - 1) * 0.2
+	playerScore = 0
+	playerTime = 0
+	if playerDifficulty == 1:
+		playerHealth = 3
+	if playerDifficulty == 2:
+		playerHealth = 6
+	if playerDifficulty == 3:
+		playerHealth = 5
+	if playerDifficulty == 4:
+		playerHealth = 4
+	
+	var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
+	current_scene.queue_free()
+	current_scene = s.instance()
+	get_scene().get_root().add_child(current_scene)
 
 func end_round():
     var s = ResourceLoader.load("res://scene/intro.xscn")
