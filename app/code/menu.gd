@@ -1,4 +1,4 @@
-extends Container
+extends HButtonArray
 
 func _ready():
 	get_node("menu").connect("button_selected", self, "_event")

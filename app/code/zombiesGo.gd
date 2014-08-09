@@ -1,4 +1,4 @@
-extends Container
+extends EmptyControl
 
 func _ready():
 	 set_process_input(true)

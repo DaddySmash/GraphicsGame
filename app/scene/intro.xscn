@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+	<ext_resource path="res://visual/Background_Placeholder2(Scaled).png" type="Texture"></ext_resource>
 	<ext_resource path="res://scene/credits.xscn" type="PackedScene"></ext_resource>
 	<ext_resource path="res://scene/menu.xscn" type="PackedScene"></ext_resource>
-	<ext_resource path="res://visual/Background_Placeholder2(Scaled).png" type="Texture"></ext_resource>
 	<ext_resource path="res://code/intro.gd" type="Script"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
@@ -88,11 +88,11 @@
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 0.540361 </real>
+							<real> 0.487676 </real>
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -14.2333, -171.554 </vector2>
+							<vector2> -88.4641, -148.103 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
@@ -181,7 +181,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
 				<vector2> 0, 0 </vector2>
 				<real> 0 </real>
