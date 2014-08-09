@@ -1,9 +1,9 @@
 extends HButtonArray
 
 func _ready():
-	get_node("menu").connect("button_selected", self, "_event")
+	pass
 
-func _event(button):
+func _on_menu_button_selected( button ):
 	if button == 0:
 		get_node("/root/global").exitGame()
 	if button == 1:

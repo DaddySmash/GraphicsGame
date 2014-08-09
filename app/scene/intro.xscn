@@ -7,29 +7,18 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="44">
+			<string_array  len="29">
 				<string> "intro" </string>
-				<string> "Container" </string>
+				<string> "Node" </string>
 				<string> "_import_path" </string>
-				<string> "visibility/visible" </string>
-				<string> "visibility/opacity" </string>
-				<string> "visibility/self_opacity" </string>
-				<string> "visibility/behind_parent" </string>
-				<string> "anchor/right" </string>
-				<string> "anchor/bottom" </string>
-				<string> "focus_neighbour/left" </string>
-				<string> "focus_neighbour/top" </string>
-				<string> "focus_neighbour/right" </string>
-				<string> "focus_neighbour/bottom" </string>
-				<string> "focus/ignore_mouse" </string>
-				<string> "focus/stop_mouse" </string>
-				<string> "size_flags/horizontal" </string>
-				<string> "size_flags/vertical" </string>
-				<string> "size_flags/stretch_ratio" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
 				<string> "Backdrop" </string>
 				<string> "Sprite" </string>
+				<string> "visibility/visible" </string>
+				<string> "visibility/opacity" </string>
+				<string> "visibility/self_opacity" </string>
+				<string> "visibility/behind_parent" </string>
 				<string> "transform/pos" </string>
 				<string> "transform/rot" </string>
 				<string> "transform/scale" </string>
@@ -46,10 +35,6 @@
 				<string> "region_rect" </string>
 				<string> "Credits" </string>
 				<string> "Control" </string>
-				<string> "margin/left" </string>
-				<string> "margin/top" </string>
-				<string> "margin/right" </string>
-				<string> "margin/bottom" </string>
 				<string> "menu" </string>
 				<string> "HButtonArray" </string>
 			</string_array>
@@ -60,13 +45,8 @@
 			<string> "node_count" </string>
 			<int> 4 </int>
 			<string> "variants" </string>
-			<array  len="21" shared="false">
+			<array  len="16" shared="false">
 				<node_path> "" </node_path>
-				<bool> True </bool>
-				<real> 1 </real>
-				<bool> False </bool>
-				<int> 1 </int>
-				<int> 2 </int>
 				<resource  resource_type="Script" path="res://code/intro.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -74,7 +54,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 1 </int>
 							<string> "sources" </string>
 							<array  len="4" shared="false">
 								<string> "res://code/intro.gd" </string>
@@ -183,22 +163,22 @@
 					<string> "__editor_plugin_screen__" </string>
 					<string> "2D" </string>
 				</dictionary>
+				<bool> True </bool>
+				<real> 1 </real>
+				<bool> False </bool>
 				<vector2> 0, 0 </vector2>
 				<real> 0 </real>
 				<vector2> 1, 1 </vector2>
 				<resource  resource_type="Texture" path="res://visual/Background_Placeholder2(Scaled).png">  </resource>
+				<int> 1 </int>
 				<int> 0 </int>
 				<color> 1, 1, 1, 1 </color>
 				<rect2> 0, 0, 0, 0 </rect2>
 				<resource  resource_type="PackedScene" path="res://scene/credits.xscn">  </resource>
-				<real> 356 </real>
-				<real> 214 </real>
-				<real> -848 </real>
-				<real> -706 </real>
 				<resource  resource_type="PackedScene" path="res://scene/menu.xscn">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="110"> 				-1, -1, 1, 0, -1, 18, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 0, 10, 0, 11, 0, 12, 0, 13, 3, 14, 1, 15, 5, 16, 5, 17, 2, 18, 6, 19, 7, 0, 0, 0, 21, 20, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 22, 8, 23, 9, 24, 10, 25, 11, 26, 3, 27, 8, 28, 3, 29, 3, 30, 4, 31, 4, 32, 12, 33, 13, 34, 3, 35, 14, 0, 0, 0, 37, 36, 15, 4, 38, 16, 39, 17, 40, 18, 41, 19, 0, 0, 0, 43, 42, 20, 0, 0 </int_array>
+			<int_array  len="72"> 				-1, -1, 1, 0, -1, 3, 2, 0, 3, 1, 4, 2, 0, 0, 0, 6, 5, -1, 19, 2, 0, 7, 3, 8, 4, 9, 4, 10, 5, 11, 6, 12, 7, 13, 8, 14, 9, 15, 5, 16, 6, 17, 5, 18, 5, 19, 10, 20, 10, 21, 11, 22, 12, 23, 5, 24, 13, 0, 0, 0, 26, 25, 14, 0, 0, 0, 0, 28, 27, 15, 0, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

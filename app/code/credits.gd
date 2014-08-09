@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var counter = 0
 var x = 0
