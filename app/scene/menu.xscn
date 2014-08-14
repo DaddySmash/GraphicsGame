@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="2" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+<resource_file type="PackedScene" subresource_count="3" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+	<ext_resource path="res://visual/Normal_Tomb_Final Size_Pos.png" type="Texture"></ext_resource>
 	<ext_resource path="res://code/menu.gd" type="Script"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="42">
+			<string_array  len="56">
 				<string> "menu" </string>
-				<string> "HButtonArray" </string>
+				<string> "Control" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
 				<string> "visibility/opacity" </string>
@@ -27,51 +28,57 @@
 				<string> "size_flags/horizontal" </string>
 				<string> "size_flags/vertical" </string>
 				<string> "size_flags/stretch_ratio" </string>
-				<string> "button/count" </string>
-				<string> "button/min_button_size" </string>
-				<string> "button/align" </string>
-				<string> "button/0/text" </string>
-				<string> "button/0/icon" </string>
-				<string> "button/1/text" </string>
-				<string> "button/1/icon" </string>
-				<string> "button/2/text" </string>
-				<string> "button/2/icon" </string>
-				<string> "button/3/text" </string>
-				<string> "button/3/icon" </string>
-				<string> "button/4/text" </string>
-				<string> "button/4/icon" </string>
-				<string> "button/5/text" </string>
-				<string> "button/5/icon" </string>
-				<string> "button/selected" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
-				<string> "_on_menu_button_selected" </string>
-				<string> "button_selected" </string>
+				<string> "Flee 2" </string>
+				<string> "TextureButton" </string>
+				<string> "disabled" </string>
+				<string> "toggle_mode" </string>
+				<string> "click_on_press" </string>
+				<string> "textures/normal" </string>
+				<string> "textures/pressed" </string>
+				<string> "textures/hover" </string>
+				<string> "textures/disabled" </string>
+				<string> "textures/focused" </string>
+				<string> "textures/click_mask" </string>
+				<string> "Flee" </string>
+				<string> "Sprite" </string>
+				<string> "transform/pos" </string>
+				<string> "transform/rot" </string>
+				<string> "transform/scale" </string>
+				<string> "texture" </string>
+				<string> "centered" </string>
+				<string> "offset" </string>
+				<string> "flip_h" </string>
+				<string> "flip_v" </string>
+				<string> "vframes" </string>
+				<string> "hframes" </string>
+				<string> "frame" </string>
+				<string> "modulate" </string>
+				<string> "region" </string>
+				<string> "region_rect" </string>
+				<string> "1" </string>
+				<string> "2" </string>
+				<string> "3" </string>
+				<string> "4" </string>
+				<string> "Donate" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
-			<int> 1 </int>
+			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 1 </int>
+			<int> 8 </int>
 			<string> "variants" </string>
-			<array  len="19" shared="false">
+			<array  len="25" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
 				<bool> False </bool>
 				<int> 1 </int>
 				<real> 80 </real>
-				<real> 560 </real>
+				<real> 505 </real>
 				<int> 2 </int>
-				<int> 6 </int>
-				<int> 4 </int>
-				<string> "Flee" </string>
-				<resource name=""></resource>				<string> "Easy" </string>
-				<string> "Normal" </string>
-				<string> "Hard" </string>
-				<string> "Insane" </string>
-				<string> "Donate" </string>
 				<resource  resource_type="Script" path="res://code/menu.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -93,11 +100,11 @@
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 0.540361 </real>
+							<real> 0.358487 </real>
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -19.4164, -171.554 </vector2>
+							<vector2> -415.628, -382.738 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
@@ -188,11 +195,25 @@
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
 				</dictionary>
+				<real> 496 </real>
+				<real> -507 </real>
+				<resource  resource_type="Texture" path="res://visual/Normal_Tomb_Final Size_Pos.png">  </resource>
+				<resource name=""></resource>				<vector2> 0, 0 </vector2>
+				<real> 0 </real>
+				<vector2> 0.333333, 0.333333 </vector2>
+				<int> 0 </int>
+				<color> 1, 1, 1, 1 </color>
+				<rect2> 80, 10, 325, 400 </rect2>
+				<vector2> 202, 0 </vector2>
+				<vector2> 404, 0 </vector2>
+				<vector2> 606, 0 </vector2>
+				<vector2> 808, 0 </vector2>
+				<vector2> 1010, 0 </vector2>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="83"> 				-1, -1, 1, 0, -1, 38, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 5, 10, 6, 11, 5, 12, 5, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 22, 8, 23, 5, 24, 9, 25, 10, 26, 11, 27, 12, 28, 11, 29, 13, 30, 11, 31, 14, 32, 11, 33, 15, 34, 11, 35, 16, 36, 11, 37, 4, 38, 17, 39, 18, 0 </int_array>
+			<int_array  len="380"> 				-1, -1, 1, 0, -1, 22, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 5, 10, 6, 11, 5, 12, 5, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 22, 8, 23, 9, 0, 0, 0, 25, 24, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 8, 4, 11, 10, 12, 11, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 26, 3, 27, 3, 28, 3, 29, 12, 30, 13, 31, 13, 32, 13, 33, 13, 34, 13, 0, 0, 0, 36, 35, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 37, 14, 38, 15, 39, 16, 40, 12, 41, 3, 42, 14, 43, 3, 44, 3, 45, 4, 46, 4, 47, 17, 48, 18, 49, 1, 50, 19, 0, 0, 0, 36, 51, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 37, 20, 38, 15, 39, 16, 40, 12, 41, 3, 42, 14, 43, 3, 44, 3, 45, 4, 46, 4, 47, 17, 48, 18, 49, 1, 50, 19, 0, 0, 0, 36, 52, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 37, 21, 38, 15, 39, 16, 40, 12, 41, 3, 42, 14, 43, 3, 44, 3, 45, 4, 46, 4, 47, 17, 48, 18, 49, 1, 50, 19, 0, 0, 0, 36, 53, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 37, 22, 38, 15, 39, 16, 40, 12, 41, 3, 42, 14, 43, 3, 44, 3, 45, 4, 46, 4, 47, 17, 48, 18, 49, 1, 50, 19, 0, 0, 0, 36, 54, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 37, 23, 38, 15, 39, 16, 40, 12, 41, 3, 42, 14, 43, 3, 44, 3, 45, 4, 46, 4, 47, 17, 48, 18, 49, 1, 50, 19, 0, 0, 0, 36, 55, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 37, 24, 38, 15, 39, 16, 40, 12, 41, 3, 42, 14, 43, 3, 44, 3, 45, 4, 46, 4, 47, 17, 48, 18, 49, 1, 50, 19, 0 </int_array>
 			<string> "conns" </string>
-			<int_array  len="6"> 				0, 0, 41, 40, 2, 0 </int_array>
+			<int_array  len="0"> 				 </int_array>
 		</dictionary>
 
 	</main_resource>

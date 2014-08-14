@@ -1,7 +1,10 @@
-extends HButtonArray
+extends Control
 
 func _ready():
 	pass
+
+func _draw():
+	VS.canvas_item_set_clip(get_canvas_item(), true)
 
 func _on_menu_button_selected( button ):
 	if button == 0:
