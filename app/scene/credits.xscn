@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="3" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+<resource_file type="PackedScene" subresource_count="4" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+	<ext_resource path="res://visual/credits.fnt" type="Font"></ext_resource>
 	<ext_resource path="res://code/credits.gd" type="Script"></ext_resource>
 	<resource type="Animation" path="local://1">
 		<string name="resource/name"> "Fade" </string>
@@ -71,7 +72,7 @@
 				<string> "__meta__" </string>
 				<string> "text" </string>
 				<string> "Label" </string>
-				<string> "custom_colors/font_color" </string>
+				<string> "custom_fonts/font" </string>
 				<string> "range/min" </string>
 				<string> "range/max" </string>
 				<string> "range/step" </string>
@@ -113,16 +114,27 @@
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 2 </int>
+							<string> "sources" </string>
+							<array  len="3" shared="false">
+								<string> "res://code/global.gd" </string>
+								<string> "res://code/zombiesGo.gd" </string>
+								<string> "res://code/menu.gd" </string>
+							</array>
+						</dictionary>
 						<string> "2D" </string>
 						<dictionary  shared="false">
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 0.291989 </real>
+							<real> 0.487675 </real>
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -775.742, -440.672 </vector2>
+							<vector2> -314.037, -498.131 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
@@ -211,10 +223,10 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
 				<real> 0 </real>
-				<color> 0, 0, 0, 1 </color>
+				<resource  resource_type="Font" path="res://visual/credits.fnt">  </resource>
 				<string> "Hello" </string>
 				<real> -1 </real>
 				<node_path> ".." </node_path>
