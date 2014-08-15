@@ -1,7 +1,8 @@
 extends Node
 
 func _ready():
-	 set_process_input(true)
+	 #set_process_input(true)
+	pass
 
 func _input(inputEvent):
 	#if (!inputEvent.is_pressed()):
