@@ -2,12 +2,22 @@ extends Node
 
 #This is used by global.gd for changing scenes.
 var currentScene = null
+var errorHighArray = false
 
 #Highscores that are saved to disk.
-var highDifficulty = null
-var highName = null
-var highScore = null
-var highTime = null
+#  highArray[difficulty][rank][stat] = value
+#  difficulty: range(SIZE_DIFFICULTY)
+#  rank:       range(SIZE_RANK)
+#  stat:       STAT_NAME, STAT_SCORE, STAT_TIME, STAT_NEW
+const SIZE_DIFFICULTY = 4
+const SIZE_RANK = 10
+const SIZE_STAT = 4
+
+const STAT_NAME = 0
+const STAT_SCORE = 1
+const STAT_TIME = 2
+const STAT_NEW = 3
+var highArray = []
 
 func _ready():
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
@@ -26,50 +36,65 @@ func loadHighScore():
 		var err = f.open_encrypted_with_pass("user://highScores.zombie", File.READ, OS.get_unique_ID())
 		if err:
 			print("LOAD ERROR: " + str(err))
+			errorHighArray = true
 			clearHighScore()
 		else:
-			highDifficulty = f.get_var()
-			highName = f.get_var()
-			highScore = f.get_var()
-			highTime = f.get_var()
+			highArray = f.get_var()
 	else:
 		print("LOAD ERROR: highScores.zombie does not exist.")
+		errorHighArray = true
 		clearHighScore()
+	if (typeof(highArray) != TYPE_ARRAY) or (highArray.size() == SIZE_DIFFICULTY) or (typeof(highArray[0]) != TYPE_ARRAY) or (highArray[0].size() == SIZE_RANK) or (typeof(highArray[0][0]) != TYPE_ARRAY) or (highArray[0][0].size() == SIZE_STAT) or (typeof(highArray[0][0][STAT_NAME]) != TYPE_STRING) or (typeof(highArray[0][0][STAT_SCORE]) != TYPE_INT) or (typeof(highArray[0][0][STAT_TIME]) != TYPE_INT) or (typeof(highArray[0][0][STAT_NEW]) != TYPE_BOOL):
+		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format.")
+		errorHighArray = true
+		clearHighScore()
+	for difficulty in range(SIZE_DIFFICULTY):
+		for rank in range(SIZE_RANK):
+			highArray[difficulty][rank][STAT_NEW] = false
 	f.close()
 
 func clearHighScore():
 	#
 	# TODO: Add prompt to delete all highscores and create empty list!
 	#
-	for x in range(0, 9):
-		highDifficulty[x][x] = 1;
-		[1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4]
-	highDifficulty = [1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4]
-	highName = ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]
-	highScore = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-	highTime = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	#Highscores that are saved to disk.
+	#  highArray[difficulty][rank][stat] = value
+	#  difficulty: range(SIZE_DIFFICULTY)
+	#  rank:       range(SIZE_RANK)
+	#  stat:       STAT_NAME, STAT_SCORE, STAT_TIME, STAT_NEW
+	highArray = []
+	for difficulty in range(SIZE_DIFFICULTY):
+		highArray.append([])
+		for rank in range(SIZE_RANK):
+			highArray[difficulty].append(["", 0, 0, false])
+	#highDifficulty.sort()
+	errorHighArray = false
 	saveHighScore()
 
 func saveHighScore():
 	#This function is to save the high scores.
-	var f = File.new()
-	var err = f.open_encrypted_with_pass("user://highScores.zombie", File.WRITE, OS.get_unique_ID())
-	if err:
-		print("SAVE ERROR: " + str(err))
-	else:
-		f.store_var(highDifficulty)
-		f.store_var(highName)        
-		f.store_var(highScore)
-		f.store_var(highTime)
-	f.close()
+	if !errorHighArray:
+		var f = File.new()
+		var err = f.open_encrypted_with_pass("user://highScores.zombie", File.WRITE, OS.get_unique_ID())
+		if err:
+			print("SAVE ERROR: " + str(err))
+			#
+			# TODO: Add prompt to try and save again!
+			#
+		else:
+			f.store_var(highArray)
+		f.close()
 
 func updateHighScore(difficulty, name, score, time):
+	#remember that new = true
 	#This needs to called at the end of the game.
 	#Check to see if the player is in the top 10 high scores.  If so, then add to high score.
 	#Then trim any high scores past the tenth entry.
+	
 	sortHighScore()
 
 func sortHighScore():
+	#Change currentLastHighScore from its old index to its new one!
 	#This function is to sort the high scores before a save.
 	pass
 
@@ -77,31 +102,25 @@ func quitGame():
 	get_scene().quit()
 
 func popupHighScore():
-	pass
+	#Only display the top 9 of each difficulty.
+	if !errorHighArray:
+		pass
 
 func popupDonation():
 	pass
 
 func startRound(difficulty):
 	set_process_input(false)
-	
-	#Init settings for round.
-	#playerDifficulty = difficulty
-	#eclipseRatio = (difficulty - 1) * 0.2
-	#playerScore = 0
-	#playerTime = 0
-	#specialAbilityAmmo = 0
-	#if playerDifficulty == 1:
-	#	playerHealth = 3
-	#if playerDifficulty == 2:
-	#	playerHealth = 6
-	#if playerDifficulty == 3:
-	#	playerHealth = 5
-	#if playerDifficulty == 4:
-	#	playerHealth = 4
+	#Highscores that are saved to disk.
+	#  highArray[difficulty][rank][stat] = value
+	#  difficulty: range(SIZE_DIFFICULTY)
+	#  rank:       range(SIZE_RANK)
+	#  stat:       STAT_NAME, STAT_SCORE, STAT_TIME, STAT_NEW
+	for difficulty in range(SIZE_DIFFICULTY):
+		for rank in range(SIZE_RANK):
+			highArray[difficulty][rank][STAT_NEW] = false
 	
 	var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
-	
 	#get_node("exitScene").active(true)
 	
 	currentScene.queue_free()
@@ -109,20 +128,8 @@ func startRound(difficulty):
 	get_scene().get_root().add_child(currentScene)
 
 func endRound():
-    var s = ResourceLoader.load("res://scene/intro.xscn")
-    currentScene.queue_free()
-    currentScene = s.instance()
-    get_scene().get_root().add_child(currentScene)
+	var s = ResourceLoader.load("res://scene/intro.xscn")
+	currentScene.queue_free()
+	currentScene = s.instance()
+	get_scene().get_root().add_child(currentScene)
 
-
-#####################################################
-
-#Time based variables.
-#var eclipseRatio = null
-
-#Player stuff.
-#var playerScore = null
-#var playerTime = null
-#var playerDifficulty = null
-#var playerHealth = null
-#var specialAbilityAmmo = null
