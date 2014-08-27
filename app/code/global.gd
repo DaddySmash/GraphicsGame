@@ -99,6 +99,7 @@ func sortHighScore():
 	pass
 
 func quitGame():
+	currentScene.queue_free()
 	get_scene().quit()
 
 func popupHighScore():
