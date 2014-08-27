@@ -105,7 +105,10 @@ func quitGame():
 func popupHighScore():
 	#Only display the top 9 of each difficulty.
 	if !errorHighArray:
-		pass
+		var s = ResourceLoader.load("res://scene/highScore.xscn")
+		currentScene.queue_free()
+		currentScene = s.instance()
+		get_scene().get_root().add_child(currentScene)
 
 func popupDonation():
 	pass
