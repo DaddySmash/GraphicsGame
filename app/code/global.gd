@@ -66,7 +66,7 @@ func clearHighScore():
 	for difficulty in range(SIZE_DIFFICULTY):
 		highArray.append([])
 		for rank in range(SIZE_RANK):
-			highArray[difficulty].append(["", 0, 0, false])
+			highArray[difficulty].append(["R.I.P.", 0, 0, false])
 	#highDifficulty.sort()
 	errorHighArray = false
 	saveHighScore()

@@ -11,7 +11,8 @@ extends Node
 #var specialAbilityAmmo = null
 
 func _ready():
-	 set_process_input(true)
+	set_process(true)
+	set_process_input(true)
 	
 	#Init settings for round.
 	#playerDifficulty = difficulty
@@ -28,9 +29,12 @@ func _ready():
 	#if playerDifficulty == 4:
 	#	playerHealth = 4
 
-func _input(inputEvent):
 
-	#if (!inputEvent.is_pressed()):
-	#	return
+func _process(delta):
+	#This is ran every frame.
+	pass
+
+func _input(inputEvent):
+	#This is ran every input.
 	if (inputEvent.is_pressed()):
 		get_node("/root/global").endRound()
