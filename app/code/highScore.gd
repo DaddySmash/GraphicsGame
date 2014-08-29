@@ -37,7 +37,7 @@ func _ready():
 
 func _input(inputEvent):
 	if (inputEvent.is_pressed()):
-		if enteringOS:
+		if get_node("/root/global").enteringOS:
 			get_node("/root/global").enterOS()
 		else:
 			get_node("/root/global").enterMenu()
