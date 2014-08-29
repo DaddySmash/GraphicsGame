@@ -10,6 +10,7 @@ var errorHighArray = false
 var enteringOS = false
 var enteringMenu = false
 var enteringRound = false
+var enteringDonation = false
 
 #Highscores that are saved to disk.
 #  highArray[difficulty][rank][stat] = value
@@ -126,13 +127,30 @@ func saveHighScore():
 		f.close()
 
 func updateHighScore(score, time):
-	if score < 0:
+	for difficultyTemp in range(SIZE_DIFFICULTY):
+		for rankTemp in range(SIZE_RANK):
+			highArray[difficultyTemp][rankTemp][STAT_NEW] = false
+	
+	if score <= 0:
 		return
-	if time < 0:
+	if time <= 0:
 		return
+	
+	currentName = "RIP"
 	currentScore = str(floor(score))
 	currentTime = timeString(time)
-	enterGetName()
+	var i = highArray[currentDifficulty]
+	i[SIZE_RANK - 1][STAT_NAME] = currentName
+	i[SIZE_RANK - 1][STAT_SCORE] = currentScore
+	i[SIZE_RANK - 1][STAT_TIME] = currentTime
+	i[SIZE_RANK - 1][STAT_NEW] = true
+	
+	#sorting highArray:
+	i.sort_custom(get_node("/root/global"), "sortLogic")
+	
+	#Only if the new score was sorted into the top 9!:
+	if i[SIZE_RANK - 1][STAT_NEW] == false:
+		enterGetName()
 
 func updateHighScorePart2():
 	#The last index of highArray is never displayed and is overridden with any new score before sorting.
@@ -145,22 +163,11 @@ func updateHighScorePart2():
 	
 	#highArray[currentDifficulty][SIZE_RANK - 1][STAT_NAME] = currentName WILL THROW AN ERROR MESSAGE OF "INVALID GET INDREX '0' (on base: 'int')" INCORRECTLY USING "var i = highArray[currentDifficulty]" as a workaround.
 	print("updateHighScorePart2 " + currentTime + " " + currentName + " " + currentScore)
-	var i = highArray[currentDifficulty]
-	i[SIZE_RANK - 1][STAT_NAME] = currentName
-	i[SIZE_RANK - 1][STAT_SCORE] = currentScore
-	i[SIZE_RANK - 1][STAT_TIME] = currentTime
-	i[SIZE_RANK - 1][STAT_NEW] = true
-	
-	#sorting highArray:
-	i.sort_custom(get_node("/root/global"), "sortLogic")
-	
-	#Only if there is a change:
+	for rankTemp in range(SIZE_RANK):
+		if highArray[currentDifficulty][rankTemp][STAT_NEW] == true:
+			highArray[currentDifficulty][rankTemp][STAT_NAME] = currentName
 	saveHighScore()
-	
-	if enteringOS:
-		enterOS()
-	if enteringMenu:
-		enterMenu()
+	enterHighScore()
 
 func sortLogic(first, second):
 	if second[STAT_SCORE] < first[STAT_SCORE]:
@@ -199,19 +206,10 @@ func enterHighScore():
 		get_scene().get_root().add_child(currentScene)
 
 func enterDonation():
-	pass
+	enteringDonation = false
 
 func enterRound(difficulty):
 	currentDifficulty = difficulty #currentDifficulty should be accessed by zombiesGo.gd
-	
-	#Highscores that are saved to disk.
-	#  highArray[difficulty][rank][stat] = value
-	#  difficulty: range(SIZE_DIFFICULTY)
-	#  rank:       range(SIZE_RANK)
-	#  stat:       STAT_NAME, STAT_SCORE, STAT_TIME, STAT_NEW
-	for difficultyTemp in range(SIZE_DIFFICULTY):
-		for rankTemp in range(SIZE_RANK):
-			highArray[difficultyTemp][rankTemp][STAT_NEW] = false
 	
 	var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
 	currentScene.queue_free()
