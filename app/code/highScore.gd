@@ -18,10 +18,19 @@ func _ready():
 	highNode = get_node("highNode")
 	for difficulty in range(highNode.get_child_count() - 1): # NO IDEA WHY THERE IS AN INVISIBLE NODE
 		diffNode = highNode.get_child(difficulty)
+		var i = 0
 		for rank in range(diffNode.get_child_count()):
 			rankNode = diffNode.get_child(rank)
 			if highArray[difficulty][rank][get_node("/root/global").STAT_NEW]:
 				rankNode.set_texture(load("res://visual/atlasBloodyTomb.xatex"))
+			
+			if i == diffNode.get_child_count() - 1: # do not randomize last tombs position.
+				i = (rank + 1) * (100 + 175 / 9)
+			else:
+				i = (rank + 1) * (100 + 175 / 9) + (rand_range(-175 / 18, 175 / 18))
+			
+			rankNode.set_margin(0, i)
+			rankNode.set_size(Vector2(100, 130))
 			rankNode.get_child(0).get_node("name").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_NAME]))
 			rankNode.get_child(0).get_node("score").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_SCORE]))
 			rankNode.get_child(0).get_node("time").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_TIME]))
