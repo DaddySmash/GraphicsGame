@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="3" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
-	<ext_resource path="res://visual/atlas_normal_tomb.xatex" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/atlasNormalTomb.xatex" type="Texture"></ext_resource>
 	<ext_resource path="res://scene/highScoreRank.xscn" type="PackedScene"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
@@ -53,7 +53,7 @@
 				<real> 1170 </real>
 				<real> 130 </real>
 				<int> 2 </int>
-				<resource  resource_type="Texture" path="res://visual/atlas_normal_tomb.xatex">  </resource>
+				<resource  resource_type="Texture" path="res://visual/atlasNormalTomb.xatex">  </resource>
 				<color> 1, 1, 1, 1 </color>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
