@@ -19,10 +19,12 @@ func _ready():
 	for difficulty in range(highNode.get_child_count() - 1): # NO IDEA WHY THERE IS AN INVISIBLE NODE
 		diffNode = highNode.get_child(difficulty)
 		for rank in range(diffNode.get_child_count()):
-			rankNode = diffNode.get_child(rank).get_child(0)
-			rankNode.get_node("name").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_NAME]))
-			rankNode.get_node("score").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_SCORE]))
-			rankNode.get_node("time").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_TIME]))
+			rankNode = diffNode.get_child(rank)
+			if highArray[difficulty][rank][get_node("/root/global").STAT_NEW]:
+				rankNode.set_texture(load("res://visual/atlasBloodyTomb.xatex"))
+			rankNode.get_child(0).get_node("name").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_NAME]))
+			rankNode.get_child(0).get_node("score").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_SCORE]))
+			rankNode.get_child(0).get_node("time").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_TIME]))
 
 func _input(inputEvent):
 	if (inputEvent.is_pressed()):

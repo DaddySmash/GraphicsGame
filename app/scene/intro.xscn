@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
-	<ext_resource path="res://scene/credits.xscn" type="PackedScene"></ext_resource>
-	<ext_resource path="res://scene/exitScene.xscn" type="PackedScene"></ext_resource>
-	<ext_resource path="res://scene/menu.xscn" type="PackedScene"></ext_resource>
+<resource_file type="PackedScene" subresource_count="4" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
 	<ext_resource path="res://visual/Background_Placeholder2(Scaled).png" type="Texture"></ext_resource>
+	<ext_resource path="res://scene/menu.xscn" type="PackedScene"></ext_resource>
+	<ext_resource path="res://scene/credits.xscn" type="PackedScene"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="29">
+			<string_array  len="28">
 				<string> "intro" </string>
 				<string> "Node" </string>
 				<string> "_import_path" </string>
@@ -36,16 +35,15 @@
 				<string> "Control" </string>
 				<string> "menu" </string>
 				<string> "HBoxContainer" </string>
-				<string> "exitScene" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 5 </int>
+			<int> 4 </int>
 			<string> "variants" </string>
-			<array  len="16" shared="false">
+			<array  len="15" shared="false">
 				<node_path> "" </node_path>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -72,7 +70,7 @@
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -88.4641, -84.7289 </vector2>
+							<vector2> -93.4011, -84.7289 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
@@ -176,10 +174,9 @@
 				<rect2> 0, 0, 0, 0 </rect2>
 				<resource  resource_type="PackedScene" path="res://scene/credits.xscn">  </resource>
 				<resource  resource_type="PackedScene" path="res://scene/menu.xscn">  </resource>
-				<resource  resource_type="PackedScene" path="res://scene/exitScene.xscn">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="77"> 				-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 0, 0, 5, 4, -1, 19, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 5, 11, 6, 12, 7, 13, 8, 14, 4, 15, 5, 16, 4, 17, 4, 18, 9, 19, 9, 20, 10, 21, 11, 22, 4, 23, 12, 0, 0, 0, 25, 24, 13, 0, 0, 0, 0, 27, 26, 14, 0, 0, 0, 0, 1, 28, 15, 0, 0 </int_array>
+			<int_array  len="70"> 				-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 0, 0, 5, 4, -1, 19, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 5, 11, 6, 12, 7, 13, 8, 14, 4, 15, 5, 16, 4, 17, 4, 18, 9, 19, 9, 20, 10, 21, 11, 22, 4, 23, 12, 0, 0, 0, 25, 24, 13, 0, 0, 0, 0, 27, 26, 14, 0, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>
