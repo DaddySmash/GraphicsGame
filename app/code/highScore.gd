@@ -37,4 +37,4 @@ func _ready():
 
 func _input(inputEvent):
 	if (inputEvent.is_pressed()):
-		get_node("/root/global").endRound()
+		get_node("/root/global").enterMenu()

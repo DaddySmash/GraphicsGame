@@ -1,5 +1,7 @@
 extends Node
 
+#get_node("/root/global").enteringOS
+#get_node("/root/global").enteringMenu
 #get_node("/root/global").currentDifficulty
 
 #Time based variables.
@@ -35,8 +37,8 @@ func _ready():
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
 		#Submit current game and save highArray before exiting.
+		get_node("/root/global").enteringOS = true
 		get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
-		get_scene().quit() #default behavior
 
 func _process(delta):
 	#This is ran every frame.
@@ -48,5 +50,5 @@ func _input(inputEvent):
 	if (inputEvent.is_pressed()):
 		#Submit current game and save highArray before ending round.
 		#updateHighScore(score, time)
+		get_node("/root/global").enteringMenu = true
 		get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
-		get_node("/root/global").endRound()

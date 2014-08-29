@@ -7,14 +7,15 @@ var currentName = "RIP"
 var currentScore = "0"
 var currentTime = "12:00"
 var errorHighArray = false
+var enteringOS = false
+var enteringMenu = false
+var enteringRound = false
 
 #Highscores that are saved to disk.
 #  highArray[difficulty][rank][stat] = value
 #  difficulty: range(SIZE_DIFFICULTY)
 #  rank:       range(SIZE_RANK)
 #  stat:       STAT_NAME, STAT_SCORE, STAT_TIME, STAT_NEW
-const FIVE = 5
-
 const SIZE_DIFFICULTY = 4
 const SIZE_RANK = 10
 const SIZE_STAT = 4
@@ -27,6 +28,7 @@ var highArray = []
 
 func _ready():
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
+	randomize()
 	var root = get_scene().get_root()
 	currentScene = root.get_child(root.get_child_count() - 1)
 	loadHighScore()
@@ -69,10 +71,10 @@ func loadHighScore():
 	if (typeof(highArray[0][0][STAT_NAME]) != TYPE_STRING):
 		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID07")
 		errorHighArray = true
-	if (typeof(highArray[0][0][STAT_SCORE]) != TYPE_INT):
+	if (typeof(highArray[0][0][STAT_SCORE]) != TYPE_STRING):
 		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID08")
 		errorHighArray = true
-	if (typeof(highArray[0][0][STAT_TIME]) != TYPE_INT):
+	if (typeof(highArray[0][0][STAT_TIME]) != TYPE_STRING):
 		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID09")
 		errorHighArray = true
 	if (typeof(highArray[0][0][STAT_NEW]) != TYPE_BOOL):
@@ -130,7 +132,7 @@ func updateHighScore(score, time):
 		return
 	currentScore = str(floor(score))
 	currentTime = timeString(time)
-	popupGetName()
+	enterGetName()
 
 func updateHighScorePart2():
 	#The last index of highArray is never displayed and is overridden with any new score before sorting.
@@ -141,7 +143,8 @@ func updateHighScorePart2():
 	#  rank:       range(SIZE_RANK)
 	#  stat:       STAT_NAME, STAT_SCORE, STAT_TIME, STAT_NEW
 	
-	# highArray[currentDifficulty][SIZE_RANK - 1][STAT_NAME] = currentName WILL THROW AN ERROR MESSAGE OF "INVALID GET INDREX '0' (on base: 'int')" INCORRECTLY USING "var i = highArray[currentDifficulty]" as a workaround.
+	#highArray[currentDifficulty][SIZE_RANK - 1][STAT_NAME] = currentName WILL THROW AN ERROR MESSAGE OF "INVALID GET INDREX '0' (on base: 'int')" INCORRECTLY USING "var i = highArray[currentDifficulty]" as a workaround.
+	print("updateHighScorePart2 " + currentTime + " " + currentName + " " + currentScore)
 	var i = highArray[currentDifficulty]
 	i[SIZE_RANK - 1][STAT_NAME] = currentName
 	i[SIZE_RANK - 1][STAT_SCORE] = currentScore
@@ -153,6 +156,11 @@ func updateHighScorePart2():
 	
 	#Only if there is a change:
 	saveHighScore()
+	
+	if enteringOS:
+		enterOS()
+	if enteringMenu:
+		enterMenu()
 
 func sortLogic(first, second):
 	if second[STAT_SCORE] < first[STAT_SCORE]:
@@ -171,15 +179,18 @@ func timeString(time):
 	else:
 		return str(floor(time / 60)) + ":" + str(time % 60)
 
-func quitGame():
+func enterOS():
 	get_scene().quit()
 
-func popupGetName():
-	currentName = "Bob"
-	updateHighScorePart2()
-	pass
+func enterGetName():
+	#Make sure you call get_node("/root/global").currentName = "INITAlS" AND get_node("/root/global").updateHighScorePart2()
+	if !errorHighArray:
+		var s = ResourceLoader.load("res://scene/getName.xscn")
+		currentScene.queue_free()
+		currentScene = s.instance()
+		get_scene().get_root().add_child(currentScene)
 
-func popupHighScore():
+func enterHighScore():
 	#Only display the top 9 of each difficulty.
 	if !errorHighArray:
 		var s = ResourceLoader.load("res://scene/highScore.xscn")
@@ -187,10 +198,10 @@ func popupHighScore():
 		currentScene = s.instance()
 		get_scene().get_root().add_child(currentScene)
 
-func popupDonation():
+func enterDonation():
 	pass
 
-func startRound(difficulty):
+func enterRound(difficulty):
 	currentDifficulty = difficulty #currentDifficulty should be accessed by zombiesGo.gd
 	
 	#Highscores that are saved to disk.
@@ -206,9 +217,11 @@ func startRound(difficulty):
 	currentScene.queue_free()
 	currentScene = s.instance()
 	get_scene().get_root().add_child(currentScene)
+	enteringRound = false
 
-func endRound():
+func enterMenu():
 	var s = ResourceLoader.load("res://scene/intro.xscn")
 	currentScene.queue_free()
 	currentScene = s.instance()
 	get_scene().get_root().add_child(currentScene)
+	enteringMenu = false
