@@ -22,7 +22,7 @@ func _ready():
 		for rank in range(diffNode.get_child_count()):
 			rankNode = diffNode.get_child(rank)
 			if highArray[difficulty][rank][get_node("/root/global").STAT_NEW]:
-				rankNode.set_texture(load("res://visual/atlasBloodyTomb.xatex"))
+				rankNode.set_normal_texture(load("res://visual/atlasBloodyTomb.xatex"))
 			
 			if i == diffNode.get_child_count() - 1: # do not randomize last tombs position.
 				i = (rank + 1) * (100 + 175 / 9)
