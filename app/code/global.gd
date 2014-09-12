@@ -10,7 +10,7 @@ var errorHighArray = false
 var enteringOS = false
 var enteringMenu = false
 var enteringRound = false
-var enteringDonation = false
+var enteringDonate = false
 
 #Highscores that are saved to disk.
 #  highArray[difficulty][rank][stat] = value
@@ -207,8 +207,12 @@ func enterHighScore():
 		currentScene = s.instance()
 		get_scene().get_root().add_child(currentScene)
 
-func enterDonation():
-	enteringDonation = false
+func enterDonate():
+	var s = ResourceLoader.load("res://scene/donate.xscn")
+	currentScene.queue_free()
+	currentScene = s.instance()
+	get_scene().get_root().add_child(currentScene)
+	enteringDonate = false
 
 func enterRound(difficulty):
 	currentDifficulty = difficulty #currentDifficulty should be accessed by zombiesGo.gd
