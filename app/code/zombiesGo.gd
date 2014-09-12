@@ -17,7 +17,6 @@ extends Node
 func _ready():
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	set_process(true)
-	set_process_input(true)
 	
 	#Init settings for round.
 	#playerDifficulty = difficulty
@@ -45,10 +44,14 @@ func _process(delta):
 	#get_node("/root/global").timeString(time)
 	pass
 
-func _input(inputEvent):
-	#This is ran every input.
-	if (inputEvent.is_pressed()):
-		#Submit current game and save highArray before ending round.
-		#updateHighScore(score, time)
-		get_node("/root/global").enteringMenu = true
-		get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
+func _on_backGround_pressed():
+	#Submit current game and save highArray before ending round.
+	#updateHighScore(score, time)
+	get_node("/root/global").enteringMenu = true
+	get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
+
+func _on_frontGround_pressed():
+	#Submit current game and save highArray before ending round.
+	#updateHighScore(score, time)
+	get_node("/root/global").enteringMenu = true
+	get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))

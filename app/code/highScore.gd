@@ -12,7 +12,7 @@ var diffNode
 var rankNode
 
 func _ready():
-	set_process_input(true)
+	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	highArray = get_node("/root/global").highArray
 	#root.get_child(root.get_child_count() - 1)
 	highNode = get_node("highNode")
@@ -35,9 +35,19 @@ func _ready():
 			rankNode.get_child(0).get_node("score").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_SCORE]))
 			rankNode.get_child(0).get_node("time").set_text(str(highArray[difficulty][rank][get_node("/root/global").STAT_TIME]))
 
-func _input(inputEvent):
-	if (inputEvent.is_pressed()):
-		if get_node("/root/global").enteringOS:
-			get_node("/root/global").enterOS()
-		else:
-			get_node("/root/global").enterMenu()
+func _notification(what):
+	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST): #User demanding to enterOS()
+		get_node("/root/global").enteringOS = true
+		get_node("/root/global").enterOS()
+
+func _on_frontGround_pressed():
+	if get_node("/root/global").enteringOS:
+		get_node("/root/global").enterOS()
+	else:
+		get_node("/root/global").enterMenu()
+
+func _on_backGround_pressed():
+	if get_node("/root/global").enteringOS:
+		get_node("/root/global").enterOS()
+	else:
+		get_node("/root/global").enterMenu()

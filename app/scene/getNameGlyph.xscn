@@ -7,7 +7,7 @@
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
 			<string_array  len="53">
-				<string> "r" </string>
+				<string> "glyph" </string>
 				<string> "TextureButton" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>

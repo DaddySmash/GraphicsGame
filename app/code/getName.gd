@@ -9,7 +9,6 @@ var y = (-340 / 3)
 
 func _ready():
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
-	set_process_input(true)
 	glyph = get_node("glyph")
 	for g in range(glyphArray.size()): # NO IDEA WHY THERE IS AN INVISIBLE NODE
 		n = load("res://scene/getNameGlyph.xscn").instance()
@@ -32,9 +31,5 @@ func _ready():
 		get_node("/root/global").currentName = ""
 
 func _notification(what):
-	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST): # DO NOT ENTER OS YET, WAIT TIL THEY GIVE NAME.
 		get_node("/root/global").enteringOS = true
-
-func _input(inputEvent):
-	if (inputEvent.is_pressed()):
-		pass

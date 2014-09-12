@@ -132,25 +132,27 @@ func updateHighScore(score, time):
 			highArray[difficultyTemp][rankTemp][STAT_NEW] = false
 	
 	if score <= 0:
-		return
-	if time <= 0:
-		return
-	
-	currentName = "RIP"
-	currentScore = str(floor(score))
-	currentTime = timeString(time)
-	var i = highArray[currentDifficulty]
-	i[SIZE_RANK - 1][STAT_NAME] = currentName
-	i[SIZE_RANK - 1][STAT_SCORE] = currentScore
-	i[SIZE_RANK - 1][STAT_TIME] = currentTime
-	i[SIZE_RANK - 1][STAT_NEW] = true
-	
-	#sorting highArray:
-	i.sort_custom(get_node("/root/global"), "sortLogic")
-	
-	#Only if the new score was sorted into the top 9!:
-	if i[SIZE_RANK - 1][STAT_NEW] == false:
-		enterGetName()
+		enterHighScore()
+	elif time <= 0:
+		enterHighScore()
+	else:
+		currentName = "RIP"
+		currentScore = str(floor(score))
+		currentTime = timeString(time)
+		var i = highArray[currentDifficulty]
+		i[SIZE_RANK - 1][STAT_NAME] = currentName
+		i[SIZE_RANK - 1][STAT_SCORE] = currentScore
+		i[SIZE_RANK - 1][STAT_TIME] = currentTime
+		i[SIZE_RANK - 1][STAT_NEW] = true
+		
+		#sorting highArray:
+		i.sort_custom(get_node("/root/global"), "sortLogic")
+		
+		#Only if the new score was sorted into the top 9!:
+		if i[SIZE_RANK - 1][STAT_NEW] == false:
+			enterGetName()
+		else:
+			enterHighScore()
 
 func updateHighScorePart2():
 	#The last index of highArray is never displayed and is overridden with any new score before sorting.
@@ -218,7 +220,7 @@ func enterRound(difficulty):
 	enteringRound = false
 
 func enterMenu():
-	var s = ResourceLoader.load("res://scene/intro.xscn")
+	var s = ResourceLoader.load("res://scene/menu.xscn")
 	currentScene.queue_free()
 	currentScene = s.instance()
 	get_scene().get_root().add_child(currentScene)

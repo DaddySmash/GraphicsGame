@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="6" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
-	<ext_resource path="res://visual/atlasNormalTomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://code/menu.gd" type="Script"></ext_resource>
-	<ext_resource path="res://visual/atlasNormalTomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/atlasFleeTomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/atlasBrokenTomb.xatex" type="Texture"></ext_resource>
+<resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+	<ext_resource path="res://visual/frontGround.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/backGround.png" type="Texture"></ext_resource>
+	<ext_resource path="res://scene/credits.xscn" type="PackedScene"></ext_resource>
+	<ext_resource path="res://scene/menuButtons.xscn" type="PackedScene"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="50">
+			<string_array  len="33">
 				<string> "menu" </string>
-				<string> "HBoxContainer" </string>
+				<string> "Node" </string>
 				<string> "_import_path" </string>
+				<string> "__meta__" </string>
+				<string> "backGround" </string>
+				<string> "TextureButton" </string>
 				<string> "visibility/visible" </string>
 				<string> "visibility/opacity" </string>
 				<string> "visibility/self_opacity" </string>
 				<string> "visibility/behind_parent" </string>
-				<string> "anchor/right" </string>
-				<string> "anchor/bottom" </string>
-				<string> "margin/left" </string>
-				<string> "margin/top" </string>
-				<string> "margin/right" </string>
-				<string> "margin/bottom" </string>
 				<string> "focus_neighbour/left" </string>
 				<string> "focus_neighbour/top" </string>
 				<string> "focus_neighbour/right" </string>
@@ -31,11 +27,6 @@
 				<string> "size_flags/horizontal" </string>
 				<string> "size_flags/vertical" </string>
 				<string> "size_flags/stretch_ratio" </string>
-				<string> "custom_constants/separation" </string>
-				<string> "script/script" </string>
-				<string> "__meta__" </string>
-				<string> "flee" </string>
-				<string> "TextureButton" </string>
 				<string> "disabled" </string>
 				<string> "toggle_mode" </string>
 				<string> "click_on_press" </string>
@@ -45,52 +36,35 @@
 				<string> "textures/disabled" </string>
 				<string> "textures/focused" </string>
 				<string> "textures/click_mask" </string>
-				<string> "highScore" </string>
-				<string> "1" </string>
-				<string> "2" </string>
-				<string> "3" </string>
-				<string> "4" </string>
-				<string> "donate" </string>
-				<string> "_on_flee_pressed" </string>
-				<string> "pressed" </string>
-				<string> "_on_highScore_pressed" </string>
-				<string> "_on_1_pressed" </string>
-				<string> "_on_2_pressed" </string>
-				<string> "_on_3_pressed" </string>
-				<string> "_on_4_pressed" </string>
-				<string> "_on_donate_pressed" </string>
+				<string> "frontGround" </string>
+				<string> "credits" </string>
+				<string> "Control" </string>
+				<string> "menuButtons" </string>
+				<string> "HBoxContainer" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
-			<int> 7 </int>
+			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 8 </int>
+			<int> 5 </int>
 			<string> "variants" </string>
-			<array  len="29" shared="false">
+			<array  len="11" shared="false">
 				<node_path> "" </node_path>
-				<bool> True </bool>
-				<real> 1 </real>
-				<bool> False </bool>
-				<int> 1 </int>
-				<real> 80 </real>
-				<real> 510 </real>
-				<int> 2 </int>
-				<int> 70 </int>
-				<resource  resource_type="Script" path="res://code/menu.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 4 </int>
 							<string> "sources" </string>
-							<array  len="4" shared="false">
+							<array  len="5" shared="false">
+								<string> "res://code/credits.gd" </string>
 								<string> "res://code/menu.gd" </string>
-								<string> "res://code/global.gd" </string>
-								<string> "res://code/unittests.gd" </string>
 								<string> "res://code/zombiesGo.gd" </string>
+								<string> "res://code/global.gd" </string>
+								<string> "res://code/menuButtons.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -98,11 +72,11 @@
 							<string> "pixel_snap" </string>
 							<bool> False </bool>
 							<string> "zoom" </string>
-							<real> 0.487675 </real>
+							<real> 0.487676 </real>
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -1280, -286.561 </vector2>
+							<vector2> -749.574, -682.311 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
@@ -191,30 +165,21 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 				</dictionary>
-				<real> 100 </real>
-				<real> 130 </real>
-				<resource  resource_type="Texture" path="res://visual/atlasFleeTomb.xatex">  </resource>
-				<resource name=""></resource>				<real> 170 </real>
-				<real> 270 </real>
-				<resource  resource_type="Texture" path="res://visual/atlasNormalTomb.xatex">  </resource>
-				<real> 340 </real>
-				<real> 440 </real>
-				<real> 610 </real>
-				<real> 680 </real>
-				<real> 780 </real>
-				<real> 850 </real>
-				<real> 950 </real>
-				<resource  resource_type="Texture" path="res://visual/atlasNormalTomb.xatex">  </resource>
-				<real> 1020 </real>
-				<real> 1140 </real>
-				<resource  resource_type="Texture" path="res://visual/atlasBrokenTomb.xatex">  </resource>
+				<bool> True </bool>
+				<real> 1 </real>
+				<bool> False </bool>
+				<int> 2 </int>
+				<resource  resource_type="Texture" path="res://visual/backGround.png">  </resource>
+				<resource name=""></resource>				<resource  resource_type="Texture" path="res://visual/frontGround.png">  </resource>
+				<resource  resource_type="PackedScene" path="res://scene/credits.xscn">  </resource>
+				<resource  resource_type="PackedScene" path="res://scene/menuButtons.xscn">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="464"> 				-1, -1, 1, 0, -1, 23, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 5, 10, 6, 11, 5, 12, 5, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 22, 8, 23, 9, 24, 10, 0, 0, 0, 26, 25, -1, 25, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 11, 11, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 13, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 36, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 15, 11, 16, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 17, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 37, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 18, 11, 19, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 17, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 38, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 6, 11, 20, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 17, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 39, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 21, 11, 22, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 17, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 40, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 23, 11, 24, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 25, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 41, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 26, 11, 27, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 28, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0 </int_array>
+			<int_array  len="131"> 				-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 0, 0, 5, 4, -1, 23, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 0, 11, 0, 12, 0, 13, 0, 14, 4, 15, 2, 16, 5, 17, 5, 18, 3, 19, 4, 20, 4, 21, 4, 22, 6, 23, 7, 24, 7, 25, 7, 26, 7, 27, 7, 0, 0, 0, 5, 28, -1, 23, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 0, 11, 0, 12, 0, 13, 0, 14, 4, 15, 2, 16, 5, 17, 5, 18, 3, 19, 4, 20, 4, 21, 4, 22, 8, 23, 7, 24, 7, 25, 7, 26, 7, 27, 7, 0, 0, 0, 30, 29, 9, 0, 0, 0, 0, 32, 31, 10, 0, 0 </int_array>
 			<string> "conns" </string>
-			<int_array  len="42"> 				1, 0, 43, 42, 2, 0, 2, 0, 43, 44, 2, 0, 3, 0, 43, 45, 2, 0, 4, 0, 43, 46, 2, 0, 5, 0, 43, 47, 2, 0, 6, 0, 43, 48, 2, 0, 7, 0, 43, 49, 2, 0 </int_array>
+			<int_array  len="0"> 				 </int_array>
 		</dictionary>
 
 	</main_resource>
