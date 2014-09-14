@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="12" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+	<ext_resource path="res://visual/missingTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/normalTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/bloodyTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/brokenTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/zombieHat.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/fleeTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/zombieNormal.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/backHole.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/frontHoleHand.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/frontHole.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/rubbleHole.png" type="Texture"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "names" </string>
+			<string_array  len="42">
+				<string> "zombiesGoTomb" </string>
+				<string> "Node" </string>
+				<string> "_import_path" </string>
+				<string> "__meta__" </string>
+				<string> "missingTomb" </string>
+				<string> "TextureButton" </string>
+				<string> "visibility/visible" </string>
+				<string> "visibility/opacity" </string>
+				<string> "visibility/self_opacity" </string>
+				<string> "visibility/behind_parent" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "focus_neighbour/left" </string>
+				<string> "focus_neighbour/top" </string>
+				<string> "focus_neighbour/right" </string>
+				<string> "focus_neighbour/bottom" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "size_flags/stretch_ratio" </string>
+				<string> "disabled" </string>
+				<string> "toggle_mode" </string>
+				<string> "click_on_press" </string>
+				<string> "textures/normal" </string>
+				<string> "textures/pressed" </string>
+				<string> "textures/hover" </string>
+				<string> "textures/disabled" </string>
+				<string> "textures/focused" </string>
+				<string> "textures/click_mask" </string>
+				<string> "howDiedTomb" </string>
+				<string> "bloodyTomb" </string>
+				<string> "brokenTomb" </string>
+				<string> "normalTomb" </string>
+				<string> "fleeTomb" </string>
+				<string> "backHole" </string>
+				<string> "frontHole" </string>
+				<string> "rubbleHole" </string>
+				<string> "frontHoleHand" </string>
+				<string> "zombieNormal" </string>
+				<string> "zombieHat" </string>
+				<string> "clickMask" </string>
+			</string_array>
+			<string> "version" </string>
+			<int> 1 </int>
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "node_count" </string>
+			<int> 14 </int>
+			<string> "variants" </string>
+			<array  len="21" shared="false">
+				<node_path> "" </node_path>
+				<dictionary  shared="false">
+					<string> "__editor_plugin_states__" </string>
+					<dictionary  shared="false">
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 0 </int>
+							<string> "sources" </string>
+							<array  len="1" shared="false">
+								<string> "res://code/zombiesGo.gd" </string>
+							</array>
+						</dictionary>
+						<string> "2D" </string>
+						<dictionary  shared="false">
+							<string> "pixel_snap" </string>
+							<bool> False </bool>
+							<string> "zoom" </string>
+							<real> 2.517533 </real>
+							<string> "use_snap" </string>
+							<bool> False </bool>
+							<string> "ofs" </string>
+							<vector2> -74.4065, -39.0691 </vector2>
+							<string> "snap" </string>
+							<int> 10 </int>
+						</dictionary>
+						<string> "3D" </string>
+						<dictionary  shared="false">
+							<string> "zfar" </string>
+							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
+							<string> "viewports" </string>
+							<array  len="4" shared="false">
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 10.07268 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+							</array>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
+							<string> "show_grid" </string>
+							<bool> True </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
+							<string> "znear" </string>
+							<real> 0.1 </real>
+						</dictionary>
+					</dictionary>
+					<string> "__editor_run_settings__" </string>
+					<dictionary  shared="false">
+						<string> "custom_args" </string>
+						<string> "-l $scene" </string>
+						<string> "run_mode" </string>
+						<int> 0 </int>
+					</dictionary>
+					<string> "__editor_plugin_screen__" </string>
+					<string> "2D" </string>
+				</dictionary>
+				<bool> True </bool>
+				<real> 1 </real>
+				<bool> False </bool>
+				<real> 165 </real>
+				<real> 214 </real>
+				<int> 2 </int>
+				<resource  resource_type="Texture" path="res://visual/missingTomb.png">  </resource>
+				<resource name=""></resource>				<real> 40 </real>
+				<resource  resource_type="Texture" path="res://visual/normalTomb.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/bloodyTomb.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/brokenTomb.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/fleeTomb.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/backHole.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/frontHole.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/rubbleHole.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/frontHoleHand.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/zombieNormal.png">  </resource>
+				<resource  resource_type="Texture" path="res://visual/zombieHat.png">  </resource>
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="752"> 				-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 0, 0, 5, 4, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 5, 11, 6, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 8, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 30, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 11, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 31, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 12, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 32, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 13, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 33, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 11, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 34, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 14, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 35, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 15, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 36, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 16, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 37, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 17, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 38, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 18, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 39, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 19, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 40, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 10, 11, 10, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 20, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0, 0, 0, 5, 41, -1, 25, 2, 0, 6, 2, 7, 3, 8, 3, 9, 4, 10, 5, 11, 6, 12, 0, 13, 0, 14, 0, 15, 0, 16, 4, 17, 2, 18, 7, 19, 7, 20, 3, 21, 4, 22, 4, 23, 4, 24, 9, 25, 9, 26, 9, 27, 9, 28, 9, 29, 9, 0 </int_array>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+		</dictionary>
+
+	</main_resource>
+</resource_file>
