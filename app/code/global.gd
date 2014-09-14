@@ -208,10 +208,11 @@ func enterHighScore():
 		get_scene().get_root().add_child(currentScene)
 
 func enterDonate():
-	var s = ResourceLoader.load("res://scene/donate.xscn")
-	currentScene.queue_free()
-	currentScene = s.instance()
-	get_scene().get_root().add_child(currentScene)
+	OS.shell_open("http://www.google.com")
+	#var s = ResourceLoader.load("res://scene/donate.xscn")
+	#currentScene.queue_free()
+	#currentScene = s.instance()
+	#get_scene().get_root().add_child(currentScene)
 	enteringDonate = false
 
 func enterRound(difficulty):
