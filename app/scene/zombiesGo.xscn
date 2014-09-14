@@ -57,7 +57,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 3 </int>
 							<string> "sources" </string>
 							<array  len="7" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
