@@ -57,15 +57,14 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 1 </int>
 							<string> "sources" </string>
-							<array  len="7" shared="false">
+							<array  len="6" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
 								<string> "res://code/global.gd" </string>
 								<string> "res://code/menu.gd" </string>
 								<string> "res://code/getName.gd" </string>
 								<string> "res://code/highScore.gd" </string>
-								<string> "res://code/credits.gd" </string>
 								<string> "res://code/getNameGlyph.gd" </string>
 							</array>
 						</dictionary>

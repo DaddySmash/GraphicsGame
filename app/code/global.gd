@@ -208,7 +208,7 @@ func enterHighScore():
 		get_scene().get_root().add_child(currentScene)
 
 func enterDonate():
-	OS.shell_open("http://www.google.com")
+	OS.shell_open("https://github.com/DaddySmash/GraphicsGame")
 	#var s = ResourceLoader.load("res://scene/donate.xscn")
 	#currentScene.queue_free()
 	#currentScene = s.instance()

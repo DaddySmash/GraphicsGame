@@ -2,7 +2,7 @@
 <resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
 	<ext_resource path="res://visual/frontGround.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/backGround.png" type="Texture"></ext_resource>
-	<ext_resource path="res://scene/credits.xscn" type="PackedScene"></ext_resource>
+	<ext_resource path="res://scene/menuCredits.xscn" type="PackedScene"></ext_resource>
 	<ext_resource path="res://scene/menuButtons.xscn" type="PackedScene"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
@@ -37,7 +37,7 @@
 				<string> "textures/focused" </string>
 				<string> "textures/click_mask" </string>
 				<string> "frontGround" </string>
-				<string> "credits" </string>
+				<string> "menuCredits" </string>
 				<string> "Control" </string>
 				<string> "menuButtons" </string>
 				<string> "HBoxContainer" </string>
@@ -60,11 +60,11 @@
 							<int> 4 </int>
 							<string> "sources" </string>
 							<array  len="5" shared="false">
-								<string> "res://code/credits.gd" </string>
 								<string> "res://code/menu.gd" </string>
 								<string> "res://code/zombiesGo.gd" </string>
 								<string> "res://code/global.gd" </string>
 								<string> "res://code/menuButtons.gd" </string>
+								<string> "res://code/menuCredits.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -165,7 +165,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -173,7 +173,7 @@
 				<int> 2 </int>
 				<resource  resource_type="Texture" path="res://visual/backGround.png">  </resource>
 				<resource name=""></resource>				<resource  resource_type="Texture" path="res://visual/frontGround.png">  </resource>
-				<resource  resource_type="PackedScene" path="res://scene/credits.xscn">  </resource>
+				<resource  resource_type="PackedScene" path="res://scene/menuCredits.xscn">  </resource>
 				<resource  resource_type="PackedScene" path="res://scene/menuButtons.xscn">  </resource>
 			</array>
 			<string> "nodes" </string>
