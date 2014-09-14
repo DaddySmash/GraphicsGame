@@ -8,8 +8,8 @@ extends Node
 #var eclipseRatio = null
 
 #Player stuff.
-#var playerScore = null
-#var playerTime = null
+var playerScore = null
+var playerTime = null
 #var playerDifficulty = null
 #var playerHealth = null
 #var specialAbilityAmmo = null
@@ -18,13 +18,15 @@ var howDiedTombCount = 3
 
 func _ready():
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
-	set_process(true)
+	set_process(true) #Enables: _process(delta) to run every frame.
+	
+	
 	
 	#Init settings for round.
 	#playerDifficulty = difficulty
 	#eclipseRatio = (difficulty - 1) * 0.2
-	#playerScore = 0
-	#playerTime = 0
+	playerScore = 0
+	playerTime = 0
 	#specialAbilityAmmo = 0
 	#if playerDifficulty == 1:
 	#	playerHealth = 3
