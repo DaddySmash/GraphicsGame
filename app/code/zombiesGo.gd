@@ -1,8 +1,8 @@
 extends Node
 
-#get_node("/root/global").enteringOS
-#get_node("/root/global").enteringMenu
-#get_node("/root/global").currentDifficulty
+#get_node("/root/global").enteringOS   <--This is the proper method to quit to desktop.
+#get_node("/root/global").enteringMenu  <--This is the proper method to get to the main menu.
+#get_node("/root/global").currentDifficulty  <--This is the proper method to get the difficulty.
 
 #Time based variables.
 #var eclipseRatio = null
@@ -10,16 +10,30 @@ extends Node
 #Player stuff.
 var playerScore = null
 var playerTime = null
-#var playerDifficulty = null
+var playerDifficulty = null #This has to be between 0 and 3 to match the size of xSizeArray and ySizeArray.
 #var playerHealth = null
 #var specialAbilityAmmo = null
+var tombArray = []
+var tombOrigen = null
+var tombNumberTotal = 0
+var xSizeArray = [3, 3, 4, 4] #[Easy, Normal, Hard, Insane]
+var ySizeArray = [1, 2, 3, 4] #[Easy, Normal, Hard, Insane]
+var howDiedTombCount = 3 #this is a count of the number of different flavor texts that go on tombstones.
 
-var howDiedTombCount = 3
+#var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
 func _ready():
+	playerDifficulty = get_node("/root/global").currentDifficulty
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	set_process(true) #Enables: _process(delta) to run every frame.
+		
+	#for g in range(glyphArray.size()):
+	#	n = load("res://scene/getNameGlyph.xscn").instance()
+	#	glyph.add_child(n)
 	
+	for x in range(xSizeArray[playerDifficulty]):
+		for y in range(ySizeArray[playerDifficulty]):
+			print("Hello World " + str(x) + ", " + str(y))
 	
 	
 	#Init settings for round.
@@ -46,7 +60,9 @@ func _notification(what):
 func _process(delta):
 	#This is ran every frame.
 	#get_node("/root/global").timeString(time)
-	pass
+	playerTime = playerTime + delta
+	get_node("displayPlayerTimeOnScreen").set_text(get_node("/root/global").timeString(playerTime))
+	
 
 func _on_backGround_pressed():
 	#Submit current game and save highArray before ending round.
