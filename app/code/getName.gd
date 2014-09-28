@@ -24,6 +24,7 @@ func _ready():
 			x = 9 * (100 + 175 / 9)
 		else:
 			x = (g % 10) * (100 + 175 / 9) + (rand_range(-175 / 18, 175 / 18))
+		#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
 		n.set_margin(0, x)
 		n.set_margin(1, y)
 		n.set_size(Vector2(100, 130))

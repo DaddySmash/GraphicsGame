@@ -51,36 +51,37 @@ func loadHighScore():
 	else:
 		print("LOAD ERROR: highScores.zombie does not exist.")
 		errorHighArray = true
-	if (typeof(highArray) != TYPE_ARRAY):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID01")
-		errorHighArray = true
-	if (highArray.size() + 1 == SIZE_DIFFICULTY):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID02")
-		errorHighArray = true
-	if (typeof(highArray[0]) != TYPE_ARRAY):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID03")
-		errorHighArray = true
-	if (highArray[0].size() + 1 == SIZE_RANK):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID04")
-		errorHighArray = true
-	if (typeof(highArray[0][0]) != TYPE_ARRAY):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID05")
-		errorHighArray = true
-	if (highArray[0][0].size() + 1 == SIZE_STAT):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID06")
-		errorHighArray = true
-	if (typeof(highArray[0][0][STAT_NAME]) != TYPE_STRING):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID07")
-		errorHighArray = true
-	if (typeof(highArray[0][0][STAT_SCORE]) != TYPE_STRING):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID08")
-		errorHighArray = true
-	if (typeof(highArray[0][0][STAT_TIME]) != TYPE_STRING):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID09")
-		errorHighArray = true
-	if (typeof(highArray[0][0][STAT_NEW]) != TYPE_BOOL):
-		print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID10")
-		errorHighArray = true
+	if (errorHighArray == false):
+		if (typeof(highArray) != TYPE_ARRAY):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID01")
+			errorHighArray = true
+		if (highArray.size() + 1 == SIZE_DIFFICULTY):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID02")
+			errorHighArray = true
+		if (typeof(highArray[0]) != TYPE_ARRAY):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID03")
+			errorHighArray = true
+		if (highArray[0].size() + 1 == SIZE_RANK):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID04")
+			errorHighArray = true
+		if (typeof(highArray[0][0]) != TYPE_ARRAY):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID05")
+			errorHighArray = true
+		if (highArray[0][0].size() + 1 == SIZE_STAT):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID06")
+			errorHighArray = true
+		if (typeof(highArray[0][0][STAT_NAME]) != TYPE_STRING):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID07")
+			errorHighArray = true
+		if (typeof(highArray[0][0][STAT_SCORE]) != TYPE_STRING):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID08")
+			errorHighArray = true
+		if (typeof(highArray[0][0][STAT_TIME]) != TYPE_STRING):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID09")
+			errorHighArray = true
+		if (typeof(highArray[0][0][STAT_NEW]) != TYPE_BOOL):
+			print("LOAD ERROR: highScores.zombie is using an outdated or incorrect format. ID10")
+			errorHighArray = true
 	if errorHighArray:
 		clearHighScore()
 	for difficulty in range(SIZE_DIFFICULTY):
@@ -178,7 +179,7 @@ func sortLogic(first, second):
 		return false
 
 func timeString(time):
-	time = floor(time)
+	time = int(floor(time))
 	if time < 10:
 		return "12:0" + str(time)
 	elif time < 60:

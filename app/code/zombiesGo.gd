@@ -15,6 +15,7 @@ var playerDifficulty = null #This has to be between 0 and 3 to match the size of
 #var specialAbilityAmmo = null
 var tombArray = []
 var tombOrigen = null
+var tombs = null
 var tombNumberTotal = 0
 var xSizeArray = [3, 3, 4, 4] #[Easy, Normal, Hard, Insane]
 var ySizeArray = [1, 2, 3, 4] #[Easy, Normal, Hard, Insane]
@@ -26,15 +27,23 @@ func _ready():
 	playerDifficulty = get_node("/root/global").currentDifficulty
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	set_process(true) #Enables: _process(delta) to run every frame.
-		
+	
+	tombs = get_node("tombs")
+	
 	#for g in range(glyphArray.size()):
 	#	n = load("res://scene/getNameGlyph.xscn").instance()
 	#	glyph.add_child(n)
 	
 	for x in range(xSizeArray[playerDifficulty]):
+		tombArray.append([])
 		for y in range(ySizeArray[playerDifficulty]):
-			print("Hello World " + str(x) + ", " + str(y))
-	
+			tombArray[x].append(load("res://scene/zombiesGoTomb.xscn").instance())
+			#print("Hello World " + str(x) + ", " + str(y))
+			#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
+			tombArray[x][y].set_margin(MARGIN_LEFT, x * 200)
+			tombArray[x][y].set_margin(MARGIN_TOP, y * 200)
+			tombs.add_child(tombArray[x][y])
+			
 	
 	#Init settings for round.
 	#playerDifficulty = difficulty

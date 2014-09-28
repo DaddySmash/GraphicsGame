@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
-	<ext_resource path="res://code/zombiesGo.gd" type="Script"></ext_resource>
 	<ext_resource path="res://visual/backGround.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/frontGround.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/tomb.fnt" type="Font"></ext_resource>
+	<ext_resource path="res://visual/frontGround.png" type="Texture"></ext_resource>
+	<ext_resource path="res://code/zombiesGo.gd" type="Script"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
@@ -40,7 +40,6 @@
 				<string> "frontGround" </string>
 				<string> "displayPlayerTimeOnScreen" </string>
 				<string> "Label" </string>
-				<string> "anchor/left" </string>
 				<string> "anchor/right" </string>
 				<string> "margin/top" </string>
 				<string> "margin/bottom" </string>
@@ -58,6 +57,7 @@
 				<string> "autowrap" </string>
 				<string> "uppercase" </string>
 				<string> "percent_visible" </string>
+				<string> "tombs" </string>
 				<string> "_on_backGround_pressed" </string>
 				<string> "pressed" </string>
 				<string> "_on_frontGround_pressed" </string>
@@ -67,9 +67,9 @@
 			<string> "conn_count" </string>
 			<int> 2 </int>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 5 </int>
 			<string> "variants" </string>
-			<array  len="18" shared="false">
+			<array  len="17" shared="false">
 				<node_path> "" </node_path>
 				<resource  resource_type="Script" path="res://code/zombiesGo.gd">  </resource>
 				<dictionary  shared="false">
@@ -78,7 +78,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="6" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
@@ -98,7 +98,7 @@
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -63.2131, -60.158 </vector2>
+							<vector2> -47.5989, -51.5283 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
@@ -195,17 +195,16 @@
 				<int> 2 </int>
 				<resource  resource_type="Texture" path="res://visual/backGround.png">  </resource>
 				<resource name=""></resource>				<resource  resource_type="Texture" path="res://visual/frontGround.png">  </resource>
-				<int> 3 </int>
+				<int> 1 </int>
 				<real> 40 </real>
 				<real> 104 </real>
 				<resource  resource_type="Font" path="res://visual/tomb.fnt">  </resource>
 				<real> 0 </real>
-				<string> "" </string>
-				<int> 0 </int>
+				<string> "12:00" </string>
 				<real> -1 </real>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="188"> 				-1, -1, 1, 0, -1, 3, 2, 0, 3, 1, 4, 2, 0, 0, 0, 6, 5, -1, 23, 2, 0, 7, 3, 8, 4, 9, 4, 10, 5, 11, 0, 12, 0, 13, 0, 14, 0, 15, 5, 16, 3, 17, 6, 18, 6, 19, 4, 20, 5, 21, 5, 22, 5, 23, 7, 24, 8, 25, 8, 26, 8, 27, 8, 28, 8, 0, 0, 0, 6, 29, -1, 23, 2, 0, 7, 3, 8, 4, 9, 4, 10, 5, 11, 0, 12, 0, 13, 0, 14, 0, 15, 5, 16, 3, 17, 6, 18, 6, 19, 4, 20, 5, 21, 5, 22, 5, 23, 9, 24, 8, 25, 8, 26, 8, 27, 8, 28, 8, 0, 0, 0, 31, 30, -1, 31, 2, 0, 7, 3, 8, 4, 9, 4, 10, 5, 32, 10, 33, 10, 34, 11, 35, 12, 11, 0, 12, 0, 13, 0, 14, 0, 15, 3, 16, 3, 17, 6, 19, 4, 36, 13, 37, 14, 38, 4, 39, 4, 40, 4, 41, 14, 42, 5, 43, 5, 44, 15, 45, 16, 46, 16, 47, 5, 48, 5, 49, 17, 0 </int_array>
+			<int_array  len="195"> 				-1, -1, 1, 0, -1, 3, 2, 0, 3, 1, 4, 2, 0, 0, 0, 6, 5, -1, 23, 2, 0, 7, 3, 8, 4, 9, 4, 10, 5, 11, 0, 12, 0, 13, 0, 14, 0, 15, 5, 16, 3, 17, 6, 18, 6, 19, 4, 20, 5, 21, 5, 22, 5, 23, 7, 24, 8, 25, 8, 26, 8, 27, 8, 28, 8, 0, 0, 0, 6, 29, -1, 23, 2, 0, 7, 3, 8, 4, 9, 4, 10, 5, 11, 0, 12, 0, 13, 0, 14, 0, 15, 5, 16, 3, 17, 6, 18, 6, 19, 4, 20, 5, 21, 5, 22, 5, 23, 9, 24, 8, 25, 8, 26, 8, 27, 8, 28, 8, 0, 0, 0, 31, 30, -1, 30, 2, 0, 7, 3, 8, 4, 9, 4, 10, 5, 32, 10, 33, 11, 34, 12, 11, 0, 12, 0, 13, 0, 14, 0, 15, 3, 16, 3, 17, 6, 19, 4, 35, 13, 36, 14, 37, 4, 38, 4, 39, 4, 40, 14, 41, 5, 42, 5, 43, 15, 44, 10, 45, 10, 46, 5, 47, 5, 48, 16, 0, 0, 0, 1, 49, -1, 1, 2, 0, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="12"> 				1, 0, 51, 50, 2, 0, 2, 0, 51, 52, 2, 0 </int_array>
 		</dictionary>
