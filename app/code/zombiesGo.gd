@@ -24,9 +24,9 @@ var howDiedTombCount = 3 #this is a count of the number of different flavor text
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
 func _ready():
-	playerDifficulty = get_node("/root/global").currentDifficulty
 	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	set_process(true) #Enables: _process(delta) to run every frame.
+	playerDifficulty = get_node("/root/global").currentDifficulty
 	
 	tombs = get_node("tombs")
 	
@@ -40,13 +40,12 @@ func _ready():
 			tombArray[x].append(load("res://scene/zombiesGoTomb.xscn").instance())
 			#print("Hello World " + str(x) + ", " + str(y))
 			#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
-			tombArray[x][y].set_margin(MARGIN_LEFT, x * 200)
-			tombArray[x][y].set_margin(MARGIN_TOP, y * 200)
+			tombArray[x][y].set_margin(MARGIN_LEFT, 1280/2 - xSizeArray[playerDifficulty]*200/2 + x * 200)
+			tombArray[x][y].set_margin(MARGIN_TOP, 720/2 - ySizeArray[playerDifficulty]*150/2  + y * 150)
 			tombs.add_child(tombArray[x][y])
 			
 	
 	#Init settings for round.
-	#playerDifficulty = difficulty
 	#eclipseRatio = (difficulty - 1) * 0.2
 	playerScore = 0
 	playerTime = 0
@@ -59,6 +58,12 @@ func _ready():
 	#	playerHealth = 5
 	#if playerDifficulty == 4:
 	#	playerHealth = 4
+
+	for x in range(xSizeArray[playerDifficulty]):
+		for y in range(ySizeArray[playerDifficulty]):
+			tombArray[x][y].get_node("normalTomb").show()
+			
+
 
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
