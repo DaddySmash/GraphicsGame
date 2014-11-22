@@ -24,6 +24,7 @@ var xTombSpacing = null
 var yTombSpacing = null
 var tombStyle = null
 var tombList = []
+var voidTombs = null #These tomb placeholders do not have any zombies coming up.
 
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
@@ -57,14 +58,18 @@ func _ready():
 	playerScore = 0
 	playerTime = 0
 	#specialAbilityAmmo = 0
-	if playerDifficulty == 0:
+	if playerDifficulty == 0: #Convert player health to an array like xSizeArray.
 		playerHealth = 3
+		voidTombs = 0 #Convert void tombs to an array like xSizeArray.
 	if playerDifficulty == 1:
 		playerHealth = 3
+		voidTombs = 1
 	if playerDifficulty == 2:
 		playerHealth = 3
+		voidTombs = 2
 	if playerDifficulty == 3:
 		playerHealth = 3
+		voidTombs = 3
 	
 	#Create List
 	tombList.resize(0)
