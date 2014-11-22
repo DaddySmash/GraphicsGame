@@ -47,7 +47,7 @@ func _ready():
 			tombArray[x].append(load("res://scene/zombiesGoTomb.xscn").instance())
 			#print("Hello World " + str(x) + ", " + str(y))
 			#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
-			tombArray[x][y].set_margin(MARGIN_LEFT, 1280/2 - xSizeArray[playerDifficulty]*xTombSpacing/2 + x * xTombSpacing)
+			tombArray[x][y].set_margin(MARGIN_LEFT, 1280/2 - xSizeArray[playerDifficulty]*xTombSpacing/2 + x * xTombSpacing + floor(rand_range( -xTombSpacing*.2, xTombSpacing*.2)))
 			tombArray[x][y].set_margin(MARGIN_TOP, 720/2 - ySizeArray[playerDifficulty]*yTombSpacing/2  + y * yTombSpacing)
 			tombs.add_child(tombArray[x][y])
 			
@@ -79,8 +79,20 @@ func _ready():
 			#tombArray[x][y].get_node("frontHole").show()
 	
 	for c in range(playerHealth):
-		var h = floor(rand_range(0, tombList.size()))
-		tombList[h].get_node("normalTomb").show()
+		if tombList.empty():
+			continue
+		var i = floor(rand_range(0, tombList.size()))
+		tombList[i].get_node("normalTomb").show()
+		tombList.remove(i)
+	
+	for i in range(tombList.size()):
+		var r = floor(rand_range(0, 3))
+		if r == 1:
+			tombList[i].get_node("brokenTomb").show()
+		elif r == 2:
+			tombList[i].get_node("missingTomb").show()
+		else:
+			pass
 
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):

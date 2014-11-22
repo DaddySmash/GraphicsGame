@@ -80,13 +80,14 @@
 							<string> "current" </string>
 							<int> 0 </int>
 							<string> "sources" </string>
-							<array  len="6" shared="false">
+							<array  len="7" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
 								<string> "res://code/global.gd" </string>
 								<string> "res://code/menu.gd" </string>
 								<string> "res://code/getName.gd" </string>
 								<string> "res://code/highScore.gd" </string>
 								<string> "res://code/getNameGlyph.gd" </string>
+								<string> "res://code/menuButtons.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
