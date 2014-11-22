@@ -11,7 +11,7 @@ extends Node
 var playerScore = null
 var playerTime = null
 var playerDifficulty = null #This has to be between 0 and 3 to match the size of xSizeArray and ySizeArray.
-#var playerHealth = null
+var playerHealth = null
 #var specialAbilityAmmo = null
 var tombArray = []
 var tombOrigen = null
@@ -22,6 +22,8 @@ var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
 var howDiedTombCount = 3 #this is a count of the number of different flavor texts that go on tombstones.
 var xTombSpacing = null
 var yTombSpacing = null
+var tombStyle = null
+var tombList = []
 
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
@@ -38,6 +40,7 @@ func _ready():
 	#	n = load("res://scene/getNameGlyph.xscn").instance()
 	#	glyph.add_child(n)
 	
+	tombArray.resize(0)
 	for x in range(xSizeArray[playerDifficulty]):
 		tombArray.append([])
 		for y in range(ySizeArray[playerDifficulty]):
@@ -54,21 +57,30 @@ func _ready():
 	playerScore = 0
 	playerTime = 0
 	#specialAbilityAmmo = 0
-	#if playerDifficulty == 1:
-	#	playerHealth = 3
-	#if playerDifficulty == 2:
-	#	playerHealth = 6
-	#if playerDifficulty == 3:
-	#	playerHealth = 5
-	#if playerDifficulty == 4:
-	#	playerHealth = 4
-
+	if playerDifficulty == 0:
+		playerHealth = 3
+	if playerDifficulty == 1:
+		playerHealth = 3
+	if playerDifficulty == 2:
+		playerHealth = 3
+	if playerDifficulty == 3:
+		playerHealth = 3
+	
+	#Create List
+	tombList.resize(0)
 	for x in range(xSizeArray[playerDifficulty]):
 		for y in range(ySizeArray[playerDifficulty]):
-			tombArray[x][y].get_node("normalTomb").show()
-			tombArray[x][y].get_node("backHole").show()
-			tombArray[x][y].get_node("frontHole").show()
-
+			tombList.append(tombArray[x][y])
+			
+			
+			#tombStyle = floor(rand_range( 0, 3)) #If floor ever returns the high value, it will be a bug on this line.
+			#tombArray[x][y].get_node("normalTomb").show()
+			#tombArray[x][y].get_node("backHole").show()
+			#tombArray[x][y].get_node("frontHole").show()
+	
+	for c in range(playerHealth):
+		var h = floor(rand_range(0, tombList.size()))
+		tombList[h].get_node("normalTomb").show()
 
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
