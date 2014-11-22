@@ -17,9 +17,11 @@ var tombArray = []
 var tombOrigen = null
 var tombs = null
 var tombNumberTotal = 0
-var xSizeArray = [3, 3, 4, 4] #[Easy, Normal, Hard, Insane]
-var ySizeArray = [1, 2, 3, 4] #[Easy, Normal, Hard, Insane]
+var xSizeArray = [3, 3, 4, 6] #[Easy, Normal, Hard, Insane]
+var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
 var howDiedTombCount = 3 #this is a count of the number of different flavor texts that go on tombstones.
+var xTombSpacing = null
+var yTombSpacing = null
 
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
@@ -29,7 +31,9 @@ func _ready():
 	playerDifficulty = get_node("/root/global").currentDifficulty
 	
 	tombs = get_node("tombs")
-	
+	xTombSpacing = 200
+	yTombSpacing = 175
+
 	#for g in range(glyphArray.size()):
 	#	n = load("res://scene/getNameGlyph.xscn").instance()
 	#	glyph.add_child(n)
@@ -40,8 +44,8 @@ func _ready():
 			tombArray[x].append(load("res://scene/zombiesGoTomb.xscn").instance())
 			#print("Hello World " + str(x) + ", " + str(y))
 			#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
-			tombArray[x][y].set_margin(MARGIN_LEFT, 1280/2 - xSizeArray[playerDifficulty]*200/2 + x * 200)
-			tombArray[x][y].set_margin(MARGIN_TOP, 720/2 - ySizeArray[playerDifficulty]*150/2  + y * 150)
+			tombArray[x][y].set_margin(MARGIN_LEFT, 1280/2 - xSizeArray[playerDifficulty]*xTombSpacing/2 + x * xTombSpacing)
+			tombArray[x][y].set_margin(MARGIN_TOP, 720/2 - ySizeArray[playerDifficulty]*yTombSpacing/2  + y * yTombSpacing)
 			tombs.add_child(tombArray[x][y])
 			
 	
@@ -62,7 +66,8 @@ func _ready():
 	for x in range(xSizeArray[playerDifficulty]):
 		for y in range(ySizeArray[playerDifficulty]):
 			tombArray[x][y].get_node("normalTomb").show()
-			
+			tombArray[x][y].get_node("backHole").show()
+			tombArray[x][y].get_node("frontHole").show()
 
 
 func _notification(what):
