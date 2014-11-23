@@ -25,6 +25,7 @@ var xTombSpacing = null
 var yTombSpacing = null
 var tombStyle = null
 var tombList = []
+var time
 
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
@@ -78,32 +79,35 @@ func _ready():
 		tombList[i].get_node("normalTomb").show()
 		tombList[i].get_node("frontHole").show()
 		tombList[i].get_node("backHole").show()
-		tombList[i].get_node("rubbleHole").show()
+		#tombList[i].get_node("rubbleHole").show()
 		tombList.remove(i)
 		
 	for c in range(voidTombs[playerDifficulty]): #Make voild tombs.
 		if tombList.empty():
 			continue
 		var i = floor(rand_range(0, tombList.size()))
+		tombList[i].get_node("rubbleHole").show()
 		tombList.remove(i)
 	
 	for i in range(tombList.size()): #Make the rest of the tombs.
-		var r = floor(rand_range(0, 3))
+		var r = floor(rand_range(0, 2))
 		if r == 0:
 			tombList[i].get_node("brokenTomb").show()
 			tombList[i].get_node("frontHole").show()
 			tombList[i].get_node("backHole").show()
-			tombList[i].get_node("rubbleHole").show()
+			#tombList[i].get_node("rubbleHole").show()
 		elif r == 1:
 			tombList[i].get_node("missingTomb").show()
 			tombList[i].get_node("frontHole").show()
 			tombList[i].get_node("backHole").show()
-			tombList[i].get_node("rubbleHole").show()
+			#tombList[i].get_node("rubbleHole").show()
 		else:
-			tombList[i].get_node("frontHole").show()
-			tombList[i].get_node("backHole").show()
-			tombList[i].get_node("rubbleHole").show()
 			pass
+			
+	tombList.resize(0)
+	for x in range(xSizeArray[playerDifficulty]):
+		for y in range(ySizeArray[playerDifficulty]):
+			tombList.append(tombArray[x][y])
 
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
@@ -116,7 +120,25 @@ func _process(delta):
 	#get_node("/root/global").timeString(time)
 	playerTime = playerTime + delta
 	get_node("displayPlayerTimeOnScreen").set_text(get_node("/root/global").timeString(playerTime))
-	
+	if playerDifficulty == 3:
+		#isDied()= true
+		pass
+		
+	for c in range(playerHealth[playerDifficulty]): #Temporarily make all zombies show.
+		if tombList.empty():
+			continue
+		var i = floor(rand_range(0, tombList.size()))
+		tombList[i].get_node("zombieNormal").show()
+		
+	#Now move zombies.
+	time = int(floor(playerTime))
+	for x in range(xSizeArray[playerDifficulty]):
+		for y in range(ySizeArray[playerDifficulty]):
+			#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
+			if time % 2 > 0.5:
+				tombArray[x][y].get_node("zombieNormal").set_margin(MARGIN_TOP, tombArray[x][y].get_node("zombieNormal").get_margin(MARGIN_TOP)+1)
+			else:
+				tombArray[x][y].get_node("zombieNormal").set_margin(MARGIN_TOP, tombArray[x][y].get_node("zombieNormal").get_margin(MARGIN_TOP)-1)
 
 func _on_backGround_pressed():
 	#Submit current game and save highArray before ending round.
@@ -129,3 +151,7 @@ func _on_frontGround_pressed():
 	#updateHighScore(score, time)
 	get_node("/root/global").enteringMenu = true
 	get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
+	
+func isDied():
+	get_node("/root/global").enteringMenu = true
+	get_node("/root/global").updateHighScore(playerScore, playerTime)
