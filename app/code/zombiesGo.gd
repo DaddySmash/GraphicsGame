@@ -11,7 +11,6 @@ extends Node
 var playerScore = null
 var playerTime = null
 var playerDifficulty = null #This has to be between 0 and 3 to match the size of xSizeArray and ySizeArray.
-var playerHealth = null
 #var specialAbilityAmmo = null
 var tombArray = []
 var tombOrigen = null
@@ -19,12 +18,13 @@ var tombs = null
 var tombNumberTotal = 0
 var xSizeArray = [3, 3, 4, 6] #[Easy, Normal, Hard, Insane]
 var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
+var playerHealth = [3, 3, 3, 3] #[Easy, Normal, Hard, Insane]
+var voidTombs = [0, 1, 2, 3] #[Easy, Normal, Hard, Insane] These tomb placeholders do not have any zombies coming up.
 var howDiedTombCount = 3 #this is a count of the number of different flavor texts that go on tombstones.
 var xTombSpacing = null
 var yTombSpacing = null
 var tombStyle = null
 var tombList = []
-var voidTombs = null #These tomb placeholders do not have any zombies coming up.
 
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
@@ -58,18 +58,6 @@ func _ready():
 	playerScore = 0
 	playerTime = 0
 	#specialAbilityAmmo = 0
-	if playerDifficulty == 0: #Convert player health to an array like xSizeArray.
-		playerHealth = 3
-		voidTombs = 0 #Convert void tombs to an array like xSizeArray.
-	if playerDifficulty == 1:
-		playerHealth = 3
-		voidTombs = 1
-	if playerDifficulty == 2:
-		playerHealth = 3
-		voidTombs = 2
-	if playerDifficulty == 3:
-		playerHealth = 3
-		voidTombs = 3
 	
 	#Create List
 	tombList.resize(0)
@@ -83,20 +71,38 @@ func _ready():
 			#tombArray[x][y].get_node("backHole").show()
 			#tombArray[x][y].get_node("frontHole").show()
 	
-	for c in range(playerHealth):
+	for c in range(playerHealth[playerDifficulty]): #Make normal tombs for player health.
 		if tombList.empty():
 			continue
 		var i = floor(rand_range(0, tombList.size()))
 		tombList[i].get_node("normalTomb").show()
+		tombList[i].get_node("frontHole").show()
+		tombList[i].get_node("backHole").show()
+		tombList[i].get_node("rubbleHole").show()
+		tombList.remove(i)
+		
+	for c in range(voidTombs[playerDifficulty]): #Make voild tombs.
+		if tombList.empty():
+			continue
+		var i = floor(rand_range(0, tombList.size()))
 		tombList.remove(i)
 	
-	for i in range(tombList.size()):
+	for i in range(tombList.size()): #Make the rest of the tombs.
 		var r = floor(rand_range(0, 3))
-		if r == 1:
+		if r == 0:
 			tombList[i].get_node("brokenTomb").show()
-		elif r == 2:
+			tombList[i].get_node("frontHole").show()
+			tombList[i].get_node("backHole").show()
+			tombList[i].get_node("rubbleHole").show()
+		elif r == 1:
 			tombList[i].get_node("missingTomb").show()
+			tombList[i].get_node("frontHole").show()
+			tombList[i].get_node("backHole").show()
+			tombList[i].get_node("rubbleHole").show()
 		else:
+			tombList[i].get_node("frontHole").show()
+			tombList[i].get_node("backHole").show()
+			tombList[i].get_node("rubbleHole").show()
 			pass
 
 func _notification(what):
