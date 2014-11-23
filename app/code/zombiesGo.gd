@@ -16,6 +16,7 @@ var tombArray = []
 var tombOrigen = null
 var tombs = null
 var tombNumberTotal = 0
+var zombieData = []
 var xSizeArray = [3, 3, 4, 6] #[Easy, Normal, Hard, Insane]
 var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
 var playerHealth = [3, 3, 3, 3] #[Easy, Normal, Hard, Insane]
@@ -26,6 +27,7 @@ var yTombSpacing = null
 var tombStyle = null
 var tombList = []
 var time
+var zombieTime = {}
 
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
@@ -104,10 +106,12 @@ func _ready():
 		else:
 			pass
 			
-	tombList.resize(0)
+	data.resize(0)
 	for x in range(xSizeArray[playerDifficulty]):
 		for y in range(ySizeArray[playerDifficulty]):
-			tombList.append(tombArray[x][y])
+			data.append({node:tombArray[x][y], zombieTime:2})
+			
+
 
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
@@ -120,25 +124,19 @@ func _process(delta):
 	#get_node("/root/global").timeString(time)
 	playerTime = playerTime + delta
 	get_node("displayPlayerTimeOnScreen").set_text(get_node("/root/global").timeString(playerTime))
+	time = int(floor(playerTime))
+	
 	if playerDifficulty == 3:
 		#isDied()= true
 		pass
 		
-	for c in range(playerHealth[playerDifficulty]): #Temporarily make all zombies show.
-		if tombList.empty():
-			continue
+	for c in range(size(data{})): #Temporarily make all zombies show.
 		var i = floor(rand_range(0, tombList.size()))
 		tombList[i].get_node("zombieNormal").show()
-		
-	#Now move zombies.
-	time = int(floor(playerTime))
-	for x in range(xSizeArray[playerDifficulty]):
-		for y in range(ySizeArray[playerDifficulty]):
-			#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
-			if time % 2 > 0.5:
-				tombArray[x][y].get_node("zombieNormal").set_margin(MARGIN_TOP, tombArray[x][y].get_node("zombieNormal").get_margin(MARGIN_TOP)+1)
-			else:
-				tombArray[x][y].get_node("zombieNormal").set_margin(MARGIN_TOP, tombArray[x][y].get_node("zombieNormal").get_margin(MARGIN_TOP)-1)
+		#if time <= 2:
+		#	zombieMove() = true
+		#else:
+		#	zombieMove() = false
 
 func _on_backGround_pressed():
 	#Submit current game and save highArray before ending round.
@@ -155,3 +153,20 @@ func _on_frontGround_pressed():
 func isDied():
 	get_node("/root/global").enteringMenu = true
 	get_node("/root/global").updateHighScore(playerScore, playerTime)
+	
+func zombieMove(): #Now move zombies up, then down.  Use zombieTime.
+	for x in range(xSizeArray[playerDifficulty]):
+		for y in range(ySizeArray[playerDifficulty]):
+			#MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM
+			if time % 2 > 0.5:
+				#This one runs second.
+				tombArray[x][y].get_node("zombieNormal").set_margin(MARGIN_TOP, tombArray[x][y].get_node("zombieNormal").get_margin(MARGIN_TOP)+1)
+			else:
+				#This one runs first.
+				tombArray[x][y].get_node("zombieNormal").set_margin(MARGIN_TOP, tombArray[x][y].get_node("zombieNormal").get_margin(MARGIN_TOP)-1)
+	if time > 2:
+		return
+		
+func getIndexFromNode(node):
+	#Search data[] for this node.
+	return i
