@@ -12,7 +12,7 @@ var diffNode
 var rankNode
 
 func _ready():
-	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
+	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	highArray = get_node("/root/global").highArray
 	#root.get_child(root.get_child_count() - 1)
 	highNode = get_node("highNode")

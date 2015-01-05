@@ -8,7 +8,7 @@ var x = 0
 var y = (-340 / 3)
 
 func _ready():
-	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
+	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	glyph = get_node("glyph")
 	for g in range(glyphArray.size()): # NO IDEA WHY THERE IS AN INVISIBLE NODE
 		n = load("res://scene/getNameGlyph.xscn").instance()
