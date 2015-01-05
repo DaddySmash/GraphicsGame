@@ -8,7 +8,8 @@ cd app
 if [ ! -x godot ]; then
   echo&echo Please download, rename, and chmod the Godot Engine to: ./app/godot
 else
-  ./alpha
+  rem= # ./alpha
+  ../alpha
 fi
 cd ..
 exit
@@ -20,7 +21,7 @@ cd app
 if not exist "godot.exe" (
   echo.&echo Please download and rename the Godot Engine to: ./app/godot.exe
 ) else (
-  alpha.exe
+  ../alpha.exe
 )
 cd ..
 echo.&echo Press any key to close...&pause >nul
