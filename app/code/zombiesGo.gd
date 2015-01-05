@@ -32,7 +32,7 @@ var zombieTime = {}
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
 func _ready():
-	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
+	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	set_process(true) #Enables: _process(delta) to run every frame.
 	playerDifficulty = get_node("/root/global").currentDifficulty
 	
@@ -106,11 +106,11 @@ func _ready():
 		else:
 			pass
 			
-	data.resize(0)
-	for x in range(xSizeArray[playerDifficulty]):
-		for y in range(ySizeArray[playerDifficulty]):
-			data.append({node:tombArray[x][y], zombieTime:2})
-			
+	#zombieData.resize(0)
+	#for x in range(xSizeArray[playerDifficulty]):
+	#	for y in range(ySizeArray[playerDifficulty]):
+	#		zombieData.append({node:tombArray[x][y], zombieTime:2})
+	#		
 
 
 func _notification(what):
@@ -130,7 +130,7 @@ func _process(delta):
 		#isDied()= true
 		pass
 		
-	for c in range(size(data{})): #Temporarily make all zombies show.
+	for c in range(zombieData.size()): #Temporarily make all zombies show. # Mayby use zombieData.size()
 		var i = floor(rand_range(0, tombList.size()))
 		tombList[i].get_node("zombieNormal").show()
 		#if time <= 2:
@@ -167,6 +167,6 @@ func zombieMove(): #Now move zombies up, then down.  Use zombieTime.
 	if time > 2:
 		return
 		
-func getIndexFromNode(node):
-	#Search data[] for this node.
-	return i
+#func getIndexFromNode(node):
+#	#Search zombieData[] for this node.
+#	return i

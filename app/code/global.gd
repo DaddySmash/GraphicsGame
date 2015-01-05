@@ -28,15 +28,15 @@ const STAT_NEW = 3
 var highArray = []
 
 func _ready():
-	get_scene().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
+	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	randomize()
-	var root = get_scene().get_root()
+	var root = get_tree().get_root()
 	currentScene = root.get_child(root.get_child_count() - 1)
 	loadHighScore()
 
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
-		get_scene().quit() #default behavior
+		get_tree().quit() #default behavior
 
 func loadHighScore():
 	#this function is to load the high scores for viewing.
@@ -190,7 +190,7 @@ func timeString(time):
 		return str(floor(time / 60)) + ":" + str(time % 60)
 
 func enterOS():
-	get_scene().quit()
+	get_tree().quit()
 
 func enterGetName():
 	#Make sure you call get_node("/root/global").currentName = "INITAlS" AND get_node("/root/global").updateHighScorePart2()
@@ -198,7 +198,7 @@ func enterGetName():
 		var s = ResourceLoader.load("res://scene/getName.xscn")
 		currentScene.queue_free()
 		currentScene = s.instance()
-		get_scene().get_root().add_child(currentScene)
+		get_tree().get_root().add_child(currentScene)
 
 func enterHighScore():
 	#Only display the top 9 of each difficulty.
@@ -206,14 +206,14 @@ func enterHighScore():
 		var s = ResourceLoader.load("res://scene/highScore.xscn")
 		currentScene.queue_free()
 		currentScene = s.instance()
-		get_scene().get_root().add_child(currentScene)
+		get_tree().get_root().add_child(currentScene)
 
 func enterDonate():
 	OS.shell_open("https://github.com/DaddySmash/GraphicsGame")
 	#var s = ResourceLoader.load("res://scene/donate.xscn")
 	#currentScene.queue_free()
 	#currentScene = s.instance()
-	#get_scene().get_root().add_child(currentScene)
+	#get_tree().get_root().add_child(currentScene)
 	enteringDonate = false
 
 func enterRound(difficulty):
@@ -222,12 +222,12 @@ func enterRound(difficulty):
 	var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
 	currentScene.queue_free()
 	currentScene = s.instance()
-	get_scene().get_root().add_child(currentScene)
+	get_tree().get_root().add_child(currentScene)
 	enteringRound = false
 
 func enterMenu():
 	var s = ResourceLoader.load("res://scene/menu.xscn")
 	currentScene.queue_free()
 	currentScene = s.instance()
-	get_scene().get_root().add_child(currentScene)
+	get_tree().get_root().add_child(currentScene)
 	enteringMenu = false
