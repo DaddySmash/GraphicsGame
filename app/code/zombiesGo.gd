@@ -16,7 +16,7 @@ var tombArray = []
 var tombOrigen = null
 var tombs = null
 var tombNumberTotal = 0 
-var zombieData = [] #[{"node":tomb, "zombieTime":time, "zombieDelay":rand_range(0, 4)}, {...}, ...]
+var zombieData = [] #[{"node":tomb, "zombieTime":time, "zombieStart":rand_range(0, 4)}, {...}, ...]
 #zombieData[0] = {"node":tomb, "zombieTime":time}
 #zombieData[1].node = tomb
 const xTombSpacing = 200
@@ -24,7 +24,6 @@ const yTombSpacing = 175
 var tombStyle = null
 var tombList = []
 var time = null
-var zombieTime = {}
 
 var xSizeArray = [3, 3, 4, 6] #[Easy, Normal, Hard, Insane]
 var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
@@ -33,11 +32,27 @@ var voidTombs = [0, 1, 2, 3] #[Easy, Normal, Hard, Insane] These tomb placeholde
 var howDiedTombCount = 3 #this is a count of the number of different flavor texts that go on tombstones.
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
+func zombieStart(index):
+	zombieData[index].zombieTime = rand_range(1.85, 2.15)
+	zombieData[index].zombieStart = rand_range(0, 4)
+
 func zombieDataInit():
 	zombieData.resize(0)
 	for x in range(xSizeArray[playerDifficulty]):
 		for y in range(ySizeArray[playerDifficulty]):
-			zombieData.append({"node":tombArray[x][y], "zombieTime":2, "zombieDelay":rand_range(0, 4)})
+			zombieData.append({"node":tombArray[x][y], "zombieTime":0, "zombieStart":0})
+	for c in range(zombieData.size()):
+		if zombieData.empty():
+			continue
+		zombieStart(c)
+
+func getIndexFromNode(node): #When passed a node, find that node's index inside of zombieData.
+	for c in range(zombieData.size()):
+		if zombieData.empty():
+			continue
+		if zombieData[c].node == node:
+			return c
+	return null
 
 func _ready():
 	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
@@ -45,7 +60,7 @@ func _ready():
 	playerDifficulty = get_node("/root/global").currentDifficulty
 	
 	tombs = get_node("tombs")
-
+	
 	#for g in range(glyphArray.size()):
 	#	n = load("res://scene/getNameGlyph.xscn").instance()
 	#	glyph.add_child(n)
@@ -126,7 +141,7 @@ func _process(delta):
 	playerTime = playerTime + delta
 	get_node("displayPlayerTimeOnScreen").set_text(get_node("/root/global").timeString(playerTime))
 	time = int(floor(playerTime))
-	
+	# Check for death.
 	if playerDifficulty == 3:
 		#isDied()= true
 		pass
@@ -169,7 +184,3 @@ func zombieMove(): #Now move zombies up, then down.  Use zombieTime.
 				tombArray[x][y].get_node("zombieNormal").set_margin(MARGIN_TOP, tombArray[x][y].get_node("zombieNormal").get_margin(MARGIN_TOP)-1)
 	if time > 2:
 		return
-		
-#func getIndexFromNode(node):
-#	#Search zombieData[] for this node.
-#	return i

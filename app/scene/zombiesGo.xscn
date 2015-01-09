@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://code/zombiesGo.gd" type="Script"></ext_resource>
 	<ext_resource path="res://visual/tomb.fnt" type="Font"></ext_resource>
 	<ext_resource path="res://visual/frontGround.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/backGround.png" type="Texture"></ext_resource>
-	<ext_resource path="res://code/zombiesGo.gd" type="Script"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
@@ -99,7 +99,7 @@
 							<string> "use_snap" </string>
 							<bool> False </bool>
 							<string> "ofs" </string>
-							<vector2> -47.5989, -51.5283 </vector2>
+							<vector2> -1181.21, -51.5283 </vector2>
 							<string> "snap" </string>
 							<int> 10 </int>
 						</dictionary>
