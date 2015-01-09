@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
+<resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://visual/tomb.fnt" type="Font"></ext_resource>
 	<ext_resource path="res://visual/frontGround.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/backGround.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/tomb.fnt" type="Font"></ext_resource>
 	<ext_resource path="res://code/zombiesGo.gd" type="Script"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
@@ -105,6 +105,8 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
 							<string> "zfar" </string>
 							<real> 500 </real>
 							<string> "fov" </string>
@@ -118,9 +120,11 @@
 									<real> 0 </real>
 									<string> "y_rot" </string>
 									<real> 0 </real>
-									<string> "use_orthogonal" </string>
-									<bool> False </bool>
+									<string> "listener" </string>
+									<bool> True </bool>
 									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "pos" </string>
 									<vector3> 0, 0, 0 </vector3>
@@ -132,9 +136,11 @@
 									<real> 0 </real>
 									<string> "y_rot" </string>
 									<real> 0 </real>
-									<string> "use_orthogonal" </string>
+									<string> "listener" </string>
 									<bool> False </bool>
 									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "pos" </string>
 									<vector3> 0, 0, 0 </vector3>
@@ -146,9 +152,11 @@
 									<real> 0 </real>
 									<string> "y_rot" </string>
 									<real> 0 </real>
-									<string> "use_orthogonal" </string>
+									<string> "listener" </string>
 									<bool> False </bool>
 									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "pos" </string>
 									<vector3> 0, 0, 0 </vector3>
@@ -160,9 +168,11 @@
 									<real> 0 </real>
 									<string> "y_rot" </string>
 									<real> 0 </real>
-									<string> "use_orthogonal" </string>
+									<string> "listener" </string>
 									<bool> False </bool>
 									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "pos" </string>
 									<vector3> 0, 0, 0 </vector3>
@@ -172,12 +182,18 @@
 							<int> 1 </int>
 							<string> "default_light" </string>
 							<bool> True </bool>
+							<string> "ambient_light_color" </string>
+							<color> 0.15, 0.15, 0.15, 1 </color>
 							<string> "show_grid" </string>
 							<bool> True </bool>
 							<string> "show_origin" </string>
 							<bool> True </bool>
 							<string> "znear" </string>
 							<real> 0.1 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>

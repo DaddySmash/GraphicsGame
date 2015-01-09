@@ -15,21 +15,29 @@ var playerDifficulty = null #This has to be between 0 and 3 to match the size of
 var tombArray = []
 var tombOrigen = null
 var tombs = null
-var tombNumberTotal = 0
-var zombieData = []
+var tombNumberTotal = 0 
+var zombieData = [] #[{"node":tomb, "zombieTime":time, "zombieDelay":rand_range(0, 4)}, {...}, ...]
+#zombieData[0] = {"node":tomb, "zombieTime":time}
+#zombieData[1].node = tomb
+const xTombSpacing = 200
+const yTombSpacing = 175
+var tombStyle = null
+var tombList = []
+var time = null
+var zombieTime = {}
+
 var xSizeArray = [3, 3, 4, 6] #[Easy, Normal, Hard, Insane]
 var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
 var playerHealth = [3, 3, 3, 3] #[Easy, Normal, Hard, Insane]
 var voidTombs = [0, 1, 2, 3] #[Easy, Normal, Hard, Insane] These tomb placeholders do not have any zombies coming up.
 var howDiedTombCount = 3 #this is a count of the number of different flavor texts that go on tombstones.
-var xTombSpacing = null
-var yTombSpacing = null
-var tombStyle = null
-var tombList = []
-var time
-var zombieTime = {}
-
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
+
+func zombieDataInit():
+	zombieData.resize(0)
+	for x in range(xSizeArray[playerDifficulty]):
+		for y in range(ySizeArray[playerDifficulty]):
+			zombieData.append({"node":tombArray[x][y], "zombieTime":2, "zombieDelay":rand_range(0, 4)})
 
 func _ready():
 	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
@@ -37,14 +45,12 @@ func _ready():
 	playerDifficulty = get_node("/root/global").currentDifficulty
 	
 	tombs = get_node("tombs")
-	xTombSpacing = 200
-	yTombSpacing = 175
 
 	#for g in range(glyphArray.size()):
 	#	n = load("res://scene/getNameGlyph.xscn").instance()
 	#	glyph.add_child(n)
 	
-	tombArray.resize(0)
+	tombArray.resize(0) #This initiallizes the tombArray to empty before we start adding to it.
 	for x in range(xSizeArray[playerDifficulty]):
 		tombArray.append([])
 		for y in range(ySizeArray[playerDifficulty]):
@@ -62,17 +68,7 @@ func _ready():
 	playerTime = 0
 	#specialAbilityAmmo = 0
 	
-	#Create List
-	tombList.resize(0)
-	for x in range(xSizeArray[playerDifficulty]):
-		for y in range(ySizeArray[playerDifficulty]):
-			tombList.append(tombArray[x][y])
-			
-			
-			#tombStyle = floor(rand_range( 0, 3)) #If floor ever returns the high value, it will be a bug on this line.
-			#tombArray[x][y].get_node("normalTomb").show()
-			#tombArray[x][y].get_node("backHole").show()
-			#tombArray[x][y].get_node("frontHole").show()
+	createTombList()
 	
 	for c in range(playerHealth[playerDifficulty]): #Make normal tombs for player health.
 		if tombList.empty():
@@ -84,7 +80,7 @@ func _ready():
 		#tombList[i].get_node("rubbleHole").show()
 		tombList.remove(i)
 		
-	for c in range(voidTombs[playerDifficulty]): #Make voild tombs.
+	for c in range(voidTombs[playerDifficulty]): #Make void tombs.
 		if tombList.empty():
 			continue
 		var i = floor(rand_range(0, tombList.size()))
@@ -92,6 +88,8 @@ func _ready():
 		tombList.remove(i)
 	
 	for i in range(tombList.size()): #Make the rest of the tombs.
+		if tombList.empty():
+			continue
 		var r = floor(rand_range(0, 2))
 		if r == 0:
 			tombList[i].get_node("brokenTomb").show()
@@ -106,12 +104,15 @@ func _ready():
 		else:
 			pass
 			
-	#zombieData.resize(0)
-	#for x in range(xSizeArray[playerDifficulty]):
-	#	for y in range(ySizeArray[playerDifficulty]):
-	#		zombieData.append({node:tombArray[x][y], zombieTime:2})
-	#		
+	createTombList()
+	zombieDataInit()
+	
 
+func createTombList(): #Create List
+	tombList.resize(0)
+	for x in range(xSizeArray[playerDifficulty]):
+		for y in range(ySizeArray[playerDifficulty]):
+			tombList.append(tombArray[x][y])
 
 func _notification(what):
 	if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
@@ -131,8 +132,10 @@ func _process(delta):
 		pass
 		
 	for c in range(zombieData.size()): #Temporarily make all zombies show. # Mayby use zombieData.size()
-		var i = floor(rand_range(0, tombList.size()))
-		tombList[i].get_node("zombieNormal").show()
+		if zombieData.empty():
+			continue
+		var i = floor(rand_range(0, zombieData.size()))
+		zombieData[i].node.get_node("zombieNormal").show()
 		#if time <= 2:
 		#	zombieMove() = true
 		#else:
