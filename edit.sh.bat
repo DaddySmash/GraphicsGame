@@ -23,5 +23,5 @@ if not exist "godot.exe" (
   "godot.exe" -e
 )
 cd ..
-echo.&echo Press any key to close...&pause >nul
+echo.&echo Press any key to close window...&pause >nul
 exit /b
