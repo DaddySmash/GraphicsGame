@@ -40,12 +40,6 @@ func _notification(what):
 		get_node("/root/global").enteringOS = true
 		get_node("/root/global").enterOS()
 
-func _on_frontGround_pressed():
-	if get_node("/root/global").enteringOS:
-		get_node("/root/global").enterOS()
-	else:
-		get_node("/root/global").enterMenu()
-
 func _on_backGround_pressed():
 	if get_node("/root/global").enteringOS:
 		get_node("/root/global").enterOS()

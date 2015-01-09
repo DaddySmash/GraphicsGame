@@ -156,22 +156,16 @@ func _process(delta):
 		#else:
 		#	zombieMove() = false
 
+func isDied():
+	get_node("/root/global").enteringMenu = true
+	get_node("/root/global").updateHighScore(playerScore, playerTime)
+
 func _on_backGround_pressed():
 	#Submit current game and save highArray before ending round.
 	#updateHighScore(score, time)
 	get_node("/root/global").enteringMenu = true
 	get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
 
-func _on_frontGround_pressed():
-	#Submit current game and save highArray before ending round.
-	#updateHighScore(score, time)
-	get_node("/root/global").enteringMenu = true
-	get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
-	
-func isDied():
-	get_node("/root/global").enteringMenu = true
-	get_node("/root/global").updateHighScore(playerScore, playerTime)
-	
 func zombieMove(): #Now move zombies up, then down.  Use zombieTime.
 	for x in range(xSizeArray[playerDifficulty]):
 		for y in range(ySizeArray[playerDifficulty]):
