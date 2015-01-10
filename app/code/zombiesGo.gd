@@ -1,8 +1,9 @@
 extends Node
 
-#get_node("/root/global").enteringOS   <--This is the proper method to quit to desktop.
-#get_node("/root/global").enteringMenu  <--This is the proper method to get to the main menu.
-#get_node("/root/global").currentDifficulty  <--This is the proper method to get the difficulty.
+#get_node("/root/global").enteringOS               <--This is the proper method to quit to desktop.
+#get_node("/root/global").enteringMenu             <--This is the proper method to get to the main menu.
+#get_node("/root/global").currentDifficulty        <--This is the proper method to get the difficulty.
+#get_node("/root/global").disableInputForXMs(1000) <--This is the proper method to rapid inputs.
 
 #Time based variables.
 #var eclipseRatio = null
@@ -161,10 +162,11 @@ func isDied():
 	get_node("/root/global").updateHighScore(playerScore, playerTime)
 
 func _on_backGround_pressed():
-	#Submit current game and save highArray before ending round.
-	#updateHighScore(score, time)
-	get_node("/root/global").enteringMenu = true
-	get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
+	if get_node("/root/global").isInputEnabled():
+		#Submit current game and save highArray before ending round.
+		#updateHighScore(score, time)
+		get_node("/root/global").enteringMenu = true
+		get_node("/root/global").updateHighScore(rand_range(0, 9999), rand_range(0, 59))
 
 func zombieMove(): #Now move zombies up, then down.  Use zombieTime.
 	for x in range(xSizeArray[playerDifficulty]):

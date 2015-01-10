@@ -11,6 +11,10 @@ var enteringOS = false
 var enteringMenu = false
 var enteringRound = false
 var enteringDonate = false
+var disableInputTilTime = OS.get_ticks_msec()
+const defaultDisableInputLength = 500;
+# func disableInputForXMs(x = defaultDisableInputLength)
+# func isInputEnabled()
 
 #Highscores that are saved to disk.
 #  highArray[difficulty][rank][stat] = value
@@ -189,6 +193,12 @@ func timeString(time):
 	else:
 		return str(floor(time / 60)) + ":" + str(time % 60)
 
+func disableInputForXMs(x = defaultDisableInputLength):
+	disableInputTilTime = OS.get_ticks_msec() + x
+
+func isInputEnabled():
+	return (OS.get_ticks_msec() >= disableInputTilTime)
+
 func enterOS():
 	get_tree().quit()
 
@@ -199,6 +209,7 @@ func enterGetName():
 		currentScene.queue_free()
 		currentScene = s.instance()
 		get_tree().get_root().add_child(currentScene)
+		disableInputForXMs()
 
 func enterHighScore():
 	#Only display the top 9 of each difficulty.
@@ -207,6 +218,7 @@ func enterHighScore():
 		currentScene.queue_free()
 		currentScene = s.instance()
 		get_tree().get_root().add_child(currentScene)
+		disableInputForXMs()
 
 func enterDonate():
 	OS.shell_open("https://github.com/DaddySmash/GraphicsGame")
@@ -215,6 +227,7 @@ func enterDonate():
 	#currentScene = s.instance()
 	#get_tree().get_root().add_child(currentScene)
 	enteringDonate = false
+	disableInputForXMs()
 
 func enterRound(difficulty):
 	currentDifficulty = difficulty #currentDifficulty should be accessed by zombiesGo.gd
@@ -224,6 +237,7 @@ func enterRound(difficulty):
 	currentScene = s.instance()
 	get_tree().get_root().add_child(currentScene)
 	enteringRound = false
+	disableInputForXMs()
 
 func enterMenu():
 	var s = ResourceLoader.load("res://scene/menu.xscn")
@@ -231,3 +245,4 @@ func enterMenu():
 	currentScene = s.instance()
 	get_tree().get_root().add_child(currentScene)
 	enteringMenu = false
+	disableInputForXMs()

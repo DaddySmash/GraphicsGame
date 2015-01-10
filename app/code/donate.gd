@@ -15,9 +15,6 @@ func _process(delta):
 	pass
 
 func _on_backGround_pressed():
-	get_node("/root/global").enteringMenu = true
-	get_node("/root/global").enterMenu()
-
-func _on_frontGround_pressed():
-	get_node("/root/global").enteringMenu = true
-	get_node("/root/global").enterMenu()
+	if get_node("/root/global").isInputEnabled():
+		get_node("/root/global").enteringMenu = true
+		get_node("/root/global").enterMenu()

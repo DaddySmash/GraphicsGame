@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="9" version="1.0" version_name="Godot Engine v1.0.3917-beta1">
-	<ext_resource path="res://visual/atlasDifficulty4Tomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/atlasDifficulty2Tomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/atlasDifficulty1Tomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/atlasDifficulty3Tomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/atlasFleeTomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://scene/highScoreRank.xscn" type="PackedScene"></ext_resource>
+<resource_file type="PackedScene" subresource_count="9" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
 	<ext_resource path="res://code/menuButtons.gd" type="Script"></ext_resource>
+	<ext_resource path="res://visual/atlasDifficulty2Tomb.xatex" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/atlasDifficulty3Tomb.xatex" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/atlasDifficulty1Tomb.xatex" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/atlasDonateTomb.xatex" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/atlasFleeTomb.xatex" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/atlasDifficulty4Tomb.xatex" type="Texture"></ext_resource>
+	<ext_resource path="res://scene/highScoreRank.xscn" type="PackedScene"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
@@ -70,7 +70,7 @@
 			<string> "node_count" </string>
 			<int> 8 </int>
 			<string> "variants" </string>
-			<array  len="32" shared="false">
+			<array  len="33" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -87,7 +87,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 3 </int>
 							<string> "sources" </string>
 							<array  len="4" shared="false">
 								<string> "res://code/menu.gd" </string>
@@ -111,10 +111,135 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
 							<string> "zfar" </string>
 							<real> 500 </real>
 							<string> "fov" </string>
 							<real> 45 </real>
+							<string> "viewports" </string>
+							<array  len="4" shared="false">
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 10.07268 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> True </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+							</array>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
+							<string> "ambient_light_color" </string>
+							<color> 0.15, 0.15, 0.15, 1 </color>
+							<string> "show_grid" </string>
+							<bool> True </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
+							<string> "znear" </string>
+							<real> 0.1 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
+						</dictionary>
+					</dictionary>
+					<string> "__editor_run_settings__" </string>
+					<dictionary  shared="false">
+						<string> "custom_args" </string>
+						<string> "-l $scene" </string>
+						<string> "run_mode" </string>
+						<int> 0 </int>
+					</dictionary>
+					<string> "__editor_plugin_screen__" </string>
+					<string> "Script" </string>
+				</dictionary>
+				<real> 100 </real>
+				<real> 130 </real>
+				<resource  resource_type="Texture" path="res://visual/atlasFleeTomb.xatex">  </resource>
+				<resource name=""></resource>				<resource  resource_type="PackedScene" path="res://scene/highScoreRank.xscn">  </resource>
+				<real> 170 </real>
+				<real> 270 </real>
+				<dictionary  shared="false">
+					<string> "__editor_plugin_states__" </string>
+					<dictionary  shared="false">
+						<string> "2D" </string>
+						<dictionary  shared="false">
+							<string> "pixel_snap" </string>
+							<bool> True </bool>
+							<string> "zoom" </string>
+							<real> 1 </real>
+							<string> "use_snap" </string>
+							<bool> False </bool>
+							<string> "ofs" </string>
+							<vector2> -538.954, -219.942 </vector2>
+							<string> "snap" </string>
+							<int> 10 </int>
+						</dictionary>
+						<string> "3D" </string>
+						<dictionary  shared="false">
+							<string> "fov" </string>
+							<real> 45 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -180,10 +305,10 @@
 							<bool> True </bool>
 							<string> "show_grid" </string>
 							<bool> True </bool>
-							<string> "show_origin" </string>
-							<bool> True </bool>
 							<string> "znear" </string>
 							<real> 0.1 </real>
+							<string> "show_origin" </string>
+							<bool> True </bool>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
@@ -196,12 +321,6 @@
 					<string> "__editor_plugin_screen__" </string>
 					<string> "2D" </string>
 				</dictionary>
-				<real> 100 </real>
-				<real> 130 </real>
-				<resource  resource_type="Texture" path="res://visual/atlasFleeTomb.xatex">  </resource>
-				<resource name=""></resource>				<resource  resource_type="PackedScene" path="res://scene/highScoreRank.xscn">  </resource>
-				<real> 170 </real>
-				<real> 270 </real>
 				<real> 340 </real>
 				<real> 440 </real>
 				<resource  resource_type="Texture" path="res://visual/atlasDifficulty1Tomb.xatex">  </resource>
@@ -218,7 +337,7 @@
 				<resource  resource_type="Texture" path="res://visual/atlasDonateTomb.xatex">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="422"> 				-1, -1, 1, 0, -1, 23, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 5, 10, 6, 11, 5, 12, 5, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 22, 8, 23, 9, 24, 10, 0, 0, 0, 26, 25, -1, 25, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 11, 11, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 13, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 36, 15, 5, 9, 16, 11, 17, 12, 12, 17, 3, 18, 1, 0, 0, 0, 26, 37, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 18, 11, 19, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 20, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 38, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 6, 11, 21, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 22, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 39, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 23, 11, 24, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 25, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 40, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 26, 11, 27, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 28, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 41, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 29, 11, 30, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 31, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0 </int_array>
+			<int_array  len="426"> 				-1, -1, 1, 0, -1, 23, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 5, 10, 6, 11, 5, 12, 5, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 22, 8, 23, 9, 24, 10, 0, 0, 0, 26, 25, -1, 25, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 11, 11, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 13, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 36, 15, 7, 2, 0, 9, 16, 11, 17, 12, 12, 17, 3, 18, 1, 24, 18, 0, 0, 0, 26, 37, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 19, 11, 20, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 21, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 38, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 6, 11, 22, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 23, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 39, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 24, 11, 25, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 26, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 40, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 27, 11, 28, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 29, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0, 0, 0, 26, 41, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 9, 30, 11, 31, 12, 12, 13, 0, 14, 0, 15, 0, 16, 0, 17, 3, 18, 1, 19, 7, 20, 7, 21, 2, 27, 3, 28, 3, 29, 3, 30, 32, 31, 14, 32, 14, 33, 14, 34, 14, 35, 14, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="42"> 				1, 0, 43, 42, 2, 0, 2, 0, 43, 44, 2, 0, 3, 0, 43, 45, 2, 0, 4, 0, 43, 46, 2, 0, 5, 0, 43, 47, 2, 0, 6, 0, 43, 48, 2, 0, 7, 0, 43, 49, 2, 0 </int_array>
 		</dictionary>
