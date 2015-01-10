@@ -237,7 +237,7 @@ func enterRound(difficulty):
 	currentScene = s.instance()
 	get_tree().get_root().add_child(currentScene)
 	enteringRound = false
-	disableInputForXMs()
+	disableInputForXMs(1000)
 
 func enterMenu():
 	var s = ResourceLoader.load("res://scene/menu.xscn")
