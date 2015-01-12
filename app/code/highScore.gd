@@ -8,28 +8,23 @@ extends Node
 
 var highArray
 var highNode
-var highCount
 var diffNode
 var rankNode
 var difficulty
-var d
 
 func _ready():
 	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	highArray = get_node("/root/global").highArray
-	#root.get_child(root.get_child_count() - 1)
 	highNode = get_node("highNode")
-	highCount = highNode.get_child_count()
-	difficulty = -1
-	d = 0
-	for d in range(highCount):
-		diffNode = highNode.get_child(highCount - d - 1)
-		if diffNode.is_type("TextureFrame") == false:
+	
+	for difficulty in range(get_node("/root/global").SIZE_DIFFICULTY):
+		diffNode = highNode.get_node("difficulty " + str(difficulty + 1))
+		if diffNode == null or diffNode.is_type("TextureFrame") == false:
+			print(diffNode)
 			continue
 		
-		difficulty += 1
 		var i = 0
-		for rank in range(diffNode.get_child_count()):
+		for rank in range(get_node("/root/global").SIZE_RANK - 1): # do not display the last row.
 			rankNode = diffNode.get_child(rank)
 			if highArray[difficulty][rank][get_node("/root/global").STAT_NEW]:
 				rankNode.set_normal_texture(load("res://visual/atlasBloodyTomb.xatex"))
