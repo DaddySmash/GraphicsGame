@@ -8,16 +8,26 @@ extends Node
 
 var highArray
 var highNode
+var highCount
 var diffNode
 var rankNode
+var difficulty
+var d
 
 func _ready():
 	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	highArray = get_node("/root/global").highArray
 	#root.get_child(root.get_child_count() - 1)
 	highNode = get_node("highNode")
-	for difficulty in range(highNode.get_child_count() - 1): # NO IDEA WHY THERE IS AN INVISIBLE NODE
-		diffNode = highNode.get_child(difficulty)
+	highCount = highNode.get_child_count()
+	difficulty = -1
+	d = 0
+	for d in range(highCount):
+		diffNode = highNode.get_child(highCount - d - 1)
+		if diffNode.is_type("TextureFrame") == false:
+			continue
+		
+		difficulty += 1
 		var i = 0
 		for rank in range(diffNode.get_child_count()):
 			rankNode = diffNode.get_child(rank)
