@@ -37,7 +37,7 @@ func zombieStart(index): #Don't call unless zombie is below ground.
 	zombieData[index].zombieTime = rand_range(1.85, 2.15) #This needs to be in seconds to match playerTime.
 	zombieData[index].zombieStart = max(playerTime, 1) + rand_range(0, 4) #This needs to be in seconds to match playerTime.
 	
-	if zombieData[index].node.get_node("rubbleHole").visible:
+	if zombieData[index].tombType == "rubbleHole":
 		zombieData[index].zombieType = "missing"
 	else:
 		if floor(rand_range(0, 3)) == 0:
@@ -86,20 +86,37 @@ func zombieDataInit():
 	zombieData.resize(0)
 	for x in range(xSizeArray[playerDifficulty]):
 		for y in range(ySizeArray[playerDifficulty]):
-			zombieData.append({"node":tombArray[x][y], "zombieTime":0, "zombieStart":0, "MARGIN_TOP":tombArray[x][y].get_margin(MARGIN_TOP)})
+			zombieData.append({"node":tombArray[x][y], "zombieTime":0, "zombieStart":0, "zombieType":"x", "tombType":"x", "MARGIN_TOP":tombArray[x][y].get_margin(MARGIN_TOP)})
 	for c in range(zombieData.size()):
 		if zombieData.empty():
 			continue
 			
-		print(zombieData)
-		print(zombieData[c])
-		print(zombieData[c].node)
-		print(zombieData[c].node.get_node("rubbleHole"))
-		print(zombieData[c].node.get_node("rubbleHole").visible)
+		#print(zombieData)
+		#print(zombieData[c])
+		#print(zombieData[c].node)
+		#print(zombieData[c].node.get_node("rubbleHole"))
+		#var x = zombieData[c].node.get_node("rubbleHole")
+		#print(x)
+		#print(x.is_visible())
+		#print(zombieData[c].node.get_node("rubbleHole").CanvasItem)
+		#print(zombieData[c].node.get_node("rubbleHole").CanvasItem.is_visible)
+		#print(zombieData[c].node.get_node("rubbleHole").get_property_list)
 		
-		if zombieData[c].node.get_node("rubbleHole").visible:
+		if zombieData[c].node.get_node("rubbleHole").is_visible():
+			zombieData[c].tombType = "rubbleHole"
 			zombieData[c].zombieType = "missing"
+		
+		if zombieData[c].node.get_node("normalTomb").is_visible():
+			zombieData[c].tombType = "normalTomb"
+		
+		if zombieData[c].node.get_node("brokenTomb").is_visible():
+			zombieData[c].tombType = "brokenTomb"
+			
+		if zombieData[c].node.get_node("missingTomb").is_visible():
+			zombieData[c].tombType = "missingTomb"
+			
 		zombieStart(c)
+		
 
 func getIndexFromNode(node): #When passed a node, find that node's index inside of zombieData.
 	for c in range(zombieData.size()):
