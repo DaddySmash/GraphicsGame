@@ -17,9 +17,9 @@ var tombArray = []
 var tombOrigen = null
 var tombs = null
 var tombNumberTotal = 0 
-var zombieData = [] #[{"node":tomb, "zombieTime":time, "zombieStart":rand_range(0, 4)}, {...}, ...]
-#zombieData[0] = {"node":tomb, "zombieTime":time}
-#zombieData[1].node = tomb
+var zombieData = [] #[{"node":sub-scene, "zombieTime":time, "zombieStart":rand_range(0, 4), "zombieType":"type", "tombType":"type"}, {...}, ...]
+#zombieData[0] = {"node":sub-scene, "zombieTime":time}
+#zombieData[1].node = sub-scene
 const xTombSpacing = 200
 const yTombSpacing = 175
 var tombStyle = null
@@ -36,8 +36,53 @@ var howDiedTombCount = 3 #this is a count of the number of different flavor text
 func zombieStart(index): #Don't call unless zombie is below ground.
 	zombieData[index].zombieTime = rand_range(1.85, 2.15) #This needs to be in seconds to match playerTime.
 	zombieData[index].zombieStart = max(playerTime, 1) + rand_range(0, 4) #This needs to be in seconds to match playerTime.
+	
+	if zombieData[index].node.get_node("rubbleHole").visible:
+		zombieData[index].zombieType = "missing"
+	else:
+		if floor(rand_range(0, 3)) == 0:
+			zombieData[index].zombieType = "hat"
+		else:
+			zombieData[index].zombieType = "normal"
 
 func zombieDataInit():
+	createTombList()
+	
+	for c in range(playerHealth[playerDifficulty]): #Make normal tombs for player health.
+		if tombList.empty():
+			continue
+		var i = floor(rand_range(0, tombList.size()))
+		tombList[i].get_node("normalTomb").show()
+		tombList[i].get_node("frontHole").show()
+		tombList[i].get_node("backHole").show()
+		#tombList[i].get_node("rubbleHole").show()
+		tombList.remove(i)
+		
+	for c in range(voidTombs[playerDifficulty]): #Make void tombs.
+		if tombList.empty():
+			continue
+		var i = floor(rand_range(0, tombList.size()))
+		tombList[i].get_node("rubbleHole").show()
+		tombList.remove(i)
+	
+	for i in range(tombList.size()): #Make the rest of the tombs.
+		if tombList.empty():
+			continue
+		var r = floor(rand_range(0, 2))
+		if r == 0:
+			tombList[i].get_node("brokenTomb").show()
+			tombList[i].get_node("frontHole").show()
+			tombList[i].get_node("backHole").show()
+			#tombList[i].get_node("rubbleHole").show()
+		elif r == 1:
+			tombList[i].get_node("missingTomb").show()
+			tombList[i].get_node("frontHole").show()
+			tombList[i].get_node("backHole").show()
+			#tombList[i].get_node("rubbleHole").show()
+		else:
+			pass
+			
+	createTombList()
 	zombieData.resize(0)
 	for x in range(xSizeArray[playerDifficulty]):
 		for y in range(ySizeArray[playerDifficulty]):
@@ -45,6 +90,15 @@ func zombieDataInit():
 	for c in range(zombieData.size()):
 		if zombieData.empty():
 			continue
+			
+		print(zombieData)
+		print(zombieData[c])
+		print(zombieData[c].node)
+		print(zombieData[c].node.get_node("rubbleHole"))
+		print(zombieData[c].node.get_node("rubbleHole").visible)
+		
+		if zombieData[c].node.get_node("rubbleHole").visible:
+			zombieData[c].zombieType = "missing"
 		zombieStart(c)
 
 func getIndexFromNode(node): #When passed a node, find that node's index inside of zombieData.
@@ -84,43 +138,7 @@ func _ready():
 	playerTime = 0
 	#specialAbilityAmmo = 0
 	
-	createTombList()
-	
-	for c in range(playerHealth[playerDifficulty]): #Make normal tombs for player health.
-		if tombList.empty():
-			continue
-		var i = floor(rand_range(0, tombList.size()))
-		tombList[i].get_node("normalTomb").show()
-		tombList[i].get_node("frontHole").show()
-		tombList[i].get_node("backHole").show()
-		#tombList[i].get_node("rubbleHole").show()
-		tombList.remove(i)
-		
-	for c in range(voidTombs[playerDifficulty]): #Make void tombs.
-		if tombList.empty():
-			continue
-		var i = floor(rand_range(0, tombList.size()))
-		tombList[i].get_node("rubbleHole").show()
-		tombList.remove(i)
-	
-	for i in range(tombList.size()): #Make the rest of the tombs.
-		if tombList.empty():
-			continue
-		var r = floor(rand_range(0, 2))
-		if r == 0:
-			tombList[i].get_node("brokenTomb").show()
-			tombList[i].get_node("frontHole").show()
-			tombList[i].get_node("backHole").show()
-			#tombList[i].get_node("rubbleHole").show()
-		elif r == 1:
-			tombList[i].get_node("missingTomb").show()
-			tombList[i].get_node("frontHole").show()
-			tombList[i].get_node("backHole").show()
-			#tombList[i].get_node("rubbleHole").show()
-		else:
-			pass
-			
-	createTombList()
+
 	zombieDataInit()
 	
 
@@ -167,18 +185,44 @@ func _on_backGround_pressed():
 
 func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime, zombieStart.
 	for c in range(zombieData.size()):
+
 		if zombieData.empty():
 			continue
-		zombieData[c].node.get_node("zombieNormal").show()
-		if playerTime < zombieData[c].zombieStart: #Before start
-			zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP, 0)
-			
-		elif playerTime < (zombieData[c].zombieStart + (zombieData[c].zombieTime / 2)): #Going up
-			zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * playerTime) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
-			
-		elif playerTime < (zombieData[c].zombieStart + zombieData[c].zombieTime): #Going down
-			zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
-			
-		else: #playerTime >= (zombieData[c].zombieStart + zombieData[c].zombieTime): #Reset zombieStart
-			zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP, 0)
-			zombieStart(c)
+
+		if zombieData[c].zombieType == "normal":
+			zombieData[c].node.get_node("zombieNormal").show()
+			zombieData[c].node.get_node("zombieHat").hide()
+			if playerTime < zombieData[c].zombieStart: #Before start
+				zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP, 0)
+				
+			elif playerTime < (zombieData[c].zombieStart + (zombieData[c].zombieTime / 2)): #Going up
+				zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * playerTime) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
+				
+			elif playerTime < (zombieData[c].zombieStart + zombieData[c].zombieTime): #Going down
+				zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
+				
+			else: #playerTime >= (zombieData[c].zombieStart + zombieData[c].zombieTime): #Reset zombieStart
+				zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP, 0)
+				zombieStart(c)
+				
+		elif zombieData[c].zombieType == "hat":
+			zombieData[c].node.get_node("zombieNormal").hide()
+			zombieData[c].node.get_node("zombieHat").show()
+			if playerTime < zombieData[c].zombieStart: #Before start
+				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP, 0)
+				
+			elif playerTime < (zombieData[c].zombieStart + (zombieData[c].zombieTime / 2)): #Going up
+				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * playerTime) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
+				
+			elif playerTime < (zombieData[c].zombieStart + zombieData[c].zombieTime): #Going down
+				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
+				
+			else: #playerTime >= (zombieData[c].zombieStart + zombieData[c].zombieTime): #Reset zombieStart
+				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP, 0)
+				zombieStart(c)
+		elif zombieData[c].zombieType == "missing":
+			zombieData[c].node.get_node("zombieNormal").hide()
+			zombieData[c].node.get_node("zombieHat").hide()
+		else:
+			print("Variable zombieType is set to an incorrect value.")
+			continue
