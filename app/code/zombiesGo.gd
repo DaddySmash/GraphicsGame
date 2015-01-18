@@ -108,6 +108,7 @@ func zombieDataInit():
 		
 		if zombieData[c].node.get_node("normalTomb").is_visible():
 			zombieData[c].tombType = "normalTomb"
+			zombieData[c].node.get_node("tombClickMask").show()
 		
 		if zombieData[c].node.get_node("brokenTomb").is_visible():
 			zombieData[c].tombType = "brokenTomb"
@@ -253,3 +254,11 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 		else:
 			print("Variable zombieType is set to an incorrect value.")
 			continue
+
+func onZombieClicked():
+	pass
+	
+func onTombClicked():
+	#tombClickMask
+	pass
+	
