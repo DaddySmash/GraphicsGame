@@ -203,7 +203,8 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 
 		if zombieData[c].zombieType == "normal":
 			zombieData[c].node.get_node("zombieNormal").show()
-			zombieData[c].node.get_node("zombieHat").hide()
+			zombieData[c].node.get_node("zombieHatBody").hide()
+			zombieData[c].node.get_node("zombieHatHead").hide()
 			if playerTime < zombieData[c].zombieStart: #Before start
 				zombieData[c].node.get_node("zombieNormal").set_margin(MARGIN_TOP, 0)
 				zombieData[c].node.get_node("zombieClickMask").set_margin(MARGIN_TOP, 0)
@@ -223,26 +224,32 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 				
 		elif zombieData[c].zombieType == "hat":
 			zombieData[c].node.get_node("zombieNormal").hide()
-			zombieData[c].node.get_node("zombieHat").show()
+			zombieData[c].node.get_node("zombieHatBody").show()
+			zombieData[c].node.get_node("zombieHatHead").show()
 			if playerTime < zombieData[c].zombieStart: #Before start
-				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP, 0)
+				zombieData[c].node.get_node("zombieHatBody").set_margin(MARGIN_TOP, 0)
+				zombieData[c].node.get_node("zombieHatHead").set_margin(MARGIN_TOP, 0)
 				zombieData[c].node.get_node("zombieClickMask").set_margin(MARGIN_TOP, 0)
 				
 			elif playerTime < (zombieData[c].zombieStart + (zombieData[c].zombieTime / 2)): #Going up
-				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * playerTime) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
+				zombieData[c].node.get_node("zombieHatBody").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * playerTime) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
+				zombieData[c].node.get_node("zombieHatHead").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * playerTime) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
 				zombieData[c].node.get_node("zombieClickMask").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * playerTime) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
 				
 			elif playerTime < (zombieData[c].zombieStart + zombieData[c].zombieTime): #Going down
-				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
+				zombieData[c].node.get_node("zombieHatBody").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
+				zombieData[c].node.get_node("zombieHatHead").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
 				zombieData[c].node.get_node("zombieClickMask").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
 				
 			else: #playerTime >= (zombieData[c].zombieStart + zombieData[c].zombieTime): #Reset zombieStart
-				zombieData[c].node.get_node("zombieHat").set_margin(MARGIN_TOP, 0)
+				zombieData[c].node.get_node("zombieHatBody").set_margin(MARGIN_TOP, 0)
+				zombieData[c].node.get_node("zombieHatHead").set_margin(MARGIN_TOP, 0)
 				zombieData[c].node.get_node("zombieClickMask").set_margin(MARGIN_TOP, 0)
 				zombieStart(c)
 		elif zombieData[c].zombieType == "missing":
 			zombieData[c].node.get_node("zombieNormal").hide()
-			zombieData[c].node.get_node("zombieHat").hide()
+			zombieData[c].node.get_node("zombieHatBody").hide()
+			zombieData[c].node.get_node("zombieHatHead").hide()
 		else:
 			print("Variable zombieType is set to an incorrect value.")
 			continue
