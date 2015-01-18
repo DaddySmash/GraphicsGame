@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="12" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+<resource_file type="PackedScene" subresource_count="13" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://code/zombieGoTomb.gd" type="Script"></ext_resource>
 	<ext_resource path="res://visual/backHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/rubbleHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/brokenTomb.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/normalTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/brokenTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/rubbleHole.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/fleeTomb.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/bloodyTomb.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/frontHole.png" type="Texture"></ext_resource>
@@ -14,7 +15,7 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="41">
+			<string_array  len="47">
 				<string> "zombiesGoTomb" </string>
 				<string> "TextureButton" </string>
 				<string> "_import_path" </string>
@@ -40,6 +41,7 @@
 				<string> "textures/disabled" </string>
 				<string> "textures/focused" </string>
 				<string> "textures/click_mask" </string>
+				<string> "script/script" </string>
 				<string> "__meta__" </string>
 				<string> "missingTomb" </string>
 				<string> "margin/right" </string>
@@ -56,31 +58,38 @@
 				<string> "clickMask" </string>
 				<string> "frontHole" </string>
 				<string> "rubbleHole" </string>
+				<string> "clickArea" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "_on_clickArea_pressed" </string>
+				<string> "pressed" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
-			<int> 0 </int>
+			<int> 1 </int>
 			<string> "node_count" </string>
-			<int> 14 </int>
+			<int> 15 </int>
 			<string> "variants" </string>
-			<array  len="21" shared="false">
+			<array  len="26" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
 				<bool> False </bool>
 				<int> 2 </int>
-				<resource name=""></resource>				<dictionary  shared="false">
+				<resource name=""></resource>				<resource  resource_type="Script" path="res://code/zombieGoTomb.gd">  </resource>
+				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 2 </int>
 							<string> "sources" </string>
-							<array  len="2" shared="false">
+							<array  len="3" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
 								<string> "res://code/global.gd" </string>
+								<string> "res://code/zombieGoTomb.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -197,7 +206,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
 				<real> 165 </real>
 				<real> 214 </real>
@@ -213,11 +222,15 @@
 				<resource  resource_type="Texture" path="res://visual/zombieHat.png">  </resource>
 				<resource  resource_type="Texture" path="res://visual/frontHole.png">  </resource>
 				<resource  resource_type="Texture" path="res://visual/rubbleHole.png">  </resource>
+				<real> 49 </real>
+				<real> 189 </real>
+				<real> 127 </real>
+				<real> 289 </real>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="796"> 				-1, -1, 1, 0, -1, 24, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 3, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 5, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 25, 6, 0, 0, 0, 1, 26, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 9, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 29, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 10, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 30, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 11, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 31, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 12, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 32, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 10, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 33, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 13, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 34, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 14, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 35, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 15, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 36, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 16, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 17, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 37, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 16, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 18, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 38, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 5, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 39, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 19, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 40, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 27, 7, 28, 8, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 20, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0 </int_array>
+			<int_array  len="859"> 				-1, -1, 1, 0, -1, 25, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 3, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 5, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 25, 6, 26, 7, 0, 0, 0, 1, 27, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 10, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 30, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 11, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 31, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 12, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 32, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 13, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 33, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 11, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 34, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 14, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 35, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 15, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 36, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 16, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 37, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 17, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 18, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 38, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 17, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 19, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 39, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 5, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 40, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 20, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 41, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 28, 8, 29, 9, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 21, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0, 0, 0, 1, 42, -1, 27, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 43, 22, 44, 23, 28, 24, 29, 25, 7, 0, 8, 0, 9, 0, 10, 0, 11, 3, 12, 1, 13, 4, 14, 4, 15, 2, 16, 3, 17, 3, 18, 3, 19, 5, 20, 5, 21, 5, 22, 5, 23, 5, 24, 5, 0 </int_array>
 			<string> "conns" </string>
-			<int_array  len="0"> 				 </int_array>
+			<int_array  len="6"> 				14, 0, 46, 45, 2, 0 </int_array>
 		</dictionary>
 
 	</main_resource>

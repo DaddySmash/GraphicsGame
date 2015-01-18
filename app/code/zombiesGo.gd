@@ -179,15 +179,10 @@ func _process(delta):
 	time = int(floor(playerTime))
 	# Check for death.
 	if playerDifficulty == 3:
-		#isDied()= true
 		pass
 		
 	zombieMove()
-		
-		#if time <= 2:
-		#	zombieMove() = true
-		#else:
-		#	zombieMove() = false
+
 
 func isDied():
 	get_node("/root/global").enteringMenu = true
