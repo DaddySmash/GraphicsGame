@@ -1,5 +1,5 @@
 
 
-func _on_clickArea_pressed(e):
-	print("Clicked" + str(e))
+func _on_clickArea_pressed():
+	print("Clicked")
 	pass # replace with function body
