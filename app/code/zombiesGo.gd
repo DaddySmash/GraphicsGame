@@ -33,6 +33,9 @@ var voidTombs = [0, 1, 2, 3] #[Easy, Normal, Hard, Insane] These tomb placeholde
 var howDiedTombCount = 3 #this is a count of the number of different flavor texts that go on tombstones.
 #var tombArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ",", ".", "_", "-"]
 
+#var mouseState = null
+#var mousePosition = null
+
 func zombieStart(index): #Don't call unless zombie is below ground.
 	zombieData[index].zombieTime = rand_range(1.85, 2.15) #This needs to be in seconds to match playerTime.
 	zombieData[index].zombieStart = max(playerTime, 1) + rand_range(0, 4) #This needs to be in seconds to match playerTime.
@@ -130,6 +133,8 @@ func getIndexFromNode(node): #When passed a node, find that node's index inside 
 func _ready():
 	get_tree().set_auto_accept_quit(false) #Enables: _notification(what) to recieve MainLoop.NOTIFICATION_WM_QUIT_REQUEST
 	set_process(true) #Enables: _process(delta) to run every frame.
+	set_process_input(true) #Enables: _input(InputEvent) to run every mouse change.
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	playerDifficulty = get_node("/root/global").currentDifficulty
 	
 	tombs = get_node("tombs")
@@ -260,5 +265,30 @@ func onZombieClicked():
 	
 func onTombClicked():
 	#tombClickMask
+	pass
+	
+func _input(ev):
+	# Mouse in viewport coordinates. "ev" is an instance of the class InputEvent.
+	
+	if (ev.type==InputEvent.MOUSE_BUTTON):
+		print("Mouse Click/Unclick at: ",ev.pos)
+	elif (ev.type==InputEvent.MOUSE_MOTION):
+		print("Mouse Motion at: ",ev.pos)
+		get_node("mouse").set_margin(MARGIN_TOP, ev.pos.y)
+		get_node("mouse").set_margin(MARGIN_LEFT, ev.pos.x)
+		
+	mouseEmpty()
+
+func mouseEmpty(): #This shows empty hands for the mouse.
+	pass
+
+func mouseHeld(): #This shows held tombstone for the mouse.
+	get_node("mouse").get_node("held").show()
+	pass
+
+func mouseBreaking(): #This shows tombstone breaking animation for the mouse.
+	pass
+
+func mouseSwinging(): #This shows tombstone swinging animation for the mouse.
 	pass
 	

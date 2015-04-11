@@ -205,6 +205,7 @@ func enterOS():
 func enterGetName():
 	#Make sure you call get_node("/root/global").currentName = "INITAlS" AND get_node("/root/global").updateHighScorePart2()
 	if !errorHighArray:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		var s = ResourceLoader.load("res://scene/getName.xscn")
 		currentScene.queue_free()
 		currentScene = s.instance()
@@ -214,6 +215,7 @@ func enterGetName():
 func enterHighScore():
 	#Only display the top 9 of each difficulty.
 	if !errorHighArray:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		var s = ResourceLoader.load("res://scene/highScore.xscn")
 		currentScene.queue_free()
 		currentScene = s.instance()
@@ -221,6 +223,7 @@ func enterHighScore():
 		disableInputForXMs()
 
 func enterDonate():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	OS.shell_open("https://github.com/DaddySmash/GraphicsGame")
 	#var s = ResourceLoader.load("res://scene/donate.xscn")
 	#currentScene.queue_free()
@@ -230,6 +233,7 @@ func enterDonate():
 	disableInputForXMs()
 
 func enterRound(difficulty):
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	currentDifficulty = difficulty #currentDifficulty should be accessed by zombiesGo.gd
 	
 	var s = ResourceLoader.load("res://scene/zombiesGo.xscn")
@@ -240,6 +244,7 @@ func enterRound(difficulty):
 	disableInputForXMs(1000)
 
 func enterMenu():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var s = ResourceLoader.load("res://scene/menu.xscn")
 	currentScene.queue_free()
 	currentScene = s.instance()
