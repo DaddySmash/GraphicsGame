@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="24" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+<resource_file type="PackedScene" subresource_count="23" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
 	<ext_resource path="res://code/mouse.gd" type="Script"></ext_resource>
-	<ext_resource path="res://visual/atlasHeldTomb.xatex" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame1.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame10.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame4.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame8.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/animations/frame11.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/animations/frame2.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame3.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame4.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame5.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame6.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame7.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame8.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/frame9.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/swing4.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/animations/swing1.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/animations/swing2.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/swing3.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/animations/swing4.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame9.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame7.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/animations/swing5.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame10.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame3.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame1.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/swing3.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame6.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/animations/frame5.png" type="Texture"></ext_resource>
 	<resource type="SpriteFrames" path="local://1">
 		<array name="frames" len="16" shared="false">
 			<resource  resource_type="Texture" path="res://visual/animations/frame1.png">  </resource>
@@ -104,27 +103,6 @@
 
 	</resource>
 	<resource type="Animation" path="local://4">
-		<real name="length"> 1 </real>
-		<bool name="loop"> True </bool>
-		<real name="step"> 0.1 </real>
-		<string name="tracks/0/type"> "value" </string>
-		<node_path name="tracks/0/path"> ".:frame" </node_path>
-		<int name="tracks/0/interp"> 1 </int>
-		<dictionary name="tracks/0/keys" shared="false">
-			<string> "cont" </string>
-			<bool> False </bool>
-			<string> "transitions" </string>
-			<real_array  len="1"> 				1 </real_array>
-			<string> "values" </string>
-			<array  len="1" shared="false">
-				<int> 0 </int>
-			</array>
-			<string> "times" </string>
-			<real_array  len="1"> 				0 </real_array>
-		</dictionary>
-
-	</resource>
-	<resource type="Animation" path="local://5">
 		<real name="length"> 0.5 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.1 </real>
@@ -165,10 +143,31 @@
 		</dictionary>
 
 	</resource>
+	<resource type="Animation" path="local://5">
+		<real name="length"> 1 </real>
+		<bool name="loop"> True </bool>
+		<real name="step"> 0.1 </real>
+		<string name="tracks/0/type"> "value" </string>
+		<node_path name="tracks/0/path"> ".:frame" </node_path>
+		<int name="tracks/0/interp"> 1 </int>
+		<dictionary name="tracks/0/keys" shared="false">
+			<string> "cont" </string>
+			<bool> False </bool>
+			<string> "transitions" </string>
+			<real_array  len="1"> 				1 </real_array>
+			<string> "values" </string>
+			<array  len="1" shared="false">
+				<int> 0 </int>
+			</array>
+			<string> "times" </string>
+			<real_array  len="1"> 				0 </real_array>
+		</dictionary>
+
+	</resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="56">
+			<string_array  len="53">
 				<string> "mouse" </string>
 				<string> "TextureButton" </string>
 				<string> "_import_path" </string>
@@ -197,9 +196,6 @@
 				<string> "textures/focused" </string>
 				<string> "textures/click_mask" </string>
 				<string> "__meta__" </string>
-				<string> "held" </string>
-				<string> "margin/left" </string>
-				<string> "margin/top" </string>
 				<string> "animations" </string>
 				<string> "AnimatedSprite" </string>
 				<string> "transform/pos" </string>
@@ -219,8 +215,8 @@
 				<string> "root/root" </string>
 				<string> "anims/empty" </string>
 				<string> "anims/swinging" </string>
-				<string> "anims/held" </string>
 				<string> "anims/breaking" </string>
+				<string> "anims/held" </string>
 				<string> "playback/active" </string>
 				<string> "playback/speed" </string>
 				<string> "blend_times" </string>
@@ -231,9 +227,9 @@
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 3 </int>
 			<string> "variants" </string>
-			<array  len="29" shared="false">
+			<array  len="24" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -247,7 +243,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="2" shared="false">
 								<string> "res://code/mouse.gd" </string>
@@ -368,14 +364,9 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
-				<real> -83 </real>
-				<real> -54 </real>
-				<real> 82 </real>
-				<real> 160 </real>
-				<resource  resource_type="Texture" path="res://visual/atlasHeldTomb.xatex">  </resource>
-				<vector2> 0, 0 </vector2>
+				<vector2> 0, 54 </vector2>
 				<real> 0 </real>
 				<vector2> 1, 1 </vector2>
 				<resource  resource_type="SpriteFrames" path="local://1">  </resource>
@@ -393,7 +384,7 @@
 				<string> "held" </string>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="188"> 				-1, -1, 1, 0, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 1, 14, 3, 15, 6, 16, 6, 17, 2, 18, 3, 19, 3, 20, 3, 21, 7, 22, 7, 23, 7, 24, 7, 25, 7, 26, 7, 27, 8, 0, 0, 0, 1, 28, -1, 27, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 29, 9, 30, 10, 7, 11, 8, 12, 9, 0, 10, 0, 11, 0, 12, 0, 13, 1, 14, 3, 15, 6, 16, 6, 17, 2, 18, 3, 19, 3, 20, 3, 21, 13, 22, 7, 23, 7, 24, 7, 25, 7, 26, 7, 0, 0, 0, 32, 31, -1, 15, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 33, 14, 34, 15, 35, 16, 36, 17, 37, 18, 38, 1, 39, 3, 40, 3, 41, 19, 42, 20, 0, 2, 0, 44, 43, -1, 12, 2, 0, 45, 21, 46, 15, 47, 22, 48, 23, 49, 24, 50, 25, 51, 26, 52, 1, 53, 2, 54, 27, 55, 28, 0 </int_array>
+			<int_array  len="127"> 				-1, -1, 1, 0, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 1, 14, 3, 15, 6, 16, 6, 17, 2, 18, 3, 19, 3, 20, 3, 21, 7, 22, 7, 23, 7, 24, 7, 25, 7, 26, 7, 27, 8, 0, 0, 0, 29, 28, -1, 15, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 30, 9, 31, 10, 32, 11, 33, 12, 34, 13, 35, 1, 36, 3, 37, 3, 38, 14, 39, 15, 0, 1, 0, 41, 40, -1, 12, 2, 0, 42, 16, 43, 10, 44, 17, 45, 18, 46, 19, 47, 20, 48, 21, 49, 1, 50, 2, 51, 22, 52, 23, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

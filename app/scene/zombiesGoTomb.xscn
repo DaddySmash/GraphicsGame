@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="19" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
 	<ext_resource path="res://code/zombieGoTomb.gd" type="Script"></ext_resource>
+	<ext_resource path="res://visual/zombieNormal.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/rubbleHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/backHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/frontHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/frontHoleHand.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/normalTomb.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/bloodyTomb.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/missingTomb.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/zombieHat.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/zombieNormal.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/fleeTomb.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/brokenTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/fleeTomb.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/frontHole.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/zombieHat.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/backHole.png" type="Texture"></ext_resource>
+	<ext_resource path="res://visual/frontHoleHand.png" type="Texture"></ext_resource>
 	<ext_resource path="res://visual/clickAreaTomb.png" type="BitMap"></ext_resource>
 	<ext_resource path="res://visual/clickArea.png" type="BitMap"></ext_resource>
 	<resource type="ImageTexture" path="local://1">
@@ -117,10 +117,11 @@
 							<string> "current" </string>
 							<int> 2 </int>
 							<string> "sources" </string>
-							<array  len="3" shared="false">
+							<array  len="4" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
 								<string> "res://code/global.gd" </string>
 								<string> "res://code/zombieGoTomb.gd" </string>
+								<string> "res://code/mouse.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -237,7 +238,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 				</dictionary>
 				<real> 165 </real>
 				<real> 214 </real>
