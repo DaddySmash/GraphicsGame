@@ -272,23 +272,36 @@ func _input(ev):
 	
 	if (ev.type==InputEvent.MOUSE_BUTTON):
 		print("Mouse Click/Unclick at: ",ev.pos)
+		#mouseSwinging()
+		get_node("mouse").get_node("animations").mouseSwinging()
 	elif (ev.type==InputEvent.MOUSE_MOTION):
-		print("Mouse Motion at: ",ev.pos)
+		#print("Mouse Motion at: ",ev.pos)
 		get_node("mouse").set_margin(MARGIN_TOP, ev.pos.y)
 		get_node("mouse").set_margin(MARGIN_LEFT, ev.pos.x)
 		
-	mouseEmpty()
+	#mouseEmpty()
 
 func mouseEmpty(): #This shows empty hands for the mouse.
+	get_node("mouse").get_node("animations").get_node("anim").play("empty")
 	pass
 
 func mouseHeld(): #This shows held tombstone for the mouse.
-	get_node("mouse").get_node("held").show()
+	print("I made it here!")
+	#get_node("mouse").get_node("held").show()
+	get_node("mouse").get_node("animations").get_node("anim").play("held")
 	pass
 
 func mouseBreaking(): #This shows tombstone breaking animation for the mouse.
+	if (get_node("mouse").get_node("animations").get_node("anim").get_current_animation() != "breaking"):
+		get_node("mouse").get_node("animations").get_node("anim").play("breaking")
+	else: 
+		print(get_node("mouse").get_node("animations").get_node("anim").get_current_animation())
 	pass
 
 func mouseSwinging(): #This shows tombstone swinging animation for the mouse.
+	if (get_node("mouse").get_node("animations").get_node("anim").get_current_animation() != "swinging"):
+		get_node("mouse").get_node("animations").get_node("anim").play("swinging")
+	else: 
+		print(get_node("mouse").get_node("animations").get_node("anim").get_current_animation())
 	pass
 	
