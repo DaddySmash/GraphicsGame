@@ -1,7 +1,12 @@
-
+var index = null
 
 func _on_clickArea_pressed():
-	print("Zombie Clicked")
+	index = get_parent().get_parent().getIndexFromNode(self)
+	print("Zombie Clicked ", index)
+	if(get_parent().get_parent().zombieData[index].zombieFadeStart == 0):
+		get_parent().get_parent().zombieFadeStart(index)
+		get_parent().get_parent().playerScore += 1
+		pass
 	pass # replace with function body
 
 
