@@ -26,6 +26,7 @@ var tombStyle = null
 var tombList = []
 var time = null
 var zombieFadeTime = 1
+var zombieMaxSize = Vector2(2,5)
 
 var xSizeArray = [3, 3, 4, 6] #[Easy, Normal, Hard, Insane]
 var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
@@ -296,9 +297,10 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 				
 			elif playerTime < (zombieData[c].zombieStart + zombieData[c].zombieTime): #Going down
 				zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
-				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
-				zombieData[c].node.get_node("zombieClip").get_node("zombieClickMask").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
-				
+				#zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
+				#zombieData[c].node.get_node("zombieClip").get_node("zombieClickMask").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
+				print(zombieMaxSize)
+				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_scale(zombieMaxSize)
 			else: #playerTime >= (zombieData[c].zombieStart + zombieData[c].zombieTime): #Reset zombieStart
 				zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").set_margin(MARGIN_TOP, 0)
 				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_margin(MARGIN_TOP, 0)
