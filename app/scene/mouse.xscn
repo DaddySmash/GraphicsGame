@@ -63,6 +63,47 @@
 	<resource type="Animation" path="local://3">
 		<real name="length"> 0.5 </real>
 		<bool name="loop"> False </bool>
+		<real name="step"> 0.1 </real>
+		<string name="tracks/0/type"> "value" </string>
+		<node_path name="tracks/0/path"> ".:frame" </node_path>
+		<int name="tracks/0/interp"> 1 </int>
+		<dictionary name="tracks/0/keys" shared="false">
+			<string> "cont" </string>
+			<bool> True </bool>
+			<string> "times" </string>
+			<real_array  len="2"> 				0, 0.5 </real_array>
+			<string> "transitions" </string>
+			<real_array  len="2"> 				1, 1 </real_array>
+			<string> "values" </string>
+			<array  len="2" shared="false">
+				<int> 0 </int>
+				<int> 10 </int>
+			</array>
+		</dictionary>
+		<string name="tracks/1/type"> "method" </string>
+		<node_path name="tracks/1/path"> "." </node_path>
+		<int name="tracks/1/interp"> 1 </int>
+		<dictionary name="tracks/1/keys" shared="false">
+			<string> "times" </string>
+			<real_array  len="1"> 				0.5 </real_array>
+			<string> "transitions" </string>
+			<real_array  len="1"> 				1 </real_array>
+			<string> "values" </string>
+			<array  len="1" shared="false">
+				<dictionary  shared="false">
+					<string> "args" </string>
+					<array  len="0" shared="false">
+					</array>
+					<string> "method" </string>
+					<string> "mouseEmptyy" </string>
+				</dictionary>
+			</array>
+		</dictionary>
+
+	</resource>
+	<resource type="Animation" path="local://4">
+		<real name="length"> 0.5 </real>
+		<bool name="loop"> False </bool>
 		<real name="step"> 0.25 </real>
 		<string name="tracks/0/type"> "value" </string>
 		<node_path name="tracks/0/path"> ".:frame" </node_path>
@@ -102,7 +143,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://4">
+	<resource type="Animation" path="local://5">
 		<real name="length"> 1 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.1 </real>
@@ -119,47 +160,6 @@
 			<string> "values" </string>
 			<array  len="1" shared="false">
 				<int> 0 </int>
-			</array>
-		</dictionary>
-
-	</resource>
-	<resource type="Animation" path="local://5">
-		<real name="length"> 0.5 </real>
-		<bool name="loop"> False </bool>
-		<real name="step"> 0.1 </real>
-		<string name="tracks/0/type"> "value" </string>
-		<node_path name="tracks/0/path"> ".:frame" </node_path>
-		<int name="tracks/0/interp"> 1 </int>
-		<dictionary name="tracks/0/keys" shared="false">
-			<string> "cont" </string>
-			<bool> True </bool>
-			<string> "times" </string>
-			<real_array  len="2"> 				0, 0.5 </real_array>
-			<string> "transitions" </string>
-			<real_array  len="2"> 				1, 1 </real_array>
-			<string> "values" </string>
-			<array  len="2" shared="false">
-				<int> 0 </int>
-				<int> 10 </int>
-			</array>
-		</dictionary>
-		<string name="tracks/1/type"> "method" </string>
-		<node_path name="tracks/1/path"> "." </node_path>
-		<int name="tracks/1/interp"> 1 </int>
-		<dictionary name="tracks/1/keys" shared="false">
-			<string> "times" </string>
-			<real_array  len="1"> 				0.5 </real_array>
-			<string> "transitions" </string>
-			<real_array  len="1"> 				1 </real_array>
-			<string> "values" </string>
-			<array  len="1" shared="false">
-				<dictionary  shared="false">
-					<string> "args" </string>
-					<array  len="0" shared="false">
-					</array>
-					<string> "method" </string>
-					<string> "mouseEmptyyy" </string>
-				</dictionary>
 			</array>
 		</dictionary>
 
@@ -223,9 +223,9 @@
 				<string> "playback/default_blend_time" </string>
 				<string> "root/root" </string>
 				<string> "anims/empty" </string>
+				<string> "anims/breaking" </string>
 				<string> "anims/swinging" </string>
 				<string> "anims/held" </string>
-				<string> "anims/breaking" </string>
 				<string> "playback/active" </string>
 				<string> "playback/speed" </string>
 				<string> "blend_times" </string>
@@ -249,7 +249,7 @@
 				<color> 1, 1, 1, 1 </color>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
