@@ -227,7 +227,7 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 			zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").hide()
 			if (zombieData[c].zombieFadeStart != 0 and (playerTime < (zombieData[c].zombieFadeStart + zombieFadeTime))): #Fading the zombie
 				
-				zombieData[c].node.get_node("zombieClip").get_node("zombieNormal").set_opacity(0.5) #Set opacity for zombieNormal
+				zombieData[c].node.get_node("zombieClip").get_node("zombieNormal").set_opacity((1 - (playerTime - zombieData[c].zombieFadeStart) / zombieFadeTime)) #Set opacity for zombieNormal
 #				
 #				if zombieData[c].zombieFadeStart < (zombieData[c].zombieStart + (zombieData[c].zombieTime / 2)): #Frozen position in first half of animation
 #					zombieData[c].node.get_node("zombieClip").get_node("zombieNormal").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * zombieData[c].zombieFadeStart) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
@@ -266,8 +266,8 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 			
 			if (zombieData[c].zombieFadeStart != 0 and (playerTime < (zombieData[c].zombieFadeStart + zombieFadeTime))): #Fading the zombie
 				
-				zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").set_opacity(0.5) #Set opacity for zombieHatBody
-				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_opacity(0.5) #Set opacity for zombieHatHead
+				zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").set_opacity((1 - (playerTime - zombieData[c].zombieFadeStart) / zombieFadeTime)) #Set opacity for zombieHatBody
+				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_opacity((1 - (playerTime - zombieData[c].zombieFadeStart) / zombieFadeTime)) #Set opacity for zombieHatHead
 #				if zombieData[c].zombieFadeStart < (zombieData[c].zombieStart + (zombieData[c].zombieTime / 2)): #Frozen position in first half of animation
 #					zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * zombieData[c].zombieFadeStart) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
 #					zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_margin(MARGIN_TOP,  ((-190 / zombieData[c].zombieTime) * zombieData[c].zombieFadeStart) + (zombieData[c].zombieStart * (190 / zombieData[c].zombieTime)))
