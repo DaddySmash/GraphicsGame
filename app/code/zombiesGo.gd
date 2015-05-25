@@ -26,7 +26,6 @@ var tombStyle = null
 var tombList = []
 var time = null
 var zombieFadeTime = 1
-var zombieMaxSize = Vector2(2,5)
 
 var xSizeArray = [3, 3, 4, 6] #[Easy, Normal, Hard, Insane]
 var ySizeArray = [1, 2, 3, 3] #[Easy, Normal, Hard, Insane]
@@ -47,6 +46,8 @@ func zombieStart(index): #Don't call unless zombie is below ground.
 	zombieData[index].node.get_node("zombieClip").get_node("zombieNormal").set_opacity(1) #Set opacity for zombieNormal
 	zombieData[index].node.get_node("zombieClip").get_node("zombieHatBody").set_opacity(1) #Set opacity for zombieHatBody
 	zombieData[index].node.get_node("zombieClip").get_node("zombieHatHead").set_opacity(1) #Set opacity for zombieHatHead
+	zombieData[index].node.get_node("zombieHatHeadThrown").set_opacity(0) #Set opacity for zombieHatHeadThrown
+	zombieData[index].node.get_node("zombieHatHeadThrown").get_node("anim").stop()
 	
 	if zombieData[index].tombType == "rubbleHole":
 		zombieData[index].zombieType = "missing"
@@ -299,8 +300,15 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 				zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
 				#zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
 				#zombieData[c].node.get_node("zombieClip").get_node("zombieClickMask").set_margin(MARGIN_TOP,  ((190 / zombieData[c].zombieTime) * playerTime) - ((zombieData[c].zombieStart + zombieData[c].zombieTime) * (190 / zombieData[c].zombieTime)))
-				print(zombieMaxSize)
-				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_scale(zombieMaxSize)
+				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_margin(MARGIN_TOP, 0)
+				zombieData[c].node.get_node("zombieClip").get_node("zombieClickMask").set_margin(MARGIN_TOP, 0)
+				if !zombieData[c].node.get_node("zombieHatHeadThrown").get_node("anim").is_playing():
+					zombieData[c].node.get_node("zombieHatHeadThrown").set_margin(MARGIN_TOP, zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").get_margin(MARGIN_TOP))
+					print(zombieData[c].node.get_node("zombieHatHeadThrown").get_margin(MARGIN_TOP), " ", zombieData[c].node.get_node("zombieHatHeadThrown").get_margin(MARGIN_LEFT))
+					zombieData[c].node.get_node("zombieHatHeadThrown").get_node("anim").play("thrown")
+					zombieData[c].node.get_node("zombieHatHeadThrown").set_opacity(1)
+					
+				
 			else: #playerTime >= (zombieData[c].zombieStart + zombieData[c].zombieTime): #Reset zombieStart
 				zombieData[c].node.get_node("zombieClip").get_node("zombieHatBody").set_margin(MARGIN_TOP, 0)
 				zombieData[c].node.get_node("zombieClip").get_node("zombieHatHead").set_margin(MARGIN_TOP, 0)
