@@ -137,17 +137,24 @@
 		<int name="tracks/1/interp"> 1 </int>
 		<dictionary name="tracks/1/keys" shared="false">
 			<string> "times" </string>
-			<real_array  len="1"> 				0.4 </real_array>
+			<real_array  len="2"> 				0.4, 0.75 </real_array>
 			<string> "transitions" </string>
-			<real_array  len="1"> 				1 </real_array>
+			<real_array  len="2"> 				1, 1 </real_array>
 			<string> "values" </string>
-			<array  len="1" shared="false">
+			<array  len="2" shared="false">
 				<dictionary  shared="false">
 					<string> "args" </string>
 					<array  len="0" shared="false">
 					</array>
 					<string> "method" </string>
 					<string> "getDamaged" </string>
+				</dictionary>
+				<dictionary  shared="false">
+					<string> "args" </string>
+					<array  len="0" shared="false">
+					</array>
+					<string> "method" </string>
+					<string> "stopMyAnimation" </string>
 				</dictionary>
 			</array>
 		</dictionary>
