@@ -46,6 +46,7 @@ func zombieStart(index): #Don't call unless zombie is below ground.
 	zombieData[index].node.get_node("zombieClip").get_node("zombieNormal").set_opacity(1) #Set opacity for zombieNormal
 	zombieData[index].node.get_node("zombieClip").get_node("zombieHatBody").set_opacity(1) #Set opacity for zombieHatBody
 	zombieData[index].node.get_node("zombieClip").get_node("zombieHatHead").set_opacity(1) #Set opacity for zombieHatHead
+	zombieData[index].node.get_node("zombieHatHeadThrown").hide()
 	zombieData[index].node.get_node("zombieHatHeadThrown").set_opacity(0) #Set opacity for zombieHatHeadThrown
 	zombieData[index].node.get_node("zombieHatHeadThrown").get_node("anim").stop()
 	
@@ -307,6 +308,7 @@ func zombieMove(): #Move zombies up, then down, based on playerTime, zombieTime,
 					print(zombieData[c].node.get_node("zombieHatHeadThrown").get_margin(MARGIN_TOP), " ", zombieData[c].node.get_node("zombieHatHeadThrown").get_margin(MARGIN_LEFT))
 					zombieData[c].node.get_node("zombieHatHeadThrown").get_node("anim").play("thrown")
 					zombieData[c].node.get_node("zombieHatHeadThrown").set_opacity(1)
+					zombieData[c].node.get_node("zombieHatHeadThrown").show()
 					
 				
 			else: #playerTime >= (zombieData[c].zombieStart + zombieData[c].zombieTime): #Reset zombieStart
