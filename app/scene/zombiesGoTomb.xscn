@@ -228,7 +228,7 @@
 				<resource  resource_type="Script" path="res://code/zombieGoTomb.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
@@ -351,7 +351,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 4 </int>
+							<int> 3 </int>
 							<string> "sources" </string>
 							<array  len="5" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
