@@ -6,9 +6,6 @@ func _on_clickArea_pressed():
 	if(get_parent().get_parent().zombieData[index].zombieFadeStart == 0):
 		get_parent().get_parent().zombieFadeStart(index)
 		get_parent().get_parent().playerScore += 1
-		pass
-	pass # replace with function body
-
 
 func _on_tombClickMask_pressed():
 	print("Tomb Clicked")
@@ -17,4 +14,4 @@ func _on_tombClickMask_pressed():
 		get_node("normalTomb").hide() #We may need to change the data structure to hold the tombs new state.
 		get_node("missingTomb").show()
 		get_parent().get_parent().get_node("mouse").get_node("animations").mouseHeld()
-	pass 
+

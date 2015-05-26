@@ -210,7 +210,8 @@ func isDied():
 	get_node("/root/global").enteringMenu = true
 	get_node("/root/global").updateHighScore(playerScore, playerTime)
 
-func _on_backGround_pressed():
+func _on_backGround_pressed(): #This was for developing the game, and is now depreciated. This may be removed.
+	return
 	if get_node("/root/global").isInputEnabled():
 		#Submit current game and save highArray before ending round.
 		#updateHighScore(score, time)
