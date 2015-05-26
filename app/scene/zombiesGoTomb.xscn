@@ -351,7 +351,7 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 3 </int>
+							<int> 4 </int>
 							<string> "sources" </string>
 							<array  len="5" shared="false">
 								<string> "res://code/zombiesGo.gd" </string>
@@ -397,8 +397,8 @@
 				<real> 0 </real>
 				<real> -300 </real>
 				<real> -100 </real>
-				<real> 503 </real>
-				<real> 586 </real>
+				<real> 525 </real>
+				<real> 1380 </real>
 				<vector2> 5, 5 </vector2>
 				<resource  resource_type="Script" path="res://code/hatHeadThrown.gd">  </resource>
 				<node_path> ".." </node_path>

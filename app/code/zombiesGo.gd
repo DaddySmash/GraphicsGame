@@ -179,6 +179,7 @@ func _ready():
 
 	zombieDataInit()
 	get_node("mouse").get_node("animations").mouseEmpty()
+	get_node("recievingDamage").hide()
 
 func createTombList(): #Create List
 	tombList.resize(0)
