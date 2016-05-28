@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="19" version="1.1" version_name="Godot Engine v1.1.stable.d3b42e41b0">
-	<ext_resource path="res://code/zombieGoTomb.gd" type="Script"></ext_resource>
-	<ext_resource path="res://visual/missingTomb.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/normalTomb.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/bloodyTomb.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/brokenTomb.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/fleeTomb.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/backHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/frontHoleHand.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/zombieNormal.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/zombieHat.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/zombieHatHead.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/zombieHatBody.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/clickArea.png" type="BitMap"></ext_resource>
-	<ext_resource path="res://visual/clickAreaTomb.png" type="BitMap"></ext_resource>
-	<ext_resource path="res://visual/frontHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://visual/rubbleHole.png" type="Texture"></ext_resource>
-	<ext_resource path="res://code/hatHeadThrown.gd" type="Script"></ext_resource>
+<resource_file type="PackedScene" subresource_count="17" version="2.0" version_name="Godot Engine v2.0.stable.official">
+	<ext_resource path="res://code/zombieGoTomb.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://code/hatHeadThrown.gd" type="Script" index="14"></ext_resource>
+	<ext_resource path="res://visual/zombieHatBody.png" type="Texture" index="11"></ext_resource>
+	<ext_resource path="res://visual/frontHole.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://visual/rubbleHole.png" type="Texture" index="13"></ext_resource>
+	<ext_resource path="res://visual/brokenTomb.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://visual/backHole.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://visual/zombieHat.png" type="Texture" index="9"></ext_resource>
+	<ext_resource path="res://visual/zombieNormal.png" type="Texture" index="8"></ext_resource>
+	<ext_resource path="res://visual/frontHoleHand.png" type="Texture" index="7"></ext_resource>
+	<ext_resource path="res://visual/zombieHatHead.png" type="Texture" index="10"></ext_resource>
+	<ext_resource path="res://visual/bloodyTomb.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://visual/missingTomb.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://visual/fleeTomb.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://visual/normalTomb.png" type="Texture" index="2"></ext_resource>
 	<resource type="Animation" path="local://1">
 		<string name="resource/name"> "thrown" </string>
 		<real name="length"> 1 </real>
@@ -139,42 +137,26 @@
 			<string> "conn_count" </string>
 			<int> 3 </int>
 			<string> "conns" </string>
-			<int_array  len="18"> 				14, 0, 66, 65, 2, 0, 15, 0, 66, 67, 2, 0, 18, 18, 66, 68, 2, 0 </int_array>
+			<int_array  len="18"> 				14, 0, 49, 48, 2, 0, 15, 0, 49, 50, 2, 0, 18, 18, 49, 51, 2, 0 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
 			<string> "names" </string>
-			<string_array  len="69">
+			<string_array  len="52">
 				<string> "zombiesGoTomb" </string>
-				<string> "TextureButton" </string>
-				<string> "_import_path" </string>
-				<string> "visibility/visible" </string>
-				<string> "visibility/opacity" </string>
-				<string> "visibility/self_opacity" </string>
-				<string> "visibility/light_mask" </string>
-				<string> "focus_neighbour/left" </string>
-				<string> "focus_neighbour/top" </string>
-				<string> "focus_neighbour/right" </string>
-				<string> "focus_neighbour/bottom" </string>
 				<string> "focus/ignore_mouse" </string>
 				<string> "focus/stop_mouse" </string>
 				<string> "size_flags/horizontal" </string>
 				<string> "size_flags/vertical" </string>
-				<string> "size_flags/stretch_ratio" </string>
-				<string> "disabled" </string>
 				<string> "toggle_mode" </string>
-				<string> "is_pressed" </string>
-				<string> "click_on_press" </string>
-				<string> "textures/normal" </string>
-				<string> "textures/pressed" </string>
-				<string> "textures/hover" </string>
-				<string> "textures/disabled" </string>
-				<string> "textures/focused" </string>
-				<string> "textures/click_mask" </string>
-				<string> "params/scale" </string>
-				<string> "params/modulate" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
+				<string> "TextureButton" </string>
 				<string> "missingTomb" </string>
+				<string> "visibility/visible" </string>
 				<string> "margin/right" </string>
 				<string> "margin/bottom" </string>
+				<string> "textures/normal" </string>
 				<string> "howDiedTomb" </string>
 				<string> "bloodyTomb" </string>
 				<string> "brokenTomb" </string>
@@ -183,9 +165,9 @@
 				<string> "backHole" </string>
 				<string> "frontHoleHand" </string>
 				<string> "zombieClip" </string>
-				<string> "ScrollContainer" </string>
 				<string> "scroll/horizontal" </string>
 				<string> "scroll/vertical" </string>
+				<string> "ScrollContainer" </string>
 				<string> "zombieNormal" </string>
 				<string> "zombieHat" </string>
 				<string> "zombieHatHead" </string>
@@ -195,10 +177,11 @@
 				<string> "frontHole" </string>
 				<string> "rubbleHole" </string>
 				<string> "zombieHatHeadThrown" </string>
+				<string> "visibility/opacity" </string>
 				<string> "margin/left" </string>
 				<string> "margin/top" </string>
+				<string> "params/scale" </string>
 				<string> "anim" </string>
-				<string> "AnimationPlayer" </string>
 				<string> "playback/process_mode" </string>
 				<string> "playback/default_blend_time" </string>
 				<string> "root/root" </string>
@@ -207,6 +190,7 @@
 				<string> "playback/speed" </string>
 				<string> "blend_times" </string>
 				<string> "autoplay" </string>
+				<string> "AnimationPlayer" </string>
 				<string> "_on_clickArea_pressed" </string>
 				<string> "pressed" </string>
 				<string> "_on_tombClickMask_pressed" </string>
@@ -214,198 +198,56 @@
 			</string_array>
 			<string> "node_count" </string>
 			<int> 20 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
 			<string> "nodes" </string>
-			<int_array  len="1208"> 				-1, -1, 1, 0, -1, 28, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 0, 8, 0, 9, 0, 10, 0, 11, 4, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 6, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 28, 9, 29, 10, 0, 0, 0, 1, 30, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 13, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 33, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 14, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 34, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 15, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 35, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 16, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 36, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 14, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 37, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 17, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 38, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 18, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 39, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 19, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 41, 40, -1, 18, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 31, 20, 32, 21, 7, 0, 8, 0, 9, 0, 10, 0, 11, 4, 12, 1, 13, 5, 14, 5, 15, 2, 42, 4, 43, 4, 0, 9, 0, 1, 44, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 20, 32, 22, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 23, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 9, 0, 1, 45, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 20, 32, 22, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 24, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 9, 0, 1, 46, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 20, 32, 22, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 25, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 9, 0, 1, 47, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 20, 32, 22, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 26, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 9, 0, 1, 48, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 20, 32, 22, 7, 0, 8, 0, 9, 0, 10, 0, 11, 4, 12, 1, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 6, 21, 6, 22, 6, 23, 6, 24, 6, 25, 27, 26, 7, 27, 8, 0, 0, 0, 1, 49, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 22, 7, 0, 8, 0, 9, 0, 10, 0, 11, 4, 12, 1, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 6, 21, 6, 22, 6, 23, 6, 24, 6, 25, 28, 26, 7, 27, 8, 0, 0, 0, 1, 50, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 29, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 51, -1, 28, 2, 0, 3, 4, 4, 2, 5, 2, 6, 3, 31, 11, 32, 12, 7, 0, 8, 0, 9, 0, 10, 0, 11, 1, 12, 4, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 30, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 7, 27, 8, 0, 0, 0, 1, 52, -1, 31, 2, 0, 3, 1, 4, 31, 5, 2, 6, 3, 53, 32, 54, 33, 31, 34, 32, 35, 7, 0, 8, 0, 9, 0, 10, 0, 11, 4, 12, 1, 13, 5, 14, 5, 15, 2, 16, 4, 17, 4, 18, 4, 19, 4, 20, 25, 21, 6, 22, 6, 23, 6, 24, 6, 25, 6, 26, 36, 27, 8, 28, 37, 0, 18, 0, 56, 55, -1, 9, 2, 0, 57, 3, 58, 31, 59, 38, 60, 39, 61, 1, 62, 2, 63, 40, 64, 41, 0 </int_array>
+			<int_array  len="492"> 				-1, -1, 8, 0, -1, 7, 1, 0, 2, 0, 3, 1, 4, 1, 5, 0, 6, 2, 7, 3, 0, 0, 0, 8, 9, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 7, 0, 0, 0, 8, 14, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 8, 0, 0, 0, 8, 15, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 9, 0, 0, 0, 8, 16, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 10, 0, 0, 0, 8, 17, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 8, 0, 0, 0, 8, 18, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 11, 0, 0, 0, 8, 19, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 12, 0, 0, 0, 8, 20, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 13, 0, 0, 0, 24, 21, -1, 8, 11, 14, 12, 15, 1, 0, 2, 6, 3, 1, 4, 1, 22, 0, 23, 0, 0, 9, 0, 8, 25, -1, 9, 10, 0, 11, 4, 12, 16, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 17, 0, 9, 0, 8, 26, -1, 9, 10, 0, 11, 4, 12, 16, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 18, 0, 9, 0, 8, 27, -1, 9, 10, 0, 11, 4, 12, 16, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 19, 0, 9, 0, 8, 28, -1, 9, 10, 0, 11, 4, 12, 16, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 20, 0, 9, 0, 8, 29, -1, 6, 10, 0, 1, 0, 2, 6, 3, 1, 4, 1, 5, 0, 0, 0, 0, 8, 30, -1, 8, 10, 0, 11, 4, 12, 16, 1, 0, 2, 6, 3, 1, 4, 1, 5, 0, 0, 0, 0, 8, 31, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 21, 0, 0, 0, 8, 32, -1, 9, 10, 0, 11, 4, 12, 5, 1, 6, 2, 0, 3, 1, 4, 1, 5, 0, 13, 22, 0, 0, 0, 8, 33, -1, 13, 34, 23, 35, 24, 36, 25, 11, 26, 12, 27, 1, 0, 2, 6, 3, 1, 4, 1, 5, 0, 13, 19, 37, 28, 6, 29, 0, 18, 0, 47, 38, -1, 8, 39, 30, 40, 23, 41, 31, 42, 32, 43, 6, 44, 33, 45, 34, 46, 35, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="42" shared="false">
-				<node_path> "" </node_path>
-				<bool> True </bool>
-				<real> 1 </real>
-				<int> 1 </int>
+			<array  len="36" shared="false">
 				<bool> False </bool>
 				<int> 2 </int>
-				<resource name=""></resource>				<vector2> 1, 1 </vector2>
-				<color> 1, 1, 1, 1 </color>
-				<resource  resource_type="Script" path="res://code/zombieGoTomb.gd">  </resource>
+				<resource  external="0">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
-					<string> "__editor_plugin_states__" </string>
-					<dictionary  shared="false">
-						<string> "2D" </string>
-						<dictionary  shared="false">
-							<string> "ofs" </string>
-							<vector2> -1143.71, -810.595 </vector2>
-							<string> "snap_grid" </string>
-							<bool> False </bool>
-							<string> "snap_offset" </string>
-							<vector2> 0, 0 </vector2>
-							<string> "snap_pixel" </string>
-							<bool> False </bool>
-							<string> "snap_relative" </string>
-							<bool> False </bool>
-							<string> "snap_rotation" </string>
-							<bool> False </bool>
-							<string> "snap_rotation_offset" </string>
-							<real> 0 </real>
-							<string> "snap_rotation_step" </string>
-							<real> 0.261799 </real>
-							<string> "snap_show_grid" </string>
-							<bool> False </bool>
-							<string> "snap_step" </string>
-							<vector2> 10, 10 </vector2>
-							<string> "zoom" </string>
-							<real> 0.26352 </real>
-						</dictionary>
-						<string> "3D" </string>
-						<dictionary  shared="false">
-							<string> "ambient_light_color" </string>
-							<color> 0.15, 0.15, 0.15, 1 </color>
-							<string> "default_light" </string>
-							<bool> True </bool>
-							<string> "default_srgb" </string>
-							<bool> False </bool>
-							<string> "deflight_rot_x" </string>
-							<real> 0.942478 </real>
-							<string> "deflight_rot_y" </string>
-							<real> 0.628319 </real>
-							<string> "fov" </string>
-							<real> 45 </real>
-							<string> "show_grid" </string>
-							<bool> True </bool>
-							<string> "show_origin" </string>
-							<bool> True </bool>
-							<string> "viewport_mode" </string>
-							<int> 1 </int>
-							<string> "viewports" </string>
-							<array  len="4" shared="false">
-								<dictionary  shared="false">
-									<string> "distance" </string>
-									<real> 10.07268 </real>
-									<string> "listener" </string>
-									<bool> True </bool>
-									<string> "pos" </string>
-									<vector3> 0, 0, 0 </vector3>
-									<string> "use_environment" </string>
-									<bool> False </bool>
-									<string> "use_orthogonal" </string>
-									<bool> False </bool>
-									<string> "x_rot" </string>
-									<real> 0 </real>
-									<string> "y_rot" </string>
-									<real> 0 </real>
-								</dictionary>
-								<dictionary  shared="false">
-									<string> "distance" </string>
-									<real> 4 </real>
-									<string> "listener" </string>
-									<bool> False </bool>
-									<string> "pos" </string>
-									<vector3> 0, 0, 0 </vector3>
-									<string> "use_environment" </string>
-									<bool> False </bool>
-									<string> "use_orthogonal" </string>
-									<bool> False </bool>
-									<string> "x_rot" </string>
-									<real> 0 </real>
-									<string> "y_rot" </string>
-									<real> 0 </real>
-								</dictionary>
-								<dictionary  shared="false">
-									<string> "distance" </string>
-									<real> 4 </real>
-									<string> "listener" </string>
-									<bool> False </bool>
-									<string> "pos" </string>
-									<vector3> 0, 0, 0 </vector3>
-									<string> "use_environment" </string>
-									<bool> False </bool>
-									<string> "use_orthogonal" </string>
-									<bool> False </bool>
-									<string> "x_rot" </string>
-									<real> 0 </real>
-									<string> "y_rot" </string>
-									<real> 0 </real>
-								</dictionary>
-								<dictionary  shared="false">
-									<string> "distance" </string>
-									<real> 4 </real>
-									<string> "listener" </string>
-									<bool> False </bool>
-									<string> "pos" </string>
-									<vector3> 0, 0, 0 </vector3>
-									<string> "use_environment" </string>
-									<bool> False </bool>
-									<string> "use_orthogonal" </string>
-									<bool> False </bool>
-									<string> "x_rot" </string>
-									<real> 0 </real>
-									<string> "y_rot" </string>
-									<real> 0 </real>
-								</dictionary>
-							</array>
-							<string> "zfar" </string>
-							<real> 500 </real>
-							<string> "znear" </string>
-							<real> 0.1 </real>
-						</dictionary>
-						<string> "Script" </string>
-						<dictionary  shared="false">
-							<string> "current" </string>
-							<int> 4 </int>
-							<string> "sources" </string>
-							<array  len="5" shared="false">
-								<string> "res://code/zombiesGo.gd" </string>
-								<string> "res://code/global.gd" </string>
-								<string> "res://code/zombieGoTomb.gd" </string>
-								<string> "res://code/mouse.gd" </string>
-								<string> "res://code/hatHeadThrown.gd" </string>
-							</array>
-						</dictionary>
-					</dictionary>
-					<string> "__editor_run_settings__" </string>
-					<dictionary  shared="false">
-						<string> "custom_args" </string>
-						<string> "-l $scene" </string>
-						<string> "run_mode" </string>
-						<int> 0 </int>
-					</dictionary>
 				</dictionary>
 				<real> 165 </real>
 				<real> 214 </real>
-				<resource  resource_type="Texture" path="res://visual/missingTomb.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/normalTomb.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/bloodyTomb.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/brokenTomb.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/fleeTomb.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/backHole.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/frontHoleHand.png">  </resource>
+				<bool> True </bool>
+				<resource  external="1">  </resource>
+				<resource  external="2">  </resource>
+				<resource  external="3">  </resource>
+				<resource  external="4">  </resource>
+				<resource  external="5">  </resource>
+				<resource  external="6">  </resource>
+				<resource  external="7">  </resource>
 				<real> 167 </real>
 				<real> 187 </real>
 				<real> 296 </real>
-				<resource  resource_type="Texture" path="res://visual/zombieNormal.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/zombieHat.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/zombieHatHead.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/zombieHatBody.png">  </resource>
-				<resource  resource_type="BitMap" path="res://visual/clickArea.png">  </resource>
-				<resource  resource_type="BitMap" path="res://visual/clickAreaTomb.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/frontHole.png">  </resource>
-				<resource  resource_type="Texture" path="res://visual/rubbleHole.png">  </resource>
+				<resource  external="8">  </resource>
+				<resource  external="9">  </resource>
+				<resource  external="10">  </resource>
+				<resource  external="11">  </resource>
+				<resource  external="12">  </resource>
+				<resource  external="13">  </resource>
 				<real> 0 </real>
 				<real> -300 </real>
 				<real> -100 </real>
 				<real> 525 </real>
 				<real> 1380 </real>
 				<vector2> 5, 5 </vector2>
-				<resource  resource_type="Script" path="res://code/hatHeadThrown.gd">  </resource>
+				<resource  external="14">  </resource>
+				<int> 1 </int>
 				<node_path> ".." </node_path>
 				<resource  resource_type="Animation" path="local://1">  </resource>
+				<real> 1 </real>
 				<array  len="0" shared="false">
 				</array>
 				<string> "" </string>
 			</array>
 			<string> "version" </string>
-			<int> 1 </int>
+			<int> 2 </int>
 		</dictionary>
 
 	</main_resource>
